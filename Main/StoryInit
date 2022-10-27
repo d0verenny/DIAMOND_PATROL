@@ -1,0 +1,3 @@
+:: StoryInit [data]
+
+<<set $start = false>>

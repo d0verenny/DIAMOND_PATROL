@@ -1,0 +1,7 @@
+sugarcube-2:
+  macros:
+    pn:
+      name: pn
+    cont:
+      name: cont
+      container: true

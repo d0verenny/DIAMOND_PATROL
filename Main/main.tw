@@ -1,0 +1,42 @@
+:: StoryData {"position":"0,350"}
+{
+        "ifid": "146273E8-C437-4C26-9469-59D12627ABE7",
+        "format": "SugarCube",
+        "format-version": "2.36.1",
+        "start": "Home",
+        "zoom": 1
+}
+
+:: StoryTitle {"position":"0,750"}
+Бриллиантовый Патруль
+
+
+:: StoryMenu {"position":"0,1000"}
+
+[[Stats]]
+
+:: Stats {"position":"0,875"}
+<h2>Player Stats</h2>
+<strong>Имя</strong>: <<= $player.name>>
+<strong>Ренегат</strong>: <<= $player.renegate>>
+
+
+
+
+:: Widgets [widget] {"position":"0,475"}
+
+/* Names: */
+
+<<widget "pn">><span class='playername'>$Player.name</span><</widget>>
+
+/*  Developer notes: */
+<<widget "devn">><span class='devnote'></span><</widget>>
+
+/*  Tutorial: */
+<<widget "tut">><span class='tutorial'></span><</widget>>
+
+<<widget "msgbox">><span class='messagebox'></span><</widget>>
+
+/* pcsmall */
+<<widget "pcsmall">><div class='padnopicsmall'></div><</widget>>
+

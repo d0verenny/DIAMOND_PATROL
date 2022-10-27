@@ -1,0 +1,60 @@
+:: Variables [data] {"position":"0,600"}
+<<silently>>
+    <<set $Player = {
+        name: "Габи",
+        сrystals: 50,
+        keys: 1,
+        detective: 0,
+        lawmaker: 0,
+        renegate: 0,
+        ace: 0,
+    }>>
+    <<set $Xander = {
+        name: "Ксандр Кайтон",
+        relationship: 0,
+    }>>
+    <<set $Cullen = {
+        name: "Каллен Маклахлан",
+        relationship: 0,
+    }>>
+    <<set $Jack = {
+        name: "Джек Эбвинтер",
+        relationship: 0,
+    }>>
+    <<set $Bohannon = {
+        name: "Капитан Бохэннон",
+    }>>
+    /* 
+    <<set $Agapa = {
+        name: "Агрипина",
+        relationship: 0,
+        fire: {
+            level: 0
+        },
+        earth: {
+            level: 0
+        },
+        meeting: {
+            metDerevnia: true
+        } 
+    }>>*/
+
+    <<set $Player.detective += 0>>
+    <<set $Player.lawmaker += 0>>
+    <<set $Player.renegate += 0>>
+    <<set $Player.ace += 0>>
+
+
+    <<set $gotDressed = false>>
+    <<set $canopyOneMoreTime = false>>
+    <<set $standUpAndClose = false>>
+    <<set $closeCanopy = false>>
+    <<set $monorideLeverDown = false>>
+    <<set $monorideLeverUp = false>>
+
+
+    <<set $gloveBox = false>>
+    <<set $takeMonorideManual = false>>
+    <<set $takeCigarets = false>>
+    <<set $takeHermeticSpray = false>>
+<</silently>>\
