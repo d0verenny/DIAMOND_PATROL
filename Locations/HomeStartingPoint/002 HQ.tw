@@ -2,6 +2,35 @@
 
 <<include Variables>>
 
+@@#exposition;\
 Я посадила свой шаттл в штабе и мигом встала в строй... 
+@@
 
-Проверка
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            <img src="Media/Locations/HQ.gif" width=650px>
+        <</replace>>
+        <<cont keypress>>
+            <<replace '#exposition'>>\
+                <<if $gotDressed == false && $closeCanopy == true>>\
+                    <<goto [[HQ_2_Success]]>>
+                <<elseif $gotDressed == true || $closeCanopy == false>>\ 
+                    <<goto [[HQ_2_Faulty]]>>   
+                <<else>>
+                    <<goto [[HQ_2_Succes]]>>
+                <</if>>
+            <</replace>>
+        <</cont>>
+    <</cont>>
+<</silently>>
+
+:: HQ_2_Faulty
+
+"Чёрт, Капитан Густав уже на месте! Я опаздала!" 
+
+К счастью, он делал обход в другом конце шеренги. 
+
+:: HQ_2_Succes
+
+Капитан ещё не пришёл, так что я могла расслабиться.

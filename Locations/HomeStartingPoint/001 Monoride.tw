@@ -3,6 +3,10 @@
 
 <<include Variables>>
 
+<<silently>>
+<<set $closeCanopy = false>>
+<</silently>>
+
 @@#exposition;\
 Я пристегнулась, надавила на педаль, и поток ветра ударил мне в лицо. 
 @@
@@ -34,7 +38,7 @@
 :: canopyOneMoreTime {"position":"700,900"}
 
 <<silently>>
-<<set $canopyOneMoreTime = true>>
+    <<set $canopyOneMoreTime = true>>
 <</silently>>
 
 @@#exposition;\
@@ -266,7 +270,6 @@
 
 
 :: CloseCanopy {"position":"1100,700"}
-
 <<silently>>
     <<set $closeCanopy = true>>
 <</silently>>
@@ -282,7 +285,7 @@
         <</replace>>
         <<cont keypress>>
             <<replace '#exposition'>>
-                <<devn>>Некоторое время спустя...<</devn>>
+                <div class="devn">Некоторое время спустя...</div>
             <</replace>>
             <<cont keypress>>
                 <<replace '#exposition'>>

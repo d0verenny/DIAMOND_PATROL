@@ -3,7 +3,7 @@ Created by Maksim Ilinskii
 
 <span style="font-family:'Russo One', sans-serif; font-size: 25px; color: rgb(151, 38, 173);">Параметры:</span>
 <b>Законник👮🏻‍♀️</b>: <<= $Player.lawmaker>>
-Ренегат👺: <<= $Player.renegate>>
+<b>Ренегат👺:</b> <<= $Player.renegate>>
 <b>Детектив🔍</b>: <<= $Player.detective>>
 <b>Ас🚀</b>: <<= $Player.ace>>
 
