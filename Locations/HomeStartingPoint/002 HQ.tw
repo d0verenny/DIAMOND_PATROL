@@ -13,17 +13,17 @@
         <</replace>>
         <<cont keypress>>
             <<replace '#exposition'>>\
-                <<if $gotDressed == false && $closeCanopy == true>>\
-                    <<goto [[HQ_2_Success]]>>
-                <<elseif $gotDressed == true || $closeCanopy == false>>\ 
-                    <<goto [[HQ_2_Faulty]]>>
-                <<else>>
-                    <<goto [[HQ_2_Success]]>>
-                <</if>>
+                    <<if $gotDressed == false && $closeCanopy == true>>\ 
+                        <<goto "HQ_2_Success">>
+                    <<elseif $gotDressed == true || $closeCanopy == false>>
+                        <<goto "HQ_2_Faulty">>
+                    <</if>>
             <</replace>>
         <</cont>>
     <</cont>>
 <</silently>>
+
+
 
 :: HQ_2_Faulty
 
@@ -31,6 +31,6 @@
 
 К счастью, он делал обход в другом конце шеренги. 
 
-:: HQ_2_Succes
+:: HQ_2_Success
 
 Капитан ещё не пришёл, так что я могла расслабиться.

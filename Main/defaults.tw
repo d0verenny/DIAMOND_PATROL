@@ -49,10 +49,9 @@
     <<set $canopyOneMoreTime = false>>
     <<set $standUpAndClose = false>>
     <<set $closeCanopy = false>>
+    
     <<set $monorideLeverDown = false>>
     <<set $monorideLeverUp = false>>
-
-
     <<set $gloveBox = false>>
     <<set $takeMonorideManual = false>>
     <<set $takeCigarets = false>>

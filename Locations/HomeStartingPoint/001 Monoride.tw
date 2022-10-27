@@ -3,10 +3,6 @@
 
 <<include Variables>>
 
-<<silently>>
-    <<set $closeCanopy = false>>
-<</silently>>
-
 @@#exposition;\
 Я пристегнулась, надавила на педаль, и поток ветра ударил мне в лицо. 
 @@
@@ -33,7 +29,9 @@
     <</cont>>
 <</silently>>
 
-
+<<silently>>
+    <<set $closeCanopy = false>>
+<</silently>>
 
 :: canopyOneMoreTime {"position":"700,900"}
 
@@ -210,6 +208,7 @@
 
 
 :: takeCigarets {"position":"1600,1025"}
+
 <<silently>>
     <<set $takeCigarets = true>>
     <<set $gloveBox = true>>
