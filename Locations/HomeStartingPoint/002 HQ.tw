@@ -16,9 +16,9 @@
                 <<if $gotDressed == false && $closeCanopy == true>>\
                     <<goto [[HQ_2_Success]]>>
                 <<elseif $gotDressed == true || $closeCanopy == false>>\ 
-                    <<goto [[HQ_2_Faulty]]>>   
+                    <<goto [[HQ_2_Faulty]]>>
                 <<else>>
-                    <<goto [[HQ_2_Succes]]>>
+                    <<goto [[HQ_2_Success]]>>
                 <</if>>
             <</replace>>
         <</cont>>

@@ -4,7 +4,7 @@
 <<include Variables>>
 
 <<silently>>
-<<set $closeCanopy = false>>
+    <<set $closeCanopy = false>>
 <</silently>>
 
 @@#exposition;\
@@ -68,7 +68,7 @@
 :: standUpAndClose {"position":"900,900"}
 
 <<silently>>
-<<set $standUpAndClose = true>>
+    <<set $standUpAndClose = true>>
 <</silently>>
 
 <<pln>>Нет, если я сделаю это, меня тут же унесёт потоком воздуха!<</pln>>
@@ -270,6 +270,7 @@
 
 
 :: CloseCanopy {"position":"1100,700"}
+
 <<silently>>
     <<set $closeCanopy = true>>
 <</silently>>
