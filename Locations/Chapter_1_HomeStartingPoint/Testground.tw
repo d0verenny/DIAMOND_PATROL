@@ -1,0 +1,53 @@
+:: Testground
+
+[[GotDressedTrue]]
+[[GotDressedFalse]]
+
+
+
+:: GotDressedTrue
+<<silently>>
+    <<set $gotDressed = true>>
+<</silently>>
+Оделась
+
+[[closeCanopyTrue]]
+[[closeCanopyFalse]]
+
+
+
+:: GotDressedFalse 
+
+Не оделась
+
+<<silently>>
+    <<set $gotDressed = false>>
+<</silently>>
+
+[[closeCanopyTrue]]
+[[closeCanopyFalse]]
+
+
+
+:: closeCanopyTrue
+
+Закрыла кабину 
+
+<<silently>>
+    <<set $closeCanopy = true>>
+<</silently>>
+
+
+[[HQ_4_CullenFirstMet]]
+
+
+
+:: closeCanopyFalse
+
+Оставила кабину открытой - Не закрыла кабину
+
+<<silently>>
+    <<set $closeCanopy = false>>
+<</silently>>
+
+[[HQ_4_CullenFirstMet]]

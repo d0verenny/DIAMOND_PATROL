@@ -1,0 +1,88 @@
+<<include Variables>>
+
+:: HQ_1 {"position":"2125,100"}
+
+@@#exposition;\
+<<pli>>Я посадила свой шаттл в штабе и мигом встала в строй...<</pli>>
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            <img src="Media/Locations/HQ.gif" width=650px>
+        <</replace>>
+        <<cont keypress>>
+            <<replace '#exposition'>>\
+                <<if $gotDressed == false && $closeCanopy == true>>
+                    <<goto [[HQ_2_Success]]>>
+                <<elseif $gotDressed == true || $closeCanopy == false>>
+                    <<goto [[HQ_2_Faulty]]>>
+                <<else>>
+                    <<goto [[HQ_2_Success]]>>
+                <</if>>
+            <</replace>>
+        <</cont>>
+    <</cont>>
+<</silently>>
+
+/*
+
+:: HQ_2_Start
+
+
+<<if $gotDressed == false && $closeCanopy == true>>
+    <<goto [[HQ_2_Success]]>>
+<<elseif $gotDressed == true || $closeCanopy == false>>
+    <<goto [[HQ_2_Faulty]]>>
+<<else>>
+    <<goto [[HQ_2_Success]]>>
+<</if>>
+
+*/
+
+/*
+<<if $gotDressed == false && $closeCanopy == true>>\ 
+    <<goto [[HQ_2_Success]]>>
+<<elseif $gotDressed == true && $closeCanopy == false>>\
+    <<goto [[HQ_2_Faulty]]>>
+<<elseif $gotDressed == false && $closeCanopy == false>>\
+    <<goto [[HQ_2_Faulty]]>>
+<<elseif $gotDressed == true && $closeCanopy == true>>\
+    <<goto [[HQ_2_Faulty]]>>
+<<else>>
+    <<goto [[HQ_2_Success]]>>
+<</if>> */
+
+:: HQ_2_Faulty
+
+@@#exposition;\
+<<pln>>"Чёрт, Капитан Густав уже на месте! Я опаздала!" <</pln>>
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+           <<pli>> К счастью, он делал обход в другом конце шеренги.<</pli>>
+        <</replace>>
+        <<cont keypress>>
+            <<goto [[HQ_3_Xander]]>>
+        <</cont>>
+    <</cont>>
+<</silently>>
+
+
+
+:: HQ_2_Success
+
+@@#exposition;\
+<<pli>> Капитан ещё не пришёл, так что я могла расслабиться. <</pli>>
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            <<goto [[HQ_3_Xander]]>>
+        <</replace>>
+    <</cont>>
+<</silently>>
+

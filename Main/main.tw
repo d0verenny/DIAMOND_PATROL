@@ -13,12 +13,11 @@
 
 :: StoryMenu {"position":"0,1000"}
 
-[[Stats]]
+[[Отношения|Stats]]
 
 :: Stats {"position":"0,875"}
-<h2>Player Stats</h2>
-<strong>Имя</strong>: <<= $player.name>>
-<strong>Ренегат</strong>: <<= $player.renegate>>
+<h2>Отношения с персонажами</h2>
+Ксандр — <<print $Xander.relationship>>
 
 
 

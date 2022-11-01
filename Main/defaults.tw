@@ -56,4 +56,6 @@
     <<set $takeMonorideManual = false>>
     <<set $takeCigarets = false>>
     <<set $takeHermeticSpray = false>>
+
+    <<set $xanderMentionedSpecOps = true>>
 <</silently>>\

@@ -11,7 +11,7 @@ h1#story-title {
 }
 
 .passage {  
-	margin-top: 190px;
+	margin-top: 180px;
     padding-left: 150px;
     padding-right: 50px;
     font-family: 'Play', sans-serif;
@@ -21,7 +21,7 @@ h1#story-title {
 }
 
 .padbig {
-    padding-top: 200px;
+    padding-top: 100px;
 }
 
 button {
@@ -76,14 +76,35 @@ button {
 /* Player*/
 
 
-.playersp {
+.playerinter {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	height: 380px;
 	color: bisque;
 	border: 2px solid rgb(128, 6, 165);
 	border-radius: 5px;
-	padding: 10px 10px 10px 10px;
+	padding: 120px 30px 10px 50px;
 	box-shadow: 5px 5px 3px Black;
 	/* Отступ для кнопок: */
-	margin-bottom: 20px !important;
+	margin-bottom: 15px !important;
+}
+
+
+
+.playersp {
+
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    height: 380px;
+	color: bisque;
+	border: 2px solid rgb(128, 6, 165);
+	border-radius: 5px;
+	padding: 10px 30px 10px 30px;
+	box-shadow: 5px 5px 3px Black;
+	/* Отступ для кнопок: */
+	margin-bottom: 15px !important;
 }
 .playerav {
 	display: block;
@@ -91,7 +112,7 @@ button {
 	height: 130px;
 	width: 130px;
 	float: left;
-	margin: 0px 10px 0px 0px;
+	margin: 5px 5px 0px 0px;
 	border: 2px solid rgb(128, 6, 165);
 	border-radius: 5px;
 	background-size: contain;
@@ -111,6 +132,10 @@ button {
 
 .xandersp {
 	color: bisque;
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    height: 380px;
 	border: 2px solid rgb(5, 153, 104);
 	border-radius: 5px;
 	padding: 8px 8px 8px 8px;
@@ -142,6 +167,10 @@ button {
 
 .cullensp {
 	color: bisque;
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    height: 380px;
 	border: 2px solid rgb(5, 111, 153);
 	border-radius: 5px;
 	padding: 8px 8px 8px 8px;
@@ -173,6 +202,10 @@ button {
 
 .cptsp {
 	color: bisque;
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    height: 380px;
 	border: 2px solid rgb(86, 91, 94);
 	border-radius: 5px;
 	padding: 8px 8px 8px 8px;
@@ -205,6 +238,10 @@ button {
 
 .jacksp {
 	color: bisque;
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    height: 380px;
 	border: 2px solid #c98612;
 	border-radius: 5px;
 	padding: 8px 8px 8px 8px;
@@ -696,4 +733,39 @@ h6 {
   }
 
 
-  
+.fadeout {
+    opacity: 1;
+	animation: fadeInOut 10s linear forwards;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  20% {
+	opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fadeoutinifinite {
+    opacity: 1;
+	animation: fadeinfinite 5s linear infinite;
+}
+
+@keyframes fadeinfinite {
+0% {
+	  opacity: 0;
+}
+50% {
+	  opacity: 1;
+}
+100% {
+	  opacity: 0;
+	}
+}

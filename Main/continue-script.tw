@@ -121,8 +121,21 @@ Macro.add('pln', {
 		var id = this.args[0], name = id;
 		if (this.args.length > 1) name = this.args[1];
 		var output = '<div class="playersp ' + id + '">';
-		output += '<span class="playerav"></span>';
-		output += '<br>' + '<div class="playername">$Player.name</div>' + '<br>' + '<hr style="display:block;height:1px;border-width:0;color:rgb(74, 4, 95);background-color:rgb(74, 4, 95)">' + this.payload[0].contents + '</div>';
+		output += '<span class="playerav" style="margin-right:20px"></span>';
+		output += '<div class="playername" style="display:block;padding:50px 0px 0px 0px">$Player.name</div>' + '<hr style="display:block;margin-top:60px;height:1px;border-width:0;color:rgb(74, 4, 95);background-color:rgb(74, 4, 95)">' + this.payload[0].contents + '</div>';
+		$(this.output).wiki(output);
+	}
+});
+
+// Playerinter
+
+Macro.add('pli', {
+	tags     : null,
+	handler  : function () {
+		var id = this.args[0], name = id;
+		if (this.args.length > 1) name = this.args[1];
+		var output = '<div class="playerinter ' + id + '">';
+		output += this.payload[0].contents + '</div>';
 		$(this.output).wiki(output);
 	}
 });
@@ -135,8 +148,8 @@ Macro.add('xander', {
 		var id = this.args[0], name = id;
 		if (this.args.length > 1) name = this.args[1];
 		var output = '<div class="xandersp ' + id + '">';
-		output += '<span class="xanderav"></span>';
-		output += '<br>'+ '<div class="xandername">$Xander.name</div>' + '<br>' + '<hr style="height:1px;border-width:0;color:rgb(5, 97, 66);background-color:rgb(5, 97, 66)">' + this.payload[0].contents + '</div>';
+		output += '<span class="xanderav" style="margin-right:20px"></span>';
+		output += '<div class="xandername" style="display:block;padding:50px 0px 0px 0px">$Xander.name</div>' + '<hr style="display:block;margin-top:60px;height:1px;border-width:0;color:rgb(5, 97, 66);background-color:rgb(5, 97, 66)">' + this.payload[0].contents + '</div>';
 		$(this.output).wiki(output);
 	}
 });
@@ -149,7 +162,7 @@ Macro.add('cul', {
 		if (this.args.length > 1) name = this.args[1];
 		var output = '<div class="cullensp ' + id + '">';
 		output += '<span class="cullenav"></span>';
-		output += '<br>'+ '<div class="cullenname">$Cullen.name</div>' + '<br>' + '<hr style="height:1px;border-width:0;color:rgb(8, 72, 97);background-color:rgb(8, 72, 97)">' + this.payload[0].contents + '</div>';
+		output += '<div class="cullenname" style="display:block;padding:50px 0px 0px 0px">$Cullen.name</div>' + '<hr style="display:block;margin-top:60px;height:1px;border-width:0;color:rgb(8, 72, 97);background-color:rgb(8, 72, 97)">' + this.payload[0].contents + '</div>';
 		$(this.output).wiki(output);
 	}
 });
@@ -161,8 +174,8 @@ Macro.add('capt', {
 		var id = this.args[0], name = id;
 		if (this.args.length > 1) name = this.args[1];
 		var output = '<div class="cptsp ' + id + '">';
-		output += '<span class="cptav"></span>';
-		output += '<br>'+ '<div class="cptname">Капитан Бохэннон</div>' + '<br>' + '<hr style="height:1px;border-width:0;color:rgb(70, 73, 75);background-color:rgb(70, 73, 75)">' + this.payload[0].contents + '</div>';
+		output += '<span class="cptav" style="margin-right:20px"></span>';
+		output += '<div class="cptname"  style="display:block;padding:50px 0px 0px 0px">Капитан Бохэннон</div>' + '<hr style="display:block;margin-top:60px;height:1px;border-width:0;color:rgb(70, 73, 75);background-color:rgb(70, 73, 75)">' + this.payload[0].contents + '</div>';
 		$(this.output).wiki(output);
 	}
 });
@@ -175,8 +188,8 @@ Macro.add('jack', {
 		var id = this.args[0], name = id;
 		if (this.args.length > 1) name = this.args[1];
 		var output = '<div class="jacksp ' + id + '">';
-		output += '<span class="jackav"></span>';
-		output += '<br>'+ '<div class="jackname">$Jack.name</div>' + '<br>' + '<hr style="height:1px;border-width:0;color:#855a11;background-color:#855a11">' + this.payload[0].contents + '</div>';
+		output += '<span class="jackav" style="margin-right:20px"></span>';
+		output += '<div class="jackname">$Jack.name</div>' + '<hr style="display:block;margin-top:60px;height:1px;border-width:0;color:#855a11;background-color:#855a11">' + this.payload[0].contents + '</div>';
 		$(this.output).wiki(output);
 	}
 });

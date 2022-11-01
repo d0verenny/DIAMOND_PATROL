@@ -1,0 +1,325 @@
+<<include Variables>>
+
+/* Ветка Нажатия на педаль */
+:: StepOnIt {"position":"700,700"}
+
+@@#exposition;\
+Я пристегнулась, надавила на педаль, и поток ветра ударил мне в лицо. 
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            Мгновение — и я оказалась на высоте 300 км от земли.
+        <img src="Media/Locations/canopy opened sky.png" width=650px>
+        <</replace>>
+        <<cont keypress>>
+            <<replace '#exposition'>>\
+                Затем, нажала на кнопку "Закрыть кабину" — кабина не закрылась.\
+            <</replace>>
+            <<cont keypress>>
+                <<replace '#exposition'>>\
+                    <<pln>>Блин, что же делать?<</pln>>\
+                    <div class="button">[[Нажать на кнопку ещё раз|canopyOneMoreTime]]</div>
+                    <div class="button">[[Встать и закрыть вручную|standUpAndClose]]</div>
+                    <div class="button">[[Нажать на тормоз|stopPedal]]</div>
+                <</replace>>
+            <</cont>>
+        <</cont>>
+    <</cont>>
+<</silently>>
+
+:: canopyOneMoreTime {"position":"700,900"}
+
+<<silently>>
+    <<set $canopyOneMoreTime = true>>
+<</silently>>
+
+@@#exposition;\
+Я нажала на кнопку — крышка кабины пошевелилась, и что-то хруснуло.
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            <<pln>>Чорт, запорный механизм сломался! Что же делать! Чорт! Чорт! Чорт!<</pln>>\
+            <<if $canopyOneMoreTime == true && $standUpAndClose == false >>\
+                <div class="button">[[Встать и закрыть вручную|standUpAndClose]]</div>
+                <div class="button">[[Нажать на тормоз|stopPedal]]</div>
+            <<elseif $canopyOneMoreTime == true && $standUpAndClose == true>>\
+                <div class="button">[[Нажать на тормоз|stopPedal]]</div>
+            <<else>>
+                <div class="button">[[Встать и закрыть вручную|standUpAndClose]]</div>
+                <div class="button">[[Нажать на тормоз|stopPedal]]</div>
+            <</if>>
+        <</replace>>
+    <</cont>>
+<</silently>>
+ 
+
+
+
+:: standUpAndClose {"position":"900,900"}
+
+<<silently>>
+    <<set $standUpAndClose = true>>
+<</silently>>
+
+<<pln>>Нет, если я сделаю это, меня тут же унесёт потоком воздуха!<</pln>>
+<<if $standUpAndClose == true && $canopyOneMoreTime == false>>\
+<div class="button">[[Нажать на кнопку ещё раз|canopyOneMoreTime]]</div>
+<div class="button">[[Нажать на тормоз|stopPedal]]</div>
+<<elseif $standUpAndClose == true && $canopyOneMoreTime == true>>\
+<div class="button">[[Нажать на тормоз|stopPedal]]</div>
+<<else>>
+<div class="button">[[Нажать на кнопку ещё раз|canopyOneMoreTime]]</div>
+<div class="button">[[Нажать на тормоз|stopPedal]]</div>
+<</if>>
+
+
+
+:: stopPedal {"position":"900,1100"}
+
+@@#exposition;\
+Я нажала на тормоз, и монорайд начал падать!
+@@
+    
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\  
+            <<pln>>Отлично — падаем! Только бы теперь ничего не перепутать!
+            <</pln>>\
+            <<if $monorideLeverDown == true && $monorideLeverUp == false>>\
+            <div class="button">[[Потянуть руль на себя|monorideLeverUp]]</div>
+            <div class="button">[[Опустить руль|monorideLeverDown]]</div>
+            <<elseif $monorideLeverDown == true && $monorideLeverUp == true>>\
+            <div class="button">[[Потянуть руль на себя|monorideLeverUp]]</div>
+            <<else>>
+            <div class="button">[[Потянуть руль на себя|monorideLeverUp]]</div>
+            <div class="button">[[Опустить руль|monorideLeverDown]]</div>
+            <</if>>
+        <</replace>>
+    <</cont>>
+<</silently>>
+
+
+
+:: monorideLeverDown {"position":"1100,1100"}
+
+<<silently>>
+    <<set $monorideLeverDown = true>>
+<</silently>>
+
+
+@@#exposition;\
+<<pln>>Нет, это не помогло, крышка кабины вот-вот оторвётся!<</pln>>
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            Я вернула монорайд в исходное положение.
+            <div class="button">[[Потянуть руль на себя|monorideLeverUp]]</div>\
+        <</replace>>
+    <</cont>>
+<</silently>>
+
+
+
+:: monorideLeverUp {"position":"1300,800"}
+<<silently>>
+    <<set $monorideLeverUp = true>>
+<</silently>>
+
+@@#exposition;\
+Я потянула руль на себя, и монорайд начал падать назад. 
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            <<pln>>Отлично, поток ветра закрыл крышку кабины!<</pln>>\
+        <</replace>>
+        <<cont keypress>>
+            <<replace '#exposition'>>\
+               <<pln>>Только вот она до сих пор сломана. Надо бы её как-то загерметизировать...<</pln>>\
+            <</replace>>
+            <<cont keypress>>
+                <<replace '#exposition'>>\
+                    <<goto [[gloveBox]]>>
+                <</replace>>
+            <</cont>>
+        <</cont>>
+    <</cont>>
+<</silently>>
+
+
+
+:: gloveBox {"position":"1600,825"}
+<<if $gloveBox == false && $takeCigarets == false && $gloveBox == false>>
+    Я заглянула в бардачок.
+<<elseif $gloveBox == true && $takeMonorideManual == true && $takeCigarets == true>>
+    Как только я убрала лишнее, глубоко в бардачке сверкнуло донышко какого-то балончика.
+<<elseif $gloveBox == true && $takeMonorideManual == false && $takeCigarets == true>>
+    Хм, что у меня там есть ещё?
+<<elseif $gloveBox == true && $takeMonorideManual == true && $takeCigarets == false>>
+    Хм, что у меня там есть ещё?
+<<else>>
+    Я заглянула в бардачок.
+<</if>>
+
+<<if $takeMonorideManual == false && $takeCigarets == false>>\
+    <div class="button">[[Взять инструкцию|takeMonorideManual]]</div>
+    <div class="button">[[Взять пачку сигарет|takeCigarets]]</div>
+<<elseif $takeMonorideManual == true && $takeCigarets == true>>\
+    <div class="button">[[Взять балончик|takeHermeticSpray]]</div>
+<<elseif $takeMonorideManual == true && $takeCigarets == false>>\
+    <div class="button">[[Взять пачку сигарет|takeCigarets]]</div>
+<<elseif $takeMonorideManual == false && $takeCigarets == true>>\
+    <div class="button">[[Взять инструкцию к монорайду|takeMonorideManual]]</div>
+<<else>>\
+    <div class="button">[[Взять инструкцию к монорайду|takeMonorideManual]]</div>
+    <div class="button">[[Взять пачку сигарет|takeCigarets]]</div>>
+<</if>>
+
+
+:: takeMonorideManual {"position":"1800,1025"}
+<<silently>>
+    <<set $takeMonorideManual = true>>
+    <<set $gloveBox = true>>
+<</silently>>
+
+@@#exposition;\
+Я знаю её от корки до корки, но сегодня дико туплю... Как же спать хочется, сил нет!
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            <<goto [[gloveBox]]>>
+        <</replace>>
+    <</cont>>
+<</silently>>
+
+
+
+:: takeCigarets {"position":"1600,1025"}
+
+<<silently>>
+    <<set $takeCigarets = true>>
+    <<set $gloveBox = true>>
+<</silently>>
+
+@@#exposition;\
+Нет, я бросила эту привычку с тех пор, как умер папа. 
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            Оставила себе как напоминание, что умереть можно не только в космосе на задании.
+        <</replace>>
+        <<cont keypress>>
+            <<replace '#exposition'>>\
+                Хотя желание закурить сейчас было сильно, как никогда.
+            <</replace>>
+            <<cont replace>>
+                <<goto [[gloveBox]]>>
+            <</cont>>
+        <</cont>>
+    <</cont>>
+<</silently>>
+
+
+:: takeHermeticSpray {"position":"1825,825"}
+@@#exposition;\
+<<pln>>Гермоспрей! Совсем забыла что давно его купила на барахолке.<</pln>>
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            <<pln>>Блин, просрочен на месяц. Ладно, рискнём! Больше вариантов всё равно нет.<</pln>>
+        <</replace>>
+        <<cont keypress>>
+            <<replace '#exposition'>>\
+                Я обильно обработала спреем все швы кабины. 
+            <</replace>>   
+            <<cont keypress>>
+                <<replace '#exposition'>>\
+                    <<pln>>Будет проблематично выбраться — зато теперь я в безопасности.<</pln>>
+                <</replace>>
+                <<cont keypress>>
+                    <<replace '#exposition'>>\
+                        <<goto [[closeToTheHQ]]>>
+                    <</replace>>
+                <</cont>>
+            <</cont>>
+        <</cont>>
+    <</cont>>
+<</silently>>
+
+
+/* Ветка безопасности */
+
+
+
+:: CloseCanopy {"position":"1100,700"}
+
+<<silently>>
+    <<set $closeCanopy = true>>
+<</silently>>
+
+@@#exposition;\
+<<pli>>Безопасность прежде всего! Я пристегнулась, закрыла кабину и надавила на педаль.<</pli>>
+@@
+        
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+           <<pli>> Времени терять было нельзя. <</pli>>\
+        <</replace>>
+        <<cont keypress>>
+            <<replace '#exposition'>>\
+                <div class="devn">Некоторое время спустя...</div>\
+            <</replace>>
+            <<cont keypress>>
+                <<replace '#exposition'>>
+                    <<goto [[closeToTheHQ]]>>
+                <</replace>>
+            <</cont>>
+        <</cont>>
+    <</cont>>
+<</silently>>
+
+
+
+:: closeToTheHQ {"position":"1900,100"}
+
+@@#exposition;\
+<<if $closeCanopy == true>>
+    <img src="Media/Locations/canopy close to hq.png" width=650px>
+<<else>>
+    <img src="Media/Locations/canopy space foamed copy.png" width=650px>
+<</if>>
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            <<pln>>О, а вот и штаб виднеется. Ещё немного осталось поднажать!<</pln>>   
+        <</replace>>
+            <<cont keypress>>
+                <<replace '#exposition'>>\
+                     <<pln>> Хотя мне лучше поберечь крышку кабины после таких приключений.<</pln>>\
+                <</replace>>
+            <<cont keypress>>
+                <<replace '#exposition'>>\
+                    <<goto [[HQ_1]]>>              
+                <</replace>>
+            <</cont>>
+        <</cont>>
+    <</cont>>
+<</silently>>
+
+Он сказал и затем она ответила.
