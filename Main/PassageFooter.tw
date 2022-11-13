@@ -1,0 +1,7 @@
+
+
+<span style="font-family:'Russo One', sans-serif; font-size: 25px; color: rgb(151, 38, 173)">Инвентарь:</span>
+
+<<if $hasHerbMaralRoot === true>>Маралий Корень<</if>>
+<<if $hasHerbPion === true>>Пион Марьин Корень<</if>>
+<<if $hasHerbPion === true>>Курильский чай<</if>>

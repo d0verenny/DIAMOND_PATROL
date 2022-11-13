@@ -19,7 +19,7 @@
         <</replace>>
         <<cont keypress>>
             <<replace '#exposition'>>\
-                <<goto [[HQ_4_Cullen_Description]]>>
+                <<goto "HQ_4_Cullen_Description">>
             <</replace>>
         <</cont>>
     <</cont>>
@@ -57,7 +57,7 @@
                         <</replace>>
                         <<cont keypress>>
                             <<replace '#exposition'>>\
-                                <<goto [[HQ_4_CullenFirstMet_1]]>>
+                                <<goto "HQ_4_CullenFirstMet_1">>
                             <</replace>>
                         <</cont>>
                     <</cont>>
@@ -80,36 +80,40 @@
 :: HQ_4_Cullen_Joke
 
 @@#exposition;\
-    <<cul>>Ой!<</cul>>
+    <<pln>>Ой, а у самого-то ширинка расстёгнута!<</pln>>
 @@
 
 <<silently>>
     <<cont keypress>>
         <<replace '#exposition'>>\
-            <<pli>>Каллен покраснел и потянулся к паху.<</pli>>
+            <<cul>>Ой! <</cul>>
         <</replace>>
         <<cont keypress>>
             <<replace '#exposition'>>\
-                <<cul>>Ах, ты...! Чуть не подловила!<</cul>>
+                <<pli>>Каллен покраснел и потянулся к паху.<</pli>>
             <</replace>>
             <<cont keypress>>
-                <<replace '#exposition'>> \
-                    <<pli>>Рассмеялся Каллен.<</pli>>
+                <<replace '#exposition'>>\
+                    <<cul>>Ах, ты...! Чуть не подловила!<</cul>>
                 <</replace>>
                 <<cont keypress>>
-                    <<replace '#exposition'>>\
-                        <<cul>>Постоянно забываю: наши костюмы — полная герметика, ни единого шва!<</cul>>
+                    <<replace '#exposition'>> \
+                        <<pli>>Рассмеялся Каллен.<</pli>>
                     <</replace>>
                     <<cont keypress>>
                         <<replace '#exposition'>>\
-                            <div class="fadeout devn">Ты начинаешь нравиться Каллену!</div>
-
-                            <<cul>>Так что с тобой произошло?<</cul>>
+                            <<cul>>Постоянно забываю: наши костюмы — полная герметика, ни единого шва!<</cul>>
                         <</replace>>
                         <<cont keypress>>
                             <<replace '#exposition'>>\
-                                <<goto [[HQ_4_Cullen_SayAsIs]]>>
+                                <div class="fadeout devn">Ты начинаешь нравиться Каллену!</div>\
+                                <<cul>>Так что с тобой произошло?<</cul>>
                             <</replace>>
+                            <<cont keypress>>
+                                <<replace '#exposition'>>\
+                                    <<goto "HQ_4_Cullen_SayAsIs">>
+                                <</replace>>
+                            <</cont>>
                         <</cont>>
                     <</cont>>
                 <</cont>>
@@ -129,11 +133,11 @@
     <<cont keypress>>
         <<replace '#exposition'>>\
             <<if $gotDressed == true && $closeCanopy == true>>
-                <<goto [[HQ_4_Cullen_SayAsIs_1]]>>
+                <<goto "HQ_4_Cullen_SayAsIs_1">>
             <<elseif $closeCanopy == false>>
-                <<goto [[HQ_4_Cullen_SayAsIs_2]]>>
+                <<goto "HQ_4_Cullen_SayAsIs_2">>
             <<else>>
-                <<goto [[HQ_4_Cullen_SayAsIs_1]]>>
+                <<goto "HQ_4_Cullen_SayAsIs_1">>
             <</if>>
         <</replace>>
     <</cont>>
@@ -152,7 +156,7 @@
 <<silently>>
     <<cont keypress>>
         <<replace '#exposition'>>\
-            <<goto [[HQ_4_Cullen_SayAsIs_3]]>>
+            <<goto "HQ_4_Cullen_SayAsIs_3">>
         <</replace>>
     <</cont>>
 <</silently>>
@@ -175,7 +179,7 @@
         <</replace>>
         <<cont keypress>>
             <<replace '#exposition'>>\
-                <<cul>>Ты же высококлассный пилот, цунами, что это с тобой? Будь аккуратнее.<</cul>>
+                <<cul>>Ты же высококлассный пилот, <<print $Player.name>>, что это с тобой? Будь аккуратнее.<</cul>>
             <</replace>>
             <<cont keypress>>\
                 <<replace '#exposition'>>\
@@ -195,11 +199,11 @@
                             <</replace>>
                             <<cont keypress>>\
                                 <<replace '#exposition'>>\
-                                    <<pln>>Да вчера ещё кэп чуть в депрессию не вогнал своими ором во время тренировки<</pln>>
+                                    <<pln>>Да вчера ещё Кэп чуть в депрессию не вогнал своими ором во время тренировки.<</pln>>
                                 <</replace>>
                                 <<cont keypress>>\
                                     <<replace '#exposition'>>\
-                                        <<goto [[HQ_4_Cullen_SayAsIs_3]]>>
+                                        <<goto "HQ_4_Cullen_SayAsIs_3">>
                                     <</replace>>
                                 <</cont>>
                             <</cont>>
@@ -217,7 +221,7 @@
 :: HQ_4_Cullen_SayAsIs_3
 
 @@#exposition;\
-<<cul>>Кэп может быть занозой в заднице, понимаю. И всё же, хороший сон важен, не выспишься — и получишь снаряд в задницу корабля от очередного контрабандюги.<</cul>>
+<<cul>>Кэп может быть занозой в заднице, понимаю. И всё же, хороший сон важен. Не выспишься — получишь снаряд в задницу корабля от очередного контрабандюги.<</cul>>
 @@
 
 
@@ -232,7 +236,7 @@
             <</replace>>
             <<cont keypress>>\
                 <<replace '#exposition'>>\
-                    <<cul>>Так что срочно нужно найти чашечку офигенного кофе... и коньяка!<</cul>>
+                    <<cul>>Так что срочно нужно найти чашечку офигенного кофе... и капельку коньяка!<</cul>>
                 <</replace>>
                 <<cont keypress>>\
                     <<replace '#exposition'>>\
@@ -240,27 +244,27 @@
                     <</replace>>
                     <<cont keypress>>\
                         <<replace '#exposition'>>\
-                            <<cul>>Да так, парочку пиратов и парочку зарядов в бочину от этих паразитов — кстати, о важности хорошего сна. <</cul>>
+                            <<cul>>Да так, парочку пиратов и парочку зарядов в бочину от этих паразитов — кстати, о важности хорошего сна. Тоже после дежурства мало спал. <</cul>>
+                        <</replace>>
+                        <<cont keypress>>\
+                            <<replace '#exposition'>>\
+                                    <<cul>>В общем, обычный день в офисе.<</cul>>
                             <</replace>>
                             <<cont keypress>>\
                                 <<replace '#exposition'>>\
-                                    <<cul>>В общем, обычный день в офисе.<</cul>>
-                                <</replace>>
+                                    <<pln>>Ой, ужас какой! Ты в порядке?<</pln>>
+                                 <</replace>>
                                 <<cont keypress>>\
                                     <<replace '#exposition'>>\
-                                        <<pln>>Ой, ужас какой! Ты в порядке?<</pln>>
+                                        <<pli>>Каллен тот ещё сорвиголова, каждый раз за него переживаю.<</pli>>
                                     <</replace>>
                                     <<cont keypress>>\
                                         <<replace '#exposition'>>\
-                                            <<pli>>Каллен тот ещё сорвиголова, каждый раз за него переживаю.<</pli>>
+                                            <<cul>>Да лишь потрепали костюм и кусок плоти вылетел.<</cul>> 
                                         <</replace>>
                                         <<cont keypress>>\
                                             <<replace '#exposition'>>\
-                                                <<cul>>Да лишь потрепали костюм и кусок плоти вылетел.<</cul>> 
-                                            <</replace>>
-                                            <<cont keypress>>\
-                                                <<replace '#exposition'>>\
-                                                    <<cul>>Ничего, наши медики быстро меня залатали.<</cul>>
+                                                <<cul>>Ничего, наши медики быстро меня залатали.<</cul>>
                                             <</replace>>
                                             <<cont keypress>>\
                                                 <<replace '#exposition'>>\
@@ -284,9 +288,9 @@
                                                                 <</replace>>
                                                                 <<cont keypress>>\
                                                                     <<replace '#exposition'>>\
-                                                                        <<pli>>Будь у меня доступ к принтерам без поступления на службу, мой отец был бы до сих пор жив.<</pli>>
-                                                                        [[Согласиться c Калленом|HQ_4_Cullen_SayAsIs_3_Agree]]
-                                                                        [[Возмутиться|HQ_4_Cullen_SayAsIs_3_Disagree]]
+                                                                        <<pli>>Будь у меня доступ к принтерам без поступления на службу, мой отец был бы до сих пор жив.<</pli>>\
+                                                                        <div class="button">[[Согласиться c Калленом|HQ_4_Cullen_SayAsIs_3_Agree]]</div>
+                                                                        <div class="button">[[Возразить|HQ_4_Cullen_SayAsIs_3_Disagree]]</div>
                                                                     <</replace>>
                                                                 <</cont>>
                                                             <</cont>>
@@ -376,11 +380,11 @@
                                                             <<cont keypress>>\
                                                                 <<replace '#exposition'>>\
                                                                     <<if $gotDressed == false && $closeCanopy == true>>
-                                                                        <<goto [[HQ_Captain_WhenNotLate]]>>
+                                                                        <<goto "HQ_Captain_WhenNotLate">>
                                                                     <<elseif $gotDressed == true || $closeCanopy == false>>
-                                                                        <<goto [[HQ_Captain_WhenLate]]>>
+                                                                        <<goto "HQ_Captain_WhenLate">>
                                                                     <<else>>
-                                                                        <<goto [[HQ_Captain_WhenNotLate]]>>
+                                                                        <<goto "HQ_Captain_WhenNotLate">>
                                                                     <</if>>
                                                                 <</replace>>
                                                             <</cont>>
@@ -407,7 +411,7 @@
 /* Не согласиться с Калленом */
 
 @@#exposition;\
-<<pln>>Ты не прав, Кэл.<</pln>>
+<<pln>>Ошибаешься, Каллен.<</pln>>
 @@
 
 <<silently>>
@@ -487,18 +491,18 @@
                                                                                     <<set $Player.renegate += 1>>
                                                                                 <</silently>>
 
-                                                                                <<pli>>Я никак не   ожидала, что придётся участвовать в облавах на фактически невиновных людей. Я всего лишь пилот.<</pli>>
+                                                                                <<pli>>Я никак не ожидала, что придётся участвовать в облавах на фактически невиновных людей. Я всего лишь пилот.<</pli>>\
                                                                             <</replace>>
                                                                             <<cont keypress>>\
                                                                                 <<replace '#exposition'>>
                                                                                     <<if $gotDressed == false && $closeCanopy == true>>
-                                                                                        <<goto [[HQ_Captain_WhenNotLate]]>>
+                                                                                        <<goto "HQ_Captain_WhenNotLate">>
                                                                                     <<elseif 
                                                                                         $gotDressed == true || $closeCanopy == false>>
                                                                                         >>
-                                                                                        <<goto [[HQ_Captain_WhenLate]]>>
+                                                                                        <<goto "HQ_Captain_WhenLate">>
                                                                                     <<else>>
-                                                                                        <<goto [[HQ_Captain_WhenNotLate]]>>
+                                                                                        <<goto "HQ_Captain_WhenNotLate">>
                                                                                     <</if>>
                                                                                 <</replace>>
                                                                             <</cont>>

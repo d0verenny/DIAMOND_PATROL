@@ -3,7 +3,7 @@
         "ifid": "146273E8-C437-4C26-9469-59D12627ABE7",
         "format": "SugarCube",
         "format-version": "2.36.1",
-        "start": "Home",
+        "start": "Intro",
         "zoom": 1
 }
 
@@ -12,12 +12,6 @@
 
 
 :: StoryMenu {"position":"0,1000"}
-
-[[Отношения|Stats]]
-
-:: Stats {"position":"0,875"}
-<h2>Отношения с персонажами</h2>
-Ксандр — <<print $Xander.relationship>>
 
 
 

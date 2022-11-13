@@ -161,7 +161,7 @@ Macro.add('cul', {
 		var id = this.args[0], name = id;
 		if (this.args.length > 1) name = this.args[1];
 		var output = '<div class="cullensp ' + id + '">';
-		output += '<span class="cullenav"></span>';
+		output += '<span class="cullenav" style="margin-right:20px;"></span>';
 		output += '<div class="cullenname" style="display:block;padding:50px 0px 0px 0px">$Cullen.name</div>' + '<hr style="display:block;margin-top:60px;height:1px;border-width:0;color:rgb(8, 72, 97);background-color:rgb(8, 72, 97)">' + this.payload[0].contents + '</div>';
 		$(this.output).wiki(output);
 	}
@@ -175,7 +175,7 @@ Macro.add('capt', {
 		if (this.args.length > 1) name = this.args[1];
 		var output = '<div class="cptsp ' + id + '">';
 		output += '<span class="cptav" style="margin-right:20px"></span>';
-		output += '<div class="cptname"  style="display:block;padding:50px 0px 0px 0px">Капитан Бохэннон</div>' + '<hr style="display:block;margin-top:60px;height:1px;border-width:0;color:rgb(70, 73, 75);background-color:rgb(70, 73, 75)">' + this.payload[0].contents + '</div>';
+		output += '<div class="cptname" style="display:block;padding:50px 0px 0px 0px">Капитан Бохэннон</div>' + '<hr style="display:block;margin-top:60px;height:1px;border-width:0;color:rgb(70, 73, 75);background-color:rgb(70, 73, 75)">' + this.payload[0].contents + '</div>';
 		$(this.output).wiki(output);
 	}
 });
@@ -189,7 +189,53 @@ Macro.add('jack', {
 		if (this.args.length > 1) name = this.args[1];
 		var output = '<div class="jacksp ' + id + '">';
 		output += '<span class="jackav" style="margin-right:20px"></span>';
-		output += '<div class="jackname">$Jack.name</div>' + '<hr style="display:block;margin-top:60px;height:1px;border-width:0;color:#855a11;background-color:#855a11">' + this.payload[0].contents + '</div>';
+		output += '<div class="jackname" style="display:block;padding:50px 0px 0px 0px">$Jack.name</div>' + '<hr style="display:block;margin-top:60px;height:1px;border-width:0;color:#855a11;background-color:#855a11">' + this.payload[0].contents + '</div>';
 		$(this.output).wiki(output);
 	}
 });
+
+
+
+
+/* Set up a handler for the enabling and disabling of the history-backward/-forward buttons. */
+jQuery(document)
+	.on(':historyupdate.ui-bar',
+		(function ($backward, $forward) {
+			return function () {
+				$backward.prop('disabled', State.length < 2);
+				$forward.prop('disabled', State.length === State.size);
+			};
+		})(jQuery('#history-backward'), jQuery('#history-forward'))
+	);
+
+/* Set up a handler for the selection of the history-backward button. */
+jQuery('#history-backward')
+	.prop('disabled', State.length < 2)
+	.ariaClick({
+		label : L10n.get('uiBarBackward')
+	}, function () {
+		Engine.backward()
+	});
+
+/* Set up a handler for the selection of the history-forward button. */
+jQuery('#history-forward')
+	.prop('disabled', State.length === State.size)
+	.ariaClick({
+		label : L10n.get('uiBarForward')
+	}, function () {
+		Engine.forward()
+	});
+
+
+
+
+
+
+
+    postrender["Associate Special Passages"] = function (content, taskName) {
+	setPageElement("story-title", "StoryTitle", Story.title);
+	setPageElement("story-banner","StoryBanner");
+	setPageElement("story-subtitle","StorySubtitle");
+	setPageElement("story-author","StoryAuthor");
+	setPageElement("story-caption","StoryCaption");
+}

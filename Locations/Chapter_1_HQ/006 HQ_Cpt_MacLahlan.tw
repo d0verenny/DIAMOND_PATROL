@@ -1,0 +1,143 @@
+:: HQ_Captain_Pushups_Maclachlan_Dressed
+
+@@#exposition;\
+<<pli>>Мои мысли прервал Каллен.<</pli>>
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            <<cul>>"Жестянка" в чём-то прав, Кэп. Дисциплина важна — спору нет. И при этом, ситуация действительно не боевая.<</cul>>
+        <</replace>>
+        <<cont keypress>>
+            <<replace '#exposition'>>\
+                <<xander>>Мда, кто ещё из вас "кэп", Капитан Очевидность.<</xander>>
+            <</replace>>
+            <<cont keypress>>
+                <<replace '#exposition'>>\
+                    <<pli>>Недовольно пробурчал Ксандр.<</pli>>
+                <</replace>>
+                <<cont keypress>>
+                    <<replace '#exposition'>>\
+                        <<cul>>Простите мне моё нарушение субординации, и всё же...<</cul>>
+                    <</replace>>
+                    <<cont keypress>>
+                        <<replace '#exposition'>>\
+                            <<if $closeCanopy == true>>
+                                @@#exposition;\
+                                <<cul>>Чертовски прекрасно выглядите сегодня, Лейтенант.<</cul>>
+                                @@
+
+                                <<silently>>
+                                    <<cont keypress>>
+                                        <<replace '#exposition'>>\
+                                            <<pln>>Спасибо, сэр.<</pln>>
+                                        <</replace>>
+                                    <</cont>>
+                                <</silently>>
+
+                            <<elseif $closeCanopy == false>>
+                                <<cul>>Чертовски прекрасно выглядите сегодня, Лейтенант. И причёска вам тоже к лицу.<</cul>>
+                                <<silently>>
+                                    <<cont keypress>>
+                                        <<replace '#exposition'>>\
+                                            <<pln>>Спасибо, это просто ветер, сэр.<</pln>>
+                                        <</replace>>
+                                    <</cont>>
+                                <</silently>>
+                            <<else>>
+                                @@#exposition;\    
+                                <<cul>>Чертовски прекрасно выглядите сегодня, Лейтенант.<</cul>>
+                                @@
+
+                                <<silently>>
+                                    <<cont keypress>>
+                                        <<replace '#exposition'>>\
+                                        <div class="fadeout devn">Благодаря твоему наряду, ты начинаешь нравиться Каллену!</div>
+
+                                            <<pln>>Спасибо, сэр.<</pln>>
+                                        <</replace>>
+                                    <</cont>>
+                                <</silently>>
+                            <</if>>
+                            <</replace>>
+                            <<cont keypress>>
+                                <<replace '#exposition'>>\
+                                        <<pli>>Кряхтя сказала я, и продолжала отжиматься. Внизу живота при этом порхали бабочки, хотя напряжение в моём прессе их активно подавляло.<</pli>>
+                                    <</replace>>
+                                    <<cont keypress>>
+                                        <<replace '#exposition'>>\
+                                            <<pli>>Я была красной от отжиманий, Кален же заставил краснеть ещё и от смущения. Слушать комплименты в таком положении — опыт не каждодневный.<</pli>>
+                                        <</replace>>
+                                        <<cont keypress>>
+                                            <<replace '#exposition'>>\
+                                                <<cul>>Кэп, оставьте её. У нас есть дела поважнее. Надо бы обсудить кое-какие детали операции. Появились нюансы.<</cul>>
+                                            <</replace>>
+                                            <<cont keypress>>
+                                                <<replace '#exposition'>>
+                                                    <<capt>>Только из уважения к вашим заслугам, Маклахлан. Отойдём. "Цунами" — вольно!<</capt>>
+                                                <</replace>>
+                                                <<cont keypress>>
+                                                    <<replace '#exposition'>>\
+                                                        Остальные, вы тоже можете идти, увидимся через час здесь же.
+                                                        <</replace>>
+                                                        <<cont keypress>>
+                                                            <<replace '#exposition'>>\
+                                                                <<pli>>Я встала и отряхнула руки. Каллен подмигнул мне и куда-то увёл капитана.<</pli>>
+                                                                <</replace>>
+                                                                <<cont keypress>>
+                                                                    <<replace '#exposition'>>\
+                                                                        <<pli>>Будь это кто другой — я бы возмутилась его комплиментам. Моя карьера превыше всего. Но это был Каллен. <</pli>>
+                                                                    <</replace>>
+                                                                    <<cont keypress>>
+                                                                        <<replace '#exposition'>>\
+                                                                            <<goto "HQ_Caffeteria">>
+                                                                        <</replace>>
+                                                                    <</cont>>
+                                                                <</cont>>
+                                                        <</cont>>
+                                                <</cont>>
+                                            <</cont>>
+                                        <</cont>>
+                                    <</cont>>
+                            <</cont>>
+                    <</cont>>
+                <</cont>>
+            <</cont>>
+        <</cont>>
+    <</cont>>
+<</silently>>
+
+
+
+:: HQ_Captain_Pushups_Maclachlan_NotDressed
+
+@@#exposition;\  
+<<pli>>Внезапно в зал вошёл Каллен.<</pli>>
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            <<cul>>Кэп, можно вас на секундочку. Надо бы обсудить кое-какие детали операции. <</cul>> 
+        <</replace>>
+        <<cont keypress>>
+            <<replace '#exposition'>>\
+                <<cul>> Появились нюансы. <</cul>>
+            <</replace>>
+            <<cont keypress>>
+                <<replace '#exposition'>>\
+                    <<capt>> Хорошо, идём. "Цунами", вольно! Остальные, вы тоже можете идти, увидимся через час здесь же. <</capt>>
+                <</replace>>
+                <<cont keypress>>
+                    <<replace '#exposition'>>\
+                        <<pli>>Я перестала отжиматься и отряхнула руки.<</pli>>
+                    <</replace>>
+                        <<replace '#exposition'>>\
+                            <<goto "HQ_Caffeteria">>
+                        <</replace>>
+                <</cont>>
+            <</cont>>
+        <</cont>>
+    <</cont>>
+<</silently>>

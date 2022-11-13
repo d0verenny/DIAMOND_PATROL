@@ -1,0 +1,30 @@
+
+
+
+<div id="ui-bar">
+	<div id="ui-bar-tray">
+		<button id="ui-bar-toggle" tabindex="0" title="Toggle the UI bar" aria-label="Toggle the UI bar" type="button"></button>
+		<div id="ui-bar-history">
+			<button id="history-backward" tabindex="0" title="Go backward within the game history" aria-label="Go backward within the game history" disabled="" type="button"></button>
+			<button id="history-forward" tabindex="0" title="Go forward within the game history" aria-label="Go forward within the game history" disabled="" type="button"></button>
+		</div>
+	</div>
+	<div id="ui-bar-body">
+		<header id="title" role="banner">
+			<div id="story-banner"></div>
+			<h1 id="story-title"></h1>
+			<div id="story-subtitle"></div>
+			<div id="story-title-separator"></div>
+			<p id="story-author"></p>
+		</header>
+		<nav id="menu" role="navigation">
+			<div id="menu-core">
+				<span id="menu-item-saves"><a tabindex="0"></a></span>
+				<span id="menu-item-restart"><a tabindex="0"></a></span>
+			</div>
+		</nav>
+	</div>
+</div>
+<div id="story" role="main">
+	<div id="passages"></div>
+</div>

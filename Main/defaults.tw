@@ -57,5 +57,5 @@
     <<set $takeCigarets = false>>
     <<set $takeHermeticSpray = false>>
 
-    <<set $xanderMentionedSpecOps = true>>
+    <<set $xanderMentionedSpecOps = true>>    
 <</silently>>\

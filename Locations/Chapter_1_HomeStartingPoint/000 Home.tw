@@ -1,8 +1,31 @@
-:: Home {"position":"295,100"}
+:: Intro {"position":"295,100"}
 
 <<include Variables>>
 
+@@#exposition;
+<div class="crt">
+
+<img src="Media/UI/logo copy 2.png" width="800px">
+@@
+
+<div class='crtscreenfont fadeoutinifinite' style="text-align:center;">>Кликните в любое место, чтобы начать полёт</div>
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+         <<goto "Home_1">>
+        <</replace>>
+    <</cont>>
+<</silently>>
+
+
+
+:: Home_1
+
 [[Testground]]
+[[HQ_Captain_Pushups]]
+
+[[StepOnIt]]
 
 <div class='crt'><div style="color:rgb(151, 38, 173);font-family:'Russo One', sans-serif;">ВВЕДИТЕ ИМЯ ВАШЕЙ ГЕРОИНИ:</div>
 <<textbox "$Player.name" $Player.name>> \
@@ -11,7 +34,7 @@
 <<if $Player.name == "">>
 	<<replace "#name-error">><div class = "devn">>Пожалуйста, назовите вашу героиню!</div><</replace>>
 <<else>>
-	<<goto [[Home_1]]>>
+	<<goto "Home_2">>
 <</if>>
 <</button>> &nbsp;&nbsp; \
 <span id="name-error"></span>
@@ -19,24 +42,13 @@
 
 
 
-:: Home_1 {"position":"500,100"}
-/* nest <<cont>> macros to create text you can "advance" through, like so 
+:: Home_2 {"position":"500,100"}
 
-    <<cul>>И я очень хочу спать...2324-й год. Человечество покоряет космос окончательно после глобальных конфликтов в начале 2000-х. На Земле выживает лишь один миллиард человек.<</cul>>
 
-    <<pln>> И я очень хочу спать...2324-й год. Человечество покоряет космос окончательно после глобальных конфликтов в начале 2000-х. На Земле выживает лишь один миллиард человек.<</pln>>
-    <div class="button">[[Проснуться|WakeUp]]</div>
-    <div class="button">[[Спать дальше|Test]]</div>
-    <div class="button">[[хай|Home_1]]</div>
+@@#exposition;\
 
-    <<xander>>И я очень хочу спать...2324-й год. Человечество покоряет космос окончательно после глобальных конфликтов в начале 2000-х. На Земле выживает лишь один миллиард человек.<</xander>>
 
-    <<capt>>И я очень хочу спать...2324-й год. Человечество покоряет космос окончательно после глобальных конфликтов в начале 2000-х. На Земле выживает лишь один миллиард человек.<</capt>>
-
-    <<jack>>И я очень хочу спать...2324-й год. Человечество покоряет космос окончательно после глобальных конфликтов в начале 2000-х. На Земле выживает лишь один миллиард человек.<</jack>> */
-
-@@#exposition;
-        <h1>ГЛАВА I. ЕЩЁ ОДИН В ОФИСЕ.</h1>\
+            <h1>ГЛАВА I. ЕЩЁ ОДИН В ОФИСЕ.</h1>\
             2324-й год. Человечество покоряет космос окончательно после глобальных конфликтов в начале 2000-х. На Земле выживает лишь один миллиард человек.
 
             <div class='devn fadeoutinifinite'>>Кликните в любое место, чтобы продолжить</div>
@@ -45,22 +57,23 @@
 <<silently>>
     <<cont keypress>>
         <<replace '#exposition'>>\
+
                 Людей, включая преступников разных мастей, раскидало по космосу. Правительство альянса создаёт Интергалактическую Полицию с неограниченными ресурсами и полномочиями.
         <</replace>>
             <<cont keypress>>
                 <<replace '#exposition'>>\
+
                     Особенно ценятся в ИнтерГалаПоле пилоты. Ведь управлегте современными боевыми летательными аппаратами требуют исключительных навыков.
                  <</replace>>
             <<cont keypress>>
                 <<replace '#exposition'>>\
-                    <div>Меня зовут <<print $Player.name>>, я одна из них...</div>\
+
+                    Меня зовут <<print $Player.name>>, я одна из них...
                 <</replace>>
                 <<cont keypress>>
                     <<replace '#exposition'>>\
-                        <div class>
                            <<pln>> И я очень хочу спать...<</pln>>\
                             <div class="button">[[Проснуться|WakeUp]]</div>
-                        </div>
                     <</replace>>
                 <</cont>>
             <</cont>>
@@ -122,13 +135,10 @@
         <</cont>>
     <</cont>>
 <</silently>>
- 
+
+
 
 :: goBeautify {"position":"1100,300"}
-
-<<silently>>
-    <<set $gotDressed = true>>
-<</silently>>
 
 @@#exposition;\
 <<pli>>Я взглянула на фотографию отца на тумбе напоследок. Он всегда верил в меня, какой бы клушой я ни была.<</pli>>
@@ -152,23 +162,24 @@
     <</cont>>
 <</silently>>
 
-
+<<silently>>
+    <<set $gotDressed = true>>
+<</silently>>\
 
 :: flyAsIs {"position":"700,300"}
 
 <<silently>>
     <<set $gotDressed = false>>
-<</silently>>
-
+<</silently>>\
 /* Вставить фотку Бати на тумбочке */
-@@#exposition;
+@@#exposition;\
 <<pli>>Я взглянула на фотографию отца на тумбе напоследок. Он всегда верил в меня, какой бы клушой я ни была.<</pli>>
 @@
 
 <<silently>>
 	<<cont keypress>>
 		<<replace '#exposition'>>\
-            Затем, быстро надела форму и выбежала в гараж на крыше.\
+            <<pli>>Затем, быстро надела форму и выбежала в гараж на крыше.<</pli>>\
     	<</replace>>
         <<cont keypress>>
             <<replace '#exposition'>>\
