@@ -3,19 +3,39 @@
 /* Ветка Нажатия на педаль */
 :: StepOnIt {"position":"700,700"}
 
-@@#exposition;\
-Я пристегнулась, надавила на педаль, и поток ветра ударил мне в лицо. 
-@@
+<<nobr>>
+<<silently>>
+<<set $closeCanopy = false>>
+<</silently>>
+<<silently>>
+<<set $secondsMonoride = 80>>
+<</silently>>
+<</nobr>>\
+<div class="countdownstyle crt" id="countdown">Осталось <span class="countdownnumber">$secondsMonoride секунд</span>  до падения!</div>\
 
+<<silently>>
+	<<repeat 1s>>
+		<<set $secondsMonoride = $secondsMonoride - 1>>
+		<<if $secondsMonoride > 0>>
+			<<replace "#countdown">>Осталось <span class="countdownnumber">$secondsMonoride секунд</span> до падения!<</replace>>\
+		<<else>>
+			<<replace "#countdown">><<goto "TooLate">><</replace>>
+			<<stop>>
+		<</if>>
+	<</repeat>>
+<</silently>>\
+@@#exposition;\
+<<pli>>Я пристегнулась, надавила на педаль, и поток ветра ударил мне в лицо.<</pli>>
+@@
 <<silently>>
     <<cont keypress>>
         <<replace '#exposition'>>\
             Мгновение — и я оказалась на высоте 300 км от земли.
-        <img src="Media/Locations/canopy opened sky.png" width=650px>
+            <img src="Media/Locations/canopy opened sky.jpg" width=650px>
         <</replace>>
         <<cont keypress>>
             <<replace '#exposition'>>\
-                Затем, нажала на кнопку "Закрыть кабину" — кабина не закрылась.\
+                <<pli>>Затем, нажала на кнопку "Закрыть кабину" — кабина не закрылась.<</pli>>\
             <</replace>>
             <<cont keypress>>
                 <<replace '#exposition'>>\
@@ -29,14 +49,28 @@
     <</cont>>
 <</silently>>
 
+
+
 :: canopyOneMoreTime {"position":"700,900"}
 
 <<silently>>
     <<set $canopyOneMoreTime = true>>
-<</silently>>
+<</silently>>\
+<div class="countdownstyle crt" id="countdown">Осталось <span class="countdownnumber">$secondsMonoride секунд</span>  до падения!</div>\
+<<silently>>
+	<<repeat 1s>>
+		<<set $secondsMonoride = $secondsMonoride - 1>>
+		<<if $secondsMonoride > 0>>
+			<<replace "#countdown">>Осталось <span class="countdownnumber">$secondsMonoride секунд</span> до падения!<</replace>>\
+		<<else>>
+			<<replace "#countdown">><<goto "TooLate">><</replace>>
+			<<stop>>
+		<</if>>
+	<</repeat>>
+<</silently>>\
 
 @@#exposition;\
-Я нажала на кнопку — крышка кабины пошевелилась, и что-то хруснуло.
+<<pli>>Я нажала на кнопку — крышка кабины пошевелилась, и что-то хруснуло.<</pli>>
 @@
 
 <<silently>>
@@ -55,7 +89,7 @@
         <</replace>>
     <</cont>>
 <</silently>>
- 
+
 
 
 
@@ -63,40 +97,71 @@
 
 <<silently>>
     <<set $standUpAndClose = true>>
-<</silently>>
+<</silently>>\
+<div class="countdownstyle crt" id="countdown">Осталось <span class="countdownnumber">$secondsMonoride секунд</span> до падения!</div>\
+<<silently>>
+	<<repeat 1s>>
+		<<set $secondsMonoride = $secondsMonoride - 1>>
+		<<if $secondsMonoride > 0>>
+			<<replace "#countdown">>Осталось <span class="countdownnumber">$secondsMonoride секунд</span> до падения!<</replace>>\
+		<<else>>
+			<<replace "#countdown">><<goto "TooLate">><</replace>>
+			<<stop>>
+		<</if>>
+	<</repeat>>
+<</silently>>\
 
-<<pln>>Нет, если я сделаю это, меня тут же унесёт потоком воздуха!<</pln>>
-<<if $standUpAndClose == true && $canopyOneMoreTime == false>>\
-<div class="button">[[Нажать на кнопку ещё раз|canopyOneMoreTime]]</div>
-<div class="button">[[Нажать на тормоз|stopPedal]]</div>
-<<elseif $standUpAndClose == true && $canopyOneMoreTime == true>>\
-<div class="button">[[Нажать на тормоз|stopPedal]]</div>
-<<else>>
-<div class="button">[[Нажать на кнопку ещё раз|canopyOneMoreTime]]</div>
-<div class="button">[[Нажать на тормоз|stopPedal]]</div>
-<</if>>
+<<pln>>Нет, если я сделаю это, меня тут же унесёт потоком воздуха!<</pln>>\
+    <<if $standUpAndClose == true && $canopyOneMoreTime == false>>\
+        <div class="button">[[Нажать на кнопку ещё раз|canopyOneMoreTime]]</div>
+        <div class="button">[[Нажать на тормоз|stopPedal]]</div>
+    <<elseif $standUpAndClose == true && $canopyOneMoreTime == true>>\
+        <div class="button">[[Нажать на тормоз|stopPedal]]</div>
+    <<else>>
+        <div class="button">[[Нажать на кнопку ещё раз|canopyOneMoreTime]]</div>
+        <div class="button">[[Нажать на тормоз|stopPedal]]</div>
+    <</if>>
 
 
 
 :: stopPedal {"position":"900,1100"}
 
+<div class="countdownstyle crt" id="countdown">Осталось <span class="countdownnumber">$secondsMonoride секунд</span>  до падения!</div>\
+<<silently>>
+	<<repeat 1s>>
+		<<set $secondsMonoride = $secondsMonoride - 1>>
+		<<if $secondsMonoride > 0>>
+			<<replace "#countdown">>Осталось <span class="countdownnumber">$secondsMonoride секунд</span> до падения!<</replace>>\
+		<<else>>
+			<<replace "#countdown">><<goto "TooLate">><</replace>>
+			<<stop>>
+		<</if>>
+	<</repeat>>
+<</silently>>\
+
 @@#exposition;\
-Я нажала на тормоз, и монорайд начал падать!
+<<pli>>Я нажала на тормоз, и монорайд начал падать!<</pli>>
 @@
-    
+
+
 <<silently>>
     <<cont keypress>>
         <<replace '#exposition'>>\  
             <<pln>>Отлично — падаем! Только бы теперь ничего не перепутать!
             <</pln>>\
             <<if $monorideLeverDown == true && $monorideLeverUp == false>>\
-            <div class="button">[[Потянуть руль на себя|monorideLeverUp]]</div>
-            <div class="button">[[Опустить руль|monorideLeverDown]]</div>
-            <<elseif $monorideLeverDown == true && $monorideLeverUp == true>>\
-            <div class="button">[[Потянуть руль на себя|monorideLeverUp]]</div>
-            <<else>>
-            <div class="button">[[Потянуть руль на себя|monorideLeverUp]]</div>
-            <div class="button">[[Опустить руль|monorideLeverDown]]</div>
+            <div style="margin-top:-50px;">
+                <div class="button">[[Потянуть руль на себя|monorideLeverUp]]</div>
+                <div class="button">[[Опустить руль|monorideLeverDown]]</div></div>
+            <<elseif $monorideLeverDown == true && $monorideLeverUp == true>>
+            <div style="margin-top:-50px;">
+                <div class="button" style="margin-top:-50px;">[[Потянуть руль на себя|monorideLeverUp]]</div>
+            </div>
+            <<else>>\
+            <div style="margin-top:-50px;">
+                <div class="button">[[Потянуть руль на себя|monorideLeverUp]]</div>
+                <div class="button">[[Опустить руль|monorideLeverDown]]</div>
+            </div>
             <</if>>
         <</replace>>
     <</cont>>
@@ -108,8 +173,20 @@
 
 <<silently>>
     <<set $monorideLeverDown = true>>
-<</silently>>
+<</silently>>\
 
+<div class="countdownstyle crt" id="countdown">Осталось <span class="countdownnumber">$secondsMonoride секунд</span>  до падения!</div>\
+<<silently>>
+	<<repeat 1s>>
+		<<set $secondsMonoride = $secondsMonoride - 1>>
+		<<if $secondsMonoride > 0>>
+			<<replace "#countdown">>Осталось <span class="countdownnumber">$secondsMonoride секунд</span> до падения!<</replace>>\
+		<<else>>
+			<<replace "#countdown">><<goto "TooLate">><</replace>>
+			<<stop>>
+		<</if>>
+	<</repeat>>
+<</silently>>\
 
 @@#exposition;\
 <<pln>>Нет, это не помогло, крышка кабины вот-вот оторвётся!<</pln>>
@@ -118,8 +195,10 @@
 <<silently>>
     <<cont keypress>>
         <<replace '#exposition'>>\
-            Я вернула монорайд в исходное положение.
-            <div class="button">[[Потянуть руль на себя|monorideLeverUp]]</div>\
+            <<pli>>Я вернула монорайд в исходное положение.<</pli>>
+        <div style="margin-top:-50px;">
+            <div class="button" style="margin-top:-30px;">[[Потянуть руль на себя|monorideLeverUp]]</div>\
+        </div>
         <</replace>>
     <</cont>>
 <</silently>>
@@ -127,12 +206,26 @@
 
 
 :: monorideLeverUp {"position":"1300,800"}
+
 <<silently>>
     <<set $monorideLeverUp = true>>
-<</silently>>
+<</silently>>\
+
+<div class="countdownstyle crt" id="countdown">Осталось <span class="countdownnumber">$secondsMonoride секунд</span>  до падения!</div>\
+<<silently>>
+	<<repeat 1s>>
+		<<set $secondsMonoride = $secondsMonoride - 1>>
+		<<if $secondsMonoride > 0>>
+			<<replace "#countdown">>Осталось <span class="countdownnumber">$secondsMonoride секунд</span> до падения!<</replace>>\
+		<<else>>
+			<<replace "#countdown">><<goto "TooLate">><</replace>>
+			<<stop>>
+		<</if>>
+	<</repeat>>
+<</silently>>\
 
 @@#exposition;\
-Я потянула руль на себя, и монорайд начал падать назад. 
+<<pli>>Я потянула руль на себя, и монорайд начал падать назад.<</pli>>\
 @@
 
 <<silently>>
@@ -156,21 +249,36 @@
 
 
 :: gloveBox {"position":"1600,825"}
-<<if $gloveBox == false && $takeCigarets == false && $gloveBox == false>>
-    Я заглянула в бардачок.
-<<elseif $gloveBox == true && $takeMonorideManual == true && $takeCigarets == true>>
-    Как только я убрала лишнее, глубоко в бардачке сверкнуло донышко какого-то балончика.
-<<elseif $gloveBox == true && $takeMonorideManual == false && $takeCigarets == true>>
-    Хм, что у меня там есть ещё?
-<<elseif $gloveBox == true && $takeMonorideManual == true && $takeCigarets == false>>
-    Хм, что у меня там есть ещё?
-<<else>>
-    Я заглянула в бардачок.
-<</if>>
 
+
+<div class="countdownstyle crt" id="countdown">Осталось <span class="countdownnumber">$secondsMonoride секунд</span>  до падения!</div>\
+<<silently>>
+	<<repeat 1s>>
+		<<set $secondsMonoride = $secondsMonoride - 1>>
+		<<if $secondsMonoride > 0>>
+			<<replace "#countdown">>Осталось <span class="countdownnumber">$secondsMonoride секунд</span> до падения!<</replace>>\
+		<<else>>
+			<<replace "#countdown">><<goto "TooLate">><</replace>>
+			<<stop>>
+		<</if>>
+	<</repeat>>
+<</silently>>
+<<nobr>>
+    <<if $gloveBox == false && $takeCigarets == false && $gloveBox == false>>
+        <<pli>>Я заглянула в бардачок.<</pli>>\
+    <<elseif $gloveBox == true && $takeMonorideManual == true && $takeCigarets == true>>
+        <<pli>>Как только я убрала лишнее, глубоко в бардачке сверкнуло донышко какого-то балончика.<</pli>>\
+    <<elseif $gloveBox == true && $takeMonorideManual == false && $takeCigarets == true>>
+        <<pln>>Хм, что у меня там есть ещё?<</pln>>\
+    <<elseif $gloveBox == true && $takeMonorideManual == true && $takeCigarets == false>>
+        <<pln>>Хм, что у меня там есть ещё?<</pln>>\
+    <<else>>
+        <<pli>>Я заглянула в бардачок.<</pli>>\
+    <</if>>
+<</nobr>>\
 <<if $takeMonorideManual == false && $takeCigarets == false>>\
-    <div class="button">[[Взять инструкцию|takeMonorideManual]]</div>
-    <div class="button">[[Взять пачку сигарет|takeCigarets]]</div>
+        <div class="button">[[Взять инструкцию|takeMonorideManual]]</div>
+        <div class="button">[[Взять пачку сигарет|takeCigarets]]</div>
 <<elseif $takeMonorideManual == true && $takeCigarets == true>>\
     <div class="button">[[Взять балончик|takeHermeticSpray]]</div>
 <<elseif $takeMonorideManual == true && $takeCigarets == false>>\
@@ -179,18 +287,33 @@
     <div class="button">[[Взять инструкцию к монорайду|takeMonorideManual]]</div>
 <<else>>\
     <div class="button">[[Взять инструкцию к монорайду|takeMonorideManual]]</div>
-    <div class="button">[[Взять пачку сигарет|takeCigarets]]</div>>
-<</if>>
+    <div class="button">[[Взять пачку сигарет|takeCigarets]]</div>\
+<</if>>\
 
 
 :: takeMonorideManual {"position":"1800,1025"}
+
+
 <<silently>>
     <<set $takeMonorideManual = true>>
     <<set $gloveBox = true>>
-<</silently>>
+<</silently>>\
+
+<div class="countdownstyle crt" id="countdown">Осталось <span class="countdownnumber">$secondsMonoride секунд</span>  до падения!</div>\
+<<silently>>
+	<<repeat 1s>>
+		<<set $secondsMonoride = $secondsMonoride - 1>>
+		<<if $secondsMonoride > 0>>
+			<<replace "#countdown">>Осталось <span class="countdownnumber">$secondsMonoride секунд</span> до падения!<</replace>>\
+		<<else>>
+			<<replace "#countdown">><<goto "TooLate">><</replace>>
+			<<stop>>
+		<</if>>
+	<</repeat>>
+<</silently>>\
 
 @@#exposition;\
-Я знаю её от корки до корки, но сегодня дико туплю... Как же спать хочется, сил нет!
+<<pln>>Я знаю её от корки до корки, но сегодня дико туплю... Как же спать хочется, сил нет!<</pln>>\
 @@
 
 <<silently>>
@@ -208,20 +331,33 @@
 <<silently>>
     <<set $takeCigarets = true>>
     <<set $gloveBox = true>>
-<</silently>>
+<</silently>>\
+
+<div class="countdownstyle crt" id="countdown">Осталось <span class="countdownnumber">$secondsMonoride секунд</span>  до падения!</div>\
+<<silently>>
+	<<repeat 1s>>
+		<<set $secondsMonoride = $secondsMonoride - 1>>
+		<<if $secondsMonoride > 0>>
+			<<replace "#countdown">>Осталось <span class="countdownnumber">$secondsMonoride секунд</span> до падения!<</replace>>\
+		<<else>>
+			<<replace "#countdown">><<goto "TooLate">><</replace>>
+			<<stop>>
+		<</if>>
+	<</repeat>>
+<</silently>>\
 
 @@#exposition;\
-Нет, я бросила эту привычку с тех пор, как умер папа. 
+<<pln>>"Нет, я бросила эту привычку с тех пор, как умер папа."<</pln>>\
 @@
 
 <<silently>>
     <<cont keypress>>
         <<replace '#exposition'>>\
-            Оставила себе как напоминание, что умереть можно не только в космосе на задании.
+            <<pln>>"Оставила себе как напоминание, что умереть можно не только в космосе на задании."<</pln>>
         <</replace>>
         <<cont keypress>>
             <<replace '#exposition'>>\
-                Хотя желание закурить сейчас было сильно, как никогда.
+                <<pln>>"Хотя желание закурить сейчас было сильно, как никогда."<</pln>>
             <</replace>>
             <<cont replace>>
                 <<goto [[gloveBox]]>>
@@ -232,6 +368,20 @@
 
 
 :: takeHermeticSpray {"position":"1825,825"}
+
+<div class="countdownstyle crt" id="countdown">Осталось <span class="countdownnumber">$secondsMonoride секунд</span>  до падения!</div>\
+<<silently>>
+	<<repeat 1s>>
+		<<set $secondsMonoride = $secondsMonoride - 1>>
+		<<if $secondsMonoride > 0>>
+			<<replace "#countdown">>Осталось <span class="countdownnumber">$secondsMonoride секунд</span> до падения!<</replace>>\
+		<<else>>
+			<<replace "#countdown">><<goto "TooLate">><</replace>>
+			<<stop>>
+		<</if>>
+	<</repeat>>
+<</silently>>\
+
 @@#exposition;\
 <<pln>>Гермоспрей! Совсем забыла что давно его купила на барахолке.<</pln>>
 @@
@@ -243,7 +393,7 @@
         <</replace>>
         <<cont keypress>>
             <<replace '#exposition'>>\
-                Я обильно обработала спреем все швы кабины. 
+                <<pli>>Я обильно обработала спреем все швы кабины.<</pli>> 
             <</replace>>   
             <<cont keypress>>
                 <<replace '#exposition'>>\
@@ -260,15 +410,17 @@
 <</silently>>
 
 
-/* Ветка безопасности */
 
+
+
+/* Ветка безопасности */
 
 
 :: CloseCanopy {"position":"1100,700"}
 
 <<silently>>
     <<set $closeCanopy = true>>
-<</silently>>
+<</silently>>\
 
 @@#exposition;\
 <<pli>>Безопасность прежде всего! Я пристегнулась, закрыла кабину и надавила на педаль.<</pli>>
@@ -298,9 +450,9 @@
 
 @@#exposition;\
 <<if $closeCanopy == true>>
-    <img src="Media/Locations/canopy close to hq.png" width=650px>
+    <img src="Media/Locations/canopy close to hq.jpg" width=650px>
 <<else>>
-    <img src="Media/Locations/canopy space foamed copy.png" width=650px>
+    <img src="Media/Locations/canopy space foamed copy.jpg" width=650px>
 <</if>>
 @@
 
@@ -311,15 +463,59 @@
         <</replace>>
             <<cont keypress>>
                 <<replace '#exposition'>>\
-                     <<pln>> Хотя мне лучше поберечь крышку кабины после таких приключений.<</pln>>\
+                <<if $closeCanopy == false>>
+                     <<pln>> Хотя, мне лучше поберечь крышку кабины, после таких-то приключений.<</pln>>
+                     <<cont keypress>>
+                        <<replace '#exposition'>>\
+                            <<goto "closeToTheHQDescription">>
+                        <</replace>>
+                    <</cont>>
+                <<else>>
+                <<replace '#exposition'>>\
+                    <<goto "closeToTheHQDescription">>
                 <</replace>>
+                <</if>>
+                <</replace>>
+            <</cont>>
+        <</cont>>
+<</silently>>
+
+:: closeToTheHQDescription
+
+@@#exposition;\
+Гигантский круглый штаб состоял из множества секторов, и его легко можно было перепутать с космической станцией. Однако же это был полноценный корабль с двигателями по всему периметру.
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            При своих размерах он обладал высокой манёвренностью и скоростью.
+        <</replace>>
+        
+        <<cont keypress>>
+            <<replace '#exposition'>>\
+                Он представлял собой "авианосец" для множества других "авианосцев", или вернее будет сказать — "шатлоносцев". Те, в свою очередь, носили на себе челноки разных размеров.
+            <</replace>>
             <<cont keypress>>
                 <<replace '#exposition'>>\
-                    <<goto [[HQ_1]]>>              
+                    В основном, штаб парил на орбите, и во время моей службы я ещё ни разу не видела, чтобы он двигался. От этого он покрывался ржавчиной, сколько бы наши техники его ни чистили и не ремонтировали. Однако, внутри всё было достаточно опрятно.
                 <</replace>>
+                <<cont keypress>>
+                    <<replace '#exposition'>>\
+                        Техника, особенно транспорт, должна работать, а не простаивать — так меня учил ещё отец.
+                    <</replace>>
+                    <<cont keypress>>
+                        <<replace '#exposition'>>\
+                            <<goto "HQ_1">>
+                        <</replace>>
+                    <</cont>>
+                <</cont>>
             <</cont>>
         <</cont>>
     <</cont>>
 <</silently>>
 
-Он сказал и затем она ответила.
+:: TooLate 
+
+<<pli>> Из-за слишком долгой реакции, <<print $Player.name>> разбилась на монорайде. Иронично, учитывая, что такие нелепые ошибки совершил профессиональный пилот.<</pli>>\
+<div class="button">[[Попробовать ещё раз|StepOnIt]]</div>

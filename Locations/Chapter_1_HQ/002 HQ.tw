@@ -3,7 +3,11 @@
 :: HQ_1 {"position":"2125,100"}
 
 @@#exposition;\
-<<pli>>Я посадила свой шаттл в штабе и мигом встала в строй...<</pli>>
+<<if $closeCanopy == false>>
+    <<pli>>Я посадила монорайд в транспортном отсеке штаба, выпнула запаенную гермоспреем крышку кабины, и побежала вставать в строй с остальными в отсек для инструктажа...<</pli>>
+<<else>>
+    <<pli>>Я посадила монорайд в транспортном отсеке штаба, и побежала вставать в строй с остальными в отсек для инструктажа...<</pli>>
+<</if>>
 @@
 
 <<silently>>
@@ -14,44 +18,17 @@
         <<cont keypress>>
             <<replace '#exposition'>>\
                 <<if $gotDressed == false && $closeCanopy == true>>
-                    <<goto [[HQ_2_Success]]>>
+                    <<goto "HQ_2_Success">>
                 <<elseif $gotDressed == true || $closeCanopy == false>>
-                    <<goto [[HQ_2_Faulty]]>>
+                    <<goto "HQ_2_Faulty">>
                 <<else>>
-                    <<goto [[HQ_2_Success]]>>
+                    <<goto "HQ_2_Success">>
                 <</if>>
             <</replace>>
         <</cont>>
     <</cont>>
 <</silently>>
 
-/*
-
-:: HQ_2_Start
-
-
-<<if $gotDressed == false && $closeCanopy == true>>
-    <<goto [[HQ_2_Success]]>>
-<<elseif $gotDressed == true || $closeCanopy == false>>
-    <<goto [[HQ_2_Faulty]]>>
-<<else>>
-    <<goto [[HQ_2_Success]]>>
-<</if>>
-
-*/
-
-/*
-<<if $gotDressed == false && $closeCanopy == true>>\ 
-    <<goto [[HQ_2_Success]]>>
-<<elseif $gotDressed == true && $closeCanopy == false>>\
-    <<goto [[HQ_2_Faulty]]>>
-<<elseif $gotDressed == false && $closeCanopy == false>>\
-    <<goto [[HQ_2_Faulty]]>>
-<<elseif $gotDressed == true && $closeCanopy == true>>\
-    <<goto [[HQ_2_Faulty]]>>
-<<else>>
-    <<goto [[HQ_2_Success]]>>
-<</if>> */
 
 :: HQ_2_Faulty
 
@@ -65,7 +42,9 @@
            <<pli>> К счастью, он делал обход в другом конце шеренги.<</pli>>
         <</replace>>
         <<cont keypress>>
-            <<goto [[HQ_3_Xander]]>>
+            <<replace '#exposition'>>\
+                <<goto "HQ_3_Xander">>
+            <</replace>>
         <</cont>>
     <</cont>>
 <</silently>>
@@ -75,13 +54,13 @@
 :: HQ_2_Success
 
 @@#exposition;\
-<<pli>> Капитан ещё не пришёл, так что я могла расслабиться. <</pli>>
+<<pli>> Капитан ещё не пришёл, так что я могла расслабиться и спокойно встала в строй с остальными сослуживцами. <</pli>>
 @@
 
 <<silently>>
     <<cont keypress>>
         <<replace '#exposition'>>\
-            <<goto [[HQ_3_Xander]]>>
+            <<goto "HQ_3_Xander">>
         <</replace>>
     <</cont>>
 <</silently>>
