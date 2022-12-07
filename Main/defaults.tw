@@ -57,5 +57,23 @@
     <<set $takeCigarets = false>>
     <<set $takeHermeticSpray = false>>
 
-    <<set $xanderMentionedSpecOps = true>>    
-<</silently>>\
+    <<set $xanderMentionedSpecOps = false>>
+    <<set $xanderdateAccepted = false>>
+    
+    <<set $cullenJoinsConvoy = false>>
+
+
+    <<set $xanderIntercomOff = false>>
+
+    <<set $drakeCullenAboutCargo = false>>
+    <<set $cullenCargoInsist = false>>
+    <<set $cullenPiratesAttack = false>>
+    <<set $cullenAboutCapt = true>>
+    <<set $cullenAboutGirlfriend = false>>
+    <<set $kissCullen = false>>
+    <<set $howBecameACop = false>>
+
+    <<set $prepareDesintegrator = false>>
+    <<set $prepareLaserGuns = false>>
+    <<set $convoyFight_Hack = false>>
+<</silently>>

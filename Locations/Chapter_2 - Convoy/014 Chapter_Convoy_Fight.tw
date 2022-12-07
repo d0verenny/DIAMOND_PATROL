@@ -1,0 +1,278 @@
+:: Drake_Explosion
+
+<<if $kissCullen == true>>\
+@@#exposition;\
+<<pli>>Только я вошла в кабину, как эту неловкость сбил гулкий удар. "Селезнь" затрясся, и мы держались за что могли.<</pli>>
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            <<xander>>Кажется, у нас неприятности.<</xander>> 
+        <</replace>>
+        <<cont keypress>>
+            <<replace '#exposition'>>\
+                <<pli>>Спокойно констатировал Ксандр.<</pli>>
+            <</replace>>
+            <<cont keypress>>
+                <<replace '#exposition'>>\
+                    <<goto "Convoy_Fight">>
+                <</replace>>
+            <</cont>>
+        <</cont>>
+    <</cont>>
+<</silently>>
+<<else>>
+@@#exposition;\
+<<pli>>Внезпно, наш разговор прервал гулкий удар. "Селезнь" зашатался.<</pli>> 
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            <<cul>>Вот же…! Эй, у нас тут такой момент, какого хрена именно сейчас!<</cul>>
+        <</replace>>
+        <<cont keypress>>
+            <<replace '#exposition'>>\
+                <<goto "Convoy_Fight">>
+            <</replace>>
+        <</cont>>
+    <</cont>>
+<</silently>>
+<</if>>
+
+
+
+:: Convoy_Fight
+
+@@#exposition;\
+<<pli>>Я бросилась в Кабину, а Каллен к Капитанскому мосту. Оттуда он мог оперировать дополнительным оружием.<</pli>> 
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            <<pli>>Я села в кресло, и робо-руки из потолка "Селезня" надели на меня шлем. В дальнейшем мы общались только по интерком-связи.<</pli>>
+        <</replace>>
+        <<cont keypress>>  
+            <<replace '#exposition'>>\
+                <<cul>><<= Player.name>>, командуй. Ты сегодня в роли командора.<</cul>>
+            <</replace>>
+            <<cont keypress>>
+                <<replace '#exposition'>>\
+                    <<pli>>Надо было реагировать быстро. Был вариант приготовить дезинтегрирующую пушку и сразу покончить с противником.<</pli>> 
+                <</replace>>
+                <<cont keypress>>
+                    <<replace '#exposition'>>\ 
+                        <<pli>>Я боялась этого оружия: оно причиняло огромную боль и мучения людям, расщепляя их на молекулы. <</pli>>
+                    <</replace>>
+                    <<cont keypress>>
+                        <<replace '#exposition'>>\ 
+                            <<pli>>И при этом, такой пушкой можно было в миг расправиться с вражеским кораблём одним выстрелом.<</pli>>
+                        <</replace>>
+                        <<cont keypress>>
+                            <<replace '#exposition'>>\
+                                <<pli>>Вторым вариантом было сражаться честно — лазерными пушками.<</pli>>
+                            <</replace>>
+                            <<cont keypress>>
+                                <<replace '#exposition'>>\
+                                    <<pli>>Также, Ксандр мог предварительно взломать бортовые компьютеры противника и обездвижить его.
+                                    <div class="button">[[Приготовить дезинтегратор|Convoy_Fight_PrepareDesintegrator]]</div>
+                                    <div class="button">[[Взломать|Convoy_Fight_Hack]]</div>
+                                    <div class="button">[[Приготовить лазерные пушки|Convoy_Fight_PrepareLaserGuns]]</div>
+                                    <</pli>>
+                                <</replace>>
+                            <</cont>>
+                        <</cont>>
+                    <</cont>>
+                <</cont>>
+            <</cont>>
+        <</cont>>
+    <</cont>>
+<</silently>>
+
+
+
+:: Convoy_Fight_Hub
+
+
+<<pli>>Я думала, что делать дальше.<</pli>>\
+<<if $prepareDesintegrator = false && $convoyFight_Hack = false && $prepareLaserGuns = false>>\
+<div class="button">[[Приготовить дезинтегратор|Convoy_Fight_PrepareDesintegrator]]</div>
+<div class="button">[[Взломать|Convoy_Fight_Hack]]</div>
+<div class="button">[[Приготовить лазерные пушки|Convoy_Fight_PrepareLaserGuns]]</div>
+<<elseif $prepareDesintegrator = true && $convoyFight_Hack = false && $prepareLaserGuns = false>>\
+<div class="button">[[Взломать|Convoy_Fight_Hack]]</div>
+<div class="button">[[Приготовить лазерные пушки|Convoy_Fight_PrepareLaserGuns]]</div>
+<<elseif $prepareDesintegrator = false && $convoyFight_Hack = false && $prepareLaserGuns = true>>\
+<div class="button">[[Приготовить дезинтегратор|Convoy_Fight_PrepareDesintegrator]]</div>
+<div class="button">[[Приготовить лазерные пушки|Convoy_Fight_PrepareLaserGuns]]</div>
+<<elseif $prepareDesintegrator = false && $convoyFight_Hack = true && $prepareLaserGuns = false>>\
+<div class="button">[[Приготовить дезинтегратор|Convoy_Fight_PrepareDesintegrator]]</div>
+<div class="button">[[Взломать|Convoy_Fight_Hack]]</div>
+<<elseif $prepareDesintegrator = true && $convoyFight_Hack = false && $prepareLaserGuns = true>>\
+<div class="button">[[Взломать|Convoy_Fight_Hack]]</div>
+<<elseif $prepareDesintegrator = false && $convoyFight_Hack = true && $prepareLaserGuns = true>>\
+<div class="button">[[Приготовить дезинтегратор|Convoy_Fight_PrepareDesintegrator]]</div>
+<<elseif $prepareDesintegrator = true && $convoyFight_Hack = true && $prepareLaserGuns = false>>\
+<div class="button">[[Приготовить лазерные пушки|Convoy_Fight_PrepareLaserGuns]]</div>
+<</if>>
+
+
+
+:: Convoy_Fight_PrepareDesintegrator
+
+@@#exposition;\
+<<pln>>Каллен, приготовь дезинтегратор!<</pln>> 
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            <<cul>>Так точно. Покажем им всю мощь нашего флота…!<</cul>>
+        <</replace>>
+        <<cont keypress>>
+            <<replace '#exposition'>>\
+                <<cul>>А, нет, не зададим. Удар пришёлся как раз по пушке.<</cul>>
+            <</replace>>
+            <<cont keypress>>
+                <<replace '#exposition'>>\
+                    <<pli>>Я выдохнула. Этот выстрел мучил бы меня до конца моих дней.<</pli>>
+                <</replace>>
+                <<cont keypress>>
+                    <<replace '#exposition'>>\
+                        <<pln>>Придётся использовать лазерные пушки.<</pln>>
+                    <</replace>>
+                    <<cont keypress>>
+                        <<replace '#exposition'>>\
+                            <<cul>>Не волнуйся, я помогу. Сосредоточься на манёврах.<</cul>>
+                        <</replace>>
+                        <<cont keypress>>
+                            <<replace '#exposition'>>\
+                                <<goto "Convoy_Fight_Hub">>
+                            <</replace>>
+                        <</cont>>
+                    <</cont>>
+                <</cont>>
+            <</cont>>
+        <</cont>>
+    <</cont>>
+<</silently>>\
+<<silently>>
+    <<set $prepareDesintegrator = true>>
+<</silently>>
+
+
+
+:: Convoy_Fight_PrepareLaserGuns
+
+@@#exposition;\
+<<pln>>Каллен, будем сражаться лазерными пушками.<</pln>>
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            Я бы на твоём месте использовал более эффективный вариант, но как скажешь. 
+        <</replace>>
+        <<cont keypress>>
+            <<replace '#exposition'>>\
+                <<goto "Convoy_Fight_Converge">>
+            <</replace>>
+        <</cont>>
+    <</cont>>
+<</silently>>\
+<<silently>>
+    <<set $prepareLaserGuns = true>>
+<</silently>>
+
+
+
+:: Convoy_Fight_Hack
+
+@@#exposition;\
+<<pln>>Ксандр, взломай бортовые компьютеры противника!<</pln>> 
+КСАНДР
+@@
+
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            <<xander>>Не получится. Тот большой челнок старше моей прабабушки. Не уверен, есть ли там вообще какие-либо бортовые компы. Либо они старые, либо их вытащили. Они не подключены ни к старому инету, ни к Интергаланету. Без шансов.<</xander>>
+        <</replace>>
+        <<cont keypress>>
+            <<replace '#exposition'>>\
+                <<cul>>Нас уделывает старое корыто? Черт. Ничего, я им задам жару. Цунами, продолжай маневрировать!<</cul>>
+            <</replace>>
+            <<cont keypress>>   
+                <<replace '#exposition'>>\
+                    <<pln>>Блин! А что по поводу мелких, Ксандр?<</pln>>
+                <</replace>>
+                <<cont keypress>>
+                    <<replace '#exposition'>>\
+                        <<xander>>Мелкие поновее, попробую замедлить интенсивность их огня. Это всё, что я могу сделать.<</xander>>
+                    <</replace>>
+                    <<cont keypress>>
+                        <<replace '#exposition'>>\
+                            <<pln>>И на том спасибо!<</pln>>
+                        <</replace>>
+                    <</cont>>
+                <</cont>>
+            <</cont>>
+        <</cont>>
+    <</cont>>
+<</silently>>\
+<<silently>>
+    <<set $convoyFight_Hack = true>>
+<</silently>>
+
+
+
+:: Convoy_Fight_Converge
+
+@@exposition;\
+Пока наши сослуживцы сражались с пиратами, нас окружили три челнока. 
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            По середине — в два раза больше нашего размером. 
+        <</replace>>
+        <<cont keypress>>
+            <<replace '#exposition'>>\
+                    <<if $prepareDesintegrator>>\
+                    Именно он сломал наш дезинтегратор. 
+                    <<else>>\
+                    Как показали датчики корабля, он сломал наш дезинтегратор.
+                    <</if>>
+            <</replace>>
+            <<cont keypress>>
+                <<replace '#exposition'>>\
+                    <<pli>>Он стрелял без остановки мощными лазерами, пока я пыталась уклоняться от его выстрелов. Один угодил в левую пушку, подконтрольную мне.<</pli>> 
+                <</replace>>
+                <<cont keypress>>
+                    <<replace '#exposition'>>\
+                        <<cul>>Плохо дело! Я тебя прикрою, не волнуйся.<</cul>> 
+                    <</replace>>
+                    <<cont keypress>>
+                        <<replace '#exposition'>>\
+                            <<pli>>Слева и справа от него — челноки мелкого размера. <</pli>>
+                        <</replace>>
+                        <<cont keypress>>
+                            <<replace '#exposition'>>\
+                                <<pli>>Они ринулись к нам и кружили вокруг "Селезня", "покусывая" его обшивку, словно блохи.<</pli>>
+                            <</replace>>
+                            <<cont keypress>>
+                                <<replace '#exposition'>>\
+                                    goto ????
+                                <</replace>>
+                            <</cont>>
+                        <</cont>>
+                    <</cont>>
+                <</cont>>
+            <</cont>>
+        <</cont>>
+    <</cont>>
+<</silently>>

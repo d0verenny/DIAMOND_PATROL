@@ -1,0 +1,869 @@
+<<include Variables>>
+
+:: Drake_GoTo_Cullen
+
+@@#exposition;\
+<<pli>>Я пошла к Каллену на мост. Он что-то задумчиво рассматривал на галло-карте.<</pli>>
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\ 
+            <<pln>>Как успехи?<</pln>>
+        <</replace>>
+        <<cont keypress>>
+            <<replace '#exposition'>>\ 
+                <<cul>>Да ничего, смотрю, нету ли астероидов. Одно дело лететь в одиночку, другое — всей эскадрильей. <</cul>>
+            <</replace>>
+            <<cont keypress>>
+                <<replace '#exposition'>>\
+                    <<cul>>Мы в первых рядах, так что на мне сейчас висит такая ответственность.<</cul>>
+                <</replace>>
+                <<cont keypress>>
+                    <<replace '#exposition'>>\
+                        <<pln>>Интересно. Но ведь я на бортовом тоже вижу, могу предупредить.<</pln>> 
+                    <</replace>>
+                    <<cont keypress>>
+                        <<replace '#exposition'>>\
+                            <<cul>>У твоего низкий радиус видимости. <</cul>>
+                        <</replace>>
+                        <<cont keypress>>
+                            <<replace '#exposition'>>\
+                                <<cul>>На капитанском же мосте данные передаются радиусом в несколько галактик. <</cul>>
+                            <</replace>>
+                            <<cont keypress>>
+                                <<replace '#exposition'>>\
+                                    <<cul>>Ты что, пропускала классы по бортовым компьютерам и датчикам?<</cul>>
+                                <</replace>>
+                                <<cont keypress>>
+                                    <<replace '#exposition'>>\
+                                        <<pln>>Честно? Я тогда, наверное, спала. У Мистера Хэндрикса жутко усыпляющий голос.<</pln>>
+                                    <</replace>>
+                                    <<cont keypress>>
+                                        <<replace '#exposition'>>\
+                                            <<cul>>Это точно!<</cul>>
+                                        <</replace>>
+                                        <<cont keypress>>
+                                            <<replace '#exposition'>>\
+                                                <<pli>>Засмеялся Каллен.<</pli>>
+                                            <</replace>>
+                                            <<cont keypress>>
+                                                <<replace '#exposition'>>\
+                                                    <<cul>>Не хочешь кофейку бахнуть с коньяком? Ах, да, ты же за штурвалом. Ну, тогда, просто кофейку...?<</cul>>
+                                                <</replace>>
+                                                <<cont keypress>>
+                                                    <<replace '#exposition'>>\
+                                                        <<pln>>Да, идейка неплохая, я прям засыпаю.<</pln>>
+                                                    <</replace>>
+                                                    <<cont keypress>>
+                                                        <<replace '#exposition'>>\
+                                                            <<cul>>Да с тобой как не поговоришь, ты всё время засыпаешь, ленивец. <</cul>>
+                                                        <</replace>>
+                                                        <<cont keypress>>
+                                                            <<replace '#exposition'>>\
+                                                                <<cul>>А ну, кто первый до дивана?<</cul>>
+                                                            <</replace>>
+                                                            <<cont keypress>>
+                                                                <<replace '#exposition'>>\
+                                                                    <<pli>>Я оказалась быстрее.<</pli>>
+                                                                <</replace>>
+                                                                <<cont keypress>>
+                                                                    <<replace '#exposition'>>\
+                                                                        <<pln>>Ленивец, говоришь? В таком случае, я самый быстрый ленивец в Галактике!<</pln>>
+                                                                    <</replace>>
+                                                                    <<cont keypress>>
+                                                                        <<replace '#exposition'>>\
+                                                                            <<pli>>Мы оба засмеялись, пока сидели на диване и переводили дух. <</pli>>
+                                                                        <</replace>>
+                                                                        <<cont keypress>>
+                                                                            <<replace '#exposition'>>\
+                                                                                    <<goto "Drake_GoTo_Cullen_AwkwardSilence">>
+                                                                                <</replace>>
+                                                                            <</cont>>
+                                                                        <</cont>>
+                                                                    <</cont>>
+                                                                <</cont>>
+                                                            <</cont>>
+                                                        <</cont>>
+                                                    <</cont>>
+                                                <</cont>>
+                                            <</cont>>
+                                        <</cont>>
+                                    <</cont>>
+                                <</cont>>
+                            <</cont>>
+                        <</cont>>
+                    <</cont>>
+                <</cont>>
+            <</cont>>
+        <</cont>>
+<</silently>>
+
+:: Drake_GoTo_Cullen_AwkwardSilence
+
+<<if $cullenAboutGirlfriend == false && $drakeCullenAboutCargo == false && $howBecameACop == false>>\
+<<pli>>Наступило неловкое молчание, и я решила взять инициативу на себя.<</pli>>\
+<<else>>\
+<<pli>>Вновь наступила тишина. Я думала, что спросить...<</pli>>\
+<</if>>\
+<<if $xanderIntercomOff == true && $cullenAboutGirlfriend == false && $drakeCullenAboutCargo == false && $howBecameACop == false>>\
+    <div class ="button">[[Спросить про груз|Drake_Cullen_Cargo]]</div>
+    <div class ="button">[[Есть ли девушка?|Drake_Cullen_Girlfriend]]</div>
+    <div class ="button">[[Как стал копом? (paid)|Drake_Cullen_HowBecameACop]]</div>
+<<elseif $xanderIntercomOff == true && $drakeCullenAboutCargo == false && $cullenAboutGirlfriend == true && $howBecameACop == false>>\
+    <div class ="button">[[Спросить про груз|Drake_Cullen_Cargo]]</div>
+    <div class ="button">[[Как стал копом? (paid)|Drake_Cullen_HowBecameACop]]</div>
+<<elseif $xanderIntercomOff == true && $drakeCullenAboutCargo == false && $cullenAboutGirlfriend == false && $howBecameACop == true>>\
+    <div class ="button">[[Спросить про груз|Drake_Cullen_Cargo]]</div>
+    <div class ="button">[[Есть ли девушка?|Drake_Cullen_Girlfriend]]</div>
+<<elseif $xanderIntercomOff == true && $drakeCullenAboutCargo == true && $cullenAboutGirlfriend == true && $howBecameACop == false>>\
+    <div class ="button">[[Как стал копом? (paid)|Drake_Cullen_HowBecameACop]]</div>
+<<elseif $xanderIntercomOff == true && $drakeCullenAboutCargo == false && $cullenAboutGirlfriend == true && $howBecameACop == true>>\
+    <div class ="button">[[Спросить про груз|Drake_Cullen_Cargo]]</div>
+<<elseif $xanderIntercomOff == false && $drakeCullenAboutCargo == false && $cullenAboutGirlfriend == false && $howBecameACop == false>>\
+    <div class ="button">[[Есть ли девушка?|Drake_Cullen_Girlfriend]]</div>
+    <div class ="button">[[Как стал копом? (paid)|Drake_Cullen_HowBecameACop]]</div>
+<<elseif $xanderIntercomOff == false  && $drakeCullenAboutCargo == false && $cullenAboutGirlfriend == true && $howBecameACop == false>>\
+    <div class ="button">[[Как стал копом? (paid)|Drake_Cullen_HowBecameACop]]</div>
+<<else>>
+    <<pln>>У меня больше нет вопросов.<</pln>>
+    /* Префаб. Заменить на goto */
+<</if>>
+
+
+:: Drake_Cullen_AskAboutCargo
+<<silently>>
+    <<set $drakeCullenAboutCargo = false>>
+<</silently>>\
+@@#exposition;\
+<<pli>>Я пренебрегла совету Ксандра, и всё-таки решила спросить про груз.<</pli>>
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\ 
+            <<pln>>Каллен, скажи честно, глядя мне в глаза: что мы везём?<</pln>>
+        <</replace>>
+        <<cont keypress>>
+            <<replace '#exposition'>>\ 
+                <<cul>>Кэп говорит, что воздух. Это просто тренировка.<</cul>>
+            <</replace>>
+            <<cont keypress>>
+                <<replace '#exposition'>>\ 
+                    <<pli>>Следующие вопросы нужно было подбирать осторожно, чтобы не спугнуть Каллена. И при этом, надо было как-то надавить на него тем, от чего он бы не смог отвертеться. <</pli>>\
+                    <div class ="button">[[Drake_Cullen_AreYouSure|Ты уверен?]]</div>
+                    <div class ="button">[[Drake_Cullen_AboutCapt|Переговоры с кэпом]]</div>
+                    <div class ="button">[[Drake_Cullen_PiratesAttack|Нападение пиратов]]</div>
+                <</replace>>
+            <</cont>>
+        <</cont>>
+    <</cont>>
+<</silently>>
+
+
+
+:: Drake_Cullen_AreYouSure
+
+<<silently>>
+    <<set $cullenCargoInsist = true>>
+<</silently>>\
+@@#exposition;\
+<<pln>>А ты уверен в этом? Может всё-таки что-то есть?<</pln>>
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            <<cul>>Скажем так, я верю Кэпу на слово. Мы везём воздух. Звучит абсурдно, не правда ли?<</cul>>
+        <</replace>>
+        <<cont keypress>>
+            <<replace '#exposition'>>\
+                <<pli>>Ты не шутишь?<</pli>>
+            <</replace>>
+            <<cont keypress>>
+                <<replace '#exposition'>>\
+                    <<cul>>Не шучу. Я и сам проходил через это. Это делается для нашей же безопасности. Если вдруг пираты нападут, им нечего будет взять, и они отвалят. <</cul>>
+                <</replace>>
+                <<cont keypress>>
+                    <<replace '#exposition'>>\
+                        <<pln>>Думаешь, могут напасть?<</pln>>
+                    <</replace>>
+                    <<cont keypress>>
+                        <<replace '#exposition'>>\
+                            <<cul>>Да ну, нет. Завидев челноки Интергалапола, они разбегаются, поджав хвосты.<</cul>>
+                        <</replace>>
+                        <<cont keypress>>
+                            <<replace '#exposition'>>\
+                                <<pln>>И как думаешь, не слишком ли дорого обходится вот такая вот тренировка?<</pln>>
+                            <</replace>>
+                            <<cont keypress>>
+                                <<replace '#exposition'>>\
+                                    <<cul>>Ну ты чудная. А другие тренировки тебя не смущали, и размеры нашей базы, например? Интергалапол денег на обучение своих солдат... копов, не жалеет.<</cul>>
+                                <</replace>>
+                                <<cont keypress>>
+                                    <<replace '#exposition'>>\
+                                        <<pln>>"Каллен спел ту же песню, что и Кэп." <</pln>>\
+                                    <<if $cullenAboutCapt == false && $cullenPiratesAttack == false>>\
+                                        <div class ="button">[[Drake_Cullen_AboutCapt|Переговоры с кэпом]]</div>
+                                        <div class ="button">[[Drake_Cullen_PiratesAttack|Нападение пиратов]]</div>
+                                    <<elseif $cullenAboutCapt == false && $cullenPiratesAttack == true>>\
+                                        <div class ="button">[[Drake_Cullen_AboutCapt|Переговоры с кэпом]]</div>
+                                    <<elseif $cullenAboutCapt == true && $cullenPiratesAttack == false>>\
+                                        <div class ="button">[[Drake_Cullen_PiratesAttack|Нападение пиратов]]</div>
+                                    <</if>>
+                                    <</replace>>
+                                <</cont>>
+                            <</cont>>
+                        <</cont>>
+                    <</cont>>
+                <</cont>>
+            <</cont>>
+        <</cont>>
+    <</cont>>
+<</silently>>
+
+
+
+:: Drake_Cullen_AboutCapt
+
+<<silently>>
+    <<set $cullenAboutCapt = true>>
+<</silently>>\
+@@#exposition;\
+<<if $cullenCargoInsist == true>>
+    <<pln>>Кстати, о Кэпе. О чём вы там постоянно с ним переговариваться отходили? <</pln>>
+<<else>>
+    <<pln>>А о чём вы там постоянно переговариваться отходили с Кэпом? <</pln>>
+<</if>>
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            <<cul>>Это что, допрос?<</cul>>
+        <</replace>>
+        <<cont keypress>>
+            <<replace '#exposition'>>\
+                <<pli>>Засмеялся Каллен в своей привычной манере.<</pli>>
+            <</replace>>
+            <<cont keypress>>
+                <<replace '#exposition'>>\
+                    <<pln>>Просто интересно. Мы же друзья, скажи по секрету.<</pln>>
+                <</replace>>
+                <<cont keypress>>
+                    <<replace '#exposition'>>\
+                        <<cul>>Ладно, только тебе. Мы решили доверить нашим младшим офицерам ценный груз. Это аугментозин и всякое другое барахло.<</cul>>
+                    <</replace>>
+                    <<cont keypress>>
+                        <<replace '#exposition'>>\
+                            <<cul>>Возможно, но это лишь по данным нашей разведки, на нас ожидается нападение.<</cul>>
+                        <</replace>>
+                        <<cont keypress>>
+                            <<replace '#exposition'>>\
+                                <<pln>>Но это же серьёзное дело, Каллен. Вы подвергаете жизни офицеров опасности. Почему вы не предупредили всех?<</pln>>
+                            <</replace>>
+                            <<cont keypress>>
+                                <<replace '#exposition'>>\
+                                    <<cul>>Это наша работа, <<print $Player.name>>. <</cul>>
+                                <</replace>>
+                                <<cont keypress>>
+                                    <<replace '#exposition'>>\
+                                        <<cul>>Ты же помнишь учения, нам постоянно талдычили: жизнь офицера в опасности двадцать четыре на семь.<</cul>>
+                                    <</replace>>
+                                    <<cont keypress>>
+                                        <<replace '#exposition'>>\
+                                            <<cul>>Нас не очень-то любят люди, знаешь ли.<</cul>>
+                                        <</replace>>
+                                        <<cont keypress>>
+                                            <<replace '#exposition'>>\
+                                                <<pln>>Ну это и не удивительно… Ладно, я поняла. Спасибо, за твою честность. Жаль только, что сразу мне не сказал.<</pln>>
+                                            <</replace>>
+                                            <<cont keypress>>
+                                                <<replace '#exposition'>>\
+                                                    <<cul>>Мне не положено, ты же сама понимаешь. Это только между старшими офицерами. И ты никому не говори.<</cul>>
+                                                <</replace>>
+                                                <<cont keypress>>
+                                                    <<replace '#exposition'>>\
+                                                        <<pli>>Мне стало не по себе от того, какой груз лёг на меня. Какая-то часть меня жалела, о том, что я спросила. Лучше бы я пребывала в неведении. <</pli>>
+                                                    <</replace>>
+                                                    <<cont keypress>>
+                                                        <<replace '#exposition'>>\
+                                                            <<pli>>А теперь, я тоже несу ответственность за жизнь других офицеров, не говоря им правду.<</pli>>
+                                                        <</replace>>
+                                                        <<cont keypress>>
+                                                            <<replace '#exposition'>>\
+                                                                <<pli>>Оставалось надеяться, что всё обойдётся, и мы победим пиратов.<</pli>>
+                                                            <</replace>>
+                                                            <<cont keypress>>
+                                                                <<replace '#exposition'>>\
+                                                                    <<cul>>Ну так что, обещаешь? Это очень важно, <<print $Player.name>>. Не заставляй меня жалеть, о том что сказал.<</cul>>
+                                                                <</replace>>
+                                                                <<cont keypress>>
+                                                                    <<replace '#exposition'>>\
+                                                                        <<pln>>Обещаю.<</pln>>
+                                                                    <</replace>>
+                                                                    <<cont keypress>>
+                                                                        <<replace '#exposition'>>\
+                                                                            <<pli>>Наконец ответила я.<</pli>>
+                                                                        <</replace>>
+                                                                        <<cont keypress>>
+                                                                            <<replace '#exposition'>>\
+                                                                                <div class="msgbox fadeout crt">🔍Ваш навык Детектив повышен!</div>\
+                                                                                <<cul>>Вот и славно. Сменим тему?<</cul>>\
+                                                                                <<if $cullenCargoInsist == false && $cullenPiratesAttack == false>>\
+                                                                                    <div class ="button">[[Drake_Cullen_AreYouSure|Ты уверен?]]</div>
+                                                                                    <div class ="button">[[Drake_Cullen_PiratesAttack|Нападение пиратов]]</div>
+                                                                                <<elseif $cullenCargoInsist == true && $cullenPiratesAttack == false>>\
+                                                                                    <div class ="button">[[Drake_Cullen_AreYouSure|Ты уверен?]]</div>
+                                                                                <<elseif $cullenCargoInsist == false && $cullenPiratesAttack == true>>
+                                                                                    <div class ="button">[[Drake_Cullen_PiratesAttack|Нападение пиратов]]</div>
+                                                                                <</if>> 
+                                                                            <</replace>>
+                                                                        <</cont>>
+                                                                    <</cont>>
+                                                                <</cont>>
+                                                            <</cont>>
+                                                        <</cont>>
+                                                    <</cont>>
+                                                <</cont>>
+                                            <</cont>>
+                                        <</cont>>
+                                    <</cont>>
+                                <</cont>>
+                            <</cont>>
+                        <</cont>>
+                    <</cont>>
+                <</cont>>
+            <</cont>>
+        <</cont>>
+    <</cont>>
+<</silently>>\
+<<silently>>
+    <<set Investigator +=1>>
+<</silently>>
+
+
+
+:: Drake_Cullen_PiratesAttack
+
+<<silently>>
+    <<set $cullenPiratesAttack = true>>
+<</silently>>\
+@@#exposition;\
+<<if $cullenCargoInsist == false>>\
+    <<pln>>Это правда, что готовится нападение пиратов?<</pln>>
+<<else>>\
+    <<pln>>Ты упомянул нападение "возможное" нападение пиратов. Это правда, что оно всё-таки готовится?<</pln>>
+<</if>>
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            <<cul>>Нет, что ты, какие глупости. Где ты это услышала?<</cul>>
+        <</replace>>
+        <<cont keypress>>
+            <<replace '#exposition'>>\
+                <<pln>>Не важно. Каллен, будь честен со мной.<</pln>>
+            <</replace>>
+            <<cont keypress>>
+                <<replace '#exposition'>>\
+                    <<cul>>Слушай, я всего лишь командор. До меня не всё доходит. Однако, про нападение я точно ничего не слышал.<</cul>>
+                <</replace>>
+                <<cont keypress>>
+                    <<replace '#exposition'>>\
+                        <<cul>>Слушай, давай сменим тему, а?<</cul>>
+                    <</replace>>
+                    <<cont keypress>>
+                        <<replace '#exposition'>>\
+                            <<pln>>"Всего лишь командор… Ну нифига себе "всего лишь""<</pln>>
+                        <</replace>>
+                        <<cont keypress>>
+                            <<replace '#exposition'>>\
+                                <<pln>>Я не хотела на него давить. Было похоже, что я, всё-таки, его спугнула.<</pln>>
+                            <</replace>>
+                            <<cont keypress>>
+                                <<replace '#exposition'>>\
+                                    <<pln>>Окей, давай сменим.<</pln>>
+                                <</replace>>
+                                <<cont keypress>>
+                                    <<replace '#exposition'>>\
+                                        <<pli>>Сказала я с улыбкой, чтобы сгладить углы.<</pli>>
+                                    <</replace>>
+                                    <<cont keypress>>
+                                        <<replace '#exposition'>>\
+                                            <<goto "Drake_GoTo_Cullen_AwkwardSilence">>
+                                        <</replace>>
+                                    <</cont>>
+                                <</cont>>
+                            <</cont>>
+                        <</cont>>
+                    <</cont>>
+                <</cont>>
+            <</cont>>
+        <</cont>>
+    <</cont>>
+<</silently>>
+
+
+
+:: Drake_Cullen_Girlfriend
+
+<<silently>>
+    <<set $cullenAboutGirlfriend = true>>
+<</silently>>\
+@@#exposition;\
+<<pln>>Ну так что, Каллен, ждёт ли тебя дома Миссис Маклахлан?<</pln>>
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            <<cul>>Ну, прямо Миссис ещё не ждёт, но Мисс у меня есть. Пока что не Маклахлан.<</cul>>
+        <</replace>>
+        <<cont keypress>>
+            <<replace '#exposition'>>\
+                <<pln>>Оу.<</pln>>
+            <</replace>>
+            <<cont keypress>>
+                <<replace '#exposition'>>\
+                    <<cul>>А что такое?<</cul>>
+                <</replace>>
+                <<cont keypress>>
+                    <<replace '#exposition'>>\
+                        <<cul>>Лукаво улыбнулся Каллен.<</cul>>
+                    <</replace>>
+                    <<cont keypress>>
+                        <<replace '#exposition'>>\
+                            <<pln>>Да так, просто любопытно. Не так часто удаётся вот так посидеть и поговорить в спокойной обстановке. Мы столько лет знакомы, а я будто о тебе ничего не знаю.<</pln>>
+                        <</replace>>
+                        <<cont keypress>>
+                            <<replace '#exposition'>>\
+                                <<cul>>Это ты тренировку "называешь спокойной обстановкой"?<</cul>>
+                            <</replace>>
+                            <<cont keypress>>    
+                                <<replace '#exposition'>>\
+                                    <<pln>>Что-то вроде того.<</pln>>
+                                <</replace>>
+                                <<cont keypress>>
+                                    <<replace '#exposition'>>\
+                                        <<pli>>Нервно засмеялась я в ответ, переживая: не слишком ли я выдаю свою симпатию.<</pli>>
+                                    <</replace>>
+                                    <<cont keypress>>
+                                        <<replace '#exposition'>>
+                                            <<goto "Drake_GoTo_Cullen_AwkwardSilence">>
+                                        <</replace>>
+                                    <</cont>>
+                                <</cont>>
+                            <</cont>>
+                        <</cont>>
+                    <</cont>>
+                <</cont>>
+            <</cont>>
+        <</cont>>
+    <</cont>>
+<</silently>>
+
+          
+
+:: Drake_Cullen_HowBecameACop
+
+<<silently>>
+    <<set $howBecameACop = true>>
+<</silently>>\
+@@#exposition;\
+<<pln>>А как ты решил стать копом?<</pln>>
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            <<cul>>О, я был копом ещё там...<</cul>>
+        <</replace>>
+        <<cont keypress>>
+            <<replace '#exposition'>>\
+                <<pli>>Жестом он показал на пол.<</pli>>
+            <</replace>>
+            <<cont keypress>>
+                <<replace '#exposition'>>\
+                    <<cul>>... на Земле. Патрулировал улицы, общался с бездомными бродягами, ловил мелких хаккеров-кардеров, которые воровали кредиты у гражданских прямо как ходячие пылесосы. <</cul>>
+                <</replace>>
+                <<cont keypress>>
+                    <<replace '#exposition'>>\
+                        <<cul>>Дослужился даже до детектива к двадцати одному году. Видел то, от чего простого человека вывернет наизнанку.<</cul>>
+                    <</replace>>
+                    <<cont keypress>>
+                        <<replace '#exposition'>>\
+                            <<pln>>Уф, в двадцать один-то год? Как ты себе психику не поломал?<</pln>>
+                        <</replace>>
+                        <<cont keypress>>
+                            <<replace '#exposition'>>\
+                                <<cul>>Да как-то привык. Да и в наше время стать детективом на Земле неаугментированному довольно сложно. И опасно. <</cul>>
+                            <</replace>>
+                            <<cont keypress>>
+                                <<replace '#exposition'>>\
+                                    <<cul>>Преступность сегодня превышает показатели чем когда-либо в истории человечества. <</cul>>
+                                <</replace>>
+                                <<cont keypress>>
+                                    <<replace '#exposition'>>\
+                                        <<cul>>Куча аугментированных извращенцев и садюг отбились от рук, думая, что куча хрома делает их бессмертными.<</cul>>
+                                    <</replace>>
+                                    <<cont keypress>>
+                                        <<replace '#exposition'>>\
+                                            <<pln>>Уф, можешь не рассказывать, я сама выросла в районе, где постоянно ходили отпетые ублюдки. Однажды чуть меня не схватили в детстве, папа еле дал отпор гаечным ключом.<</pln>>
+                                        <</replace>>
+                                        <<cont keypress>>
+                                            <<replace '#exposition'>>\
+                                                <<cul>>Уф... Да твой отец супермен.<</cul>>
+                                            <</replace>>
+                                            <<cont keypress>>
+                                                <<replace '#exposition'>>\
+                                                    <<pln>>Да, он был крепким и ловким мужиком. Мастер спорта по боксу. <</pln>>
+                                                <</replace>>
+                                                <<cont keypress>>
+                                                    <<replace '#exposition'>>\
+                                                        <<pln>>Правда, это развлечение отошло на второй план, всем сейчас интересно смотреть как аугментированные дерутся.<</pln>>
+                                                    <</replace>>
+                                                    <<cont keypress>>
+                                                        <<replace '#exposition'>>\
+                                                            <<pln>>И отцу пришлось сесть за руль аэробуса.<</pln>>
+                                                        <</replace>>
+                                                        <<cont keypress>>
+                                                            <<replace '#exposition'>>\
+                                                                <<pln>>Ты так много сказал, и при этом так и не сказал, как решил стать копом.<</pln>>
+                                                            <</replace>>
+                                                            <<cont keypress>>
+                                                                <<replace '#exposition'>>\
+                                                                    <<cul>>Ах, да. Ты же помнишь, я играл в рэгби в школе. Моя спортивная карьера быстро закончилась, прям как у твоего отца. <</cul>>
+                                                                <</replace>>
+                                                                <<cont keypress>>
+                                                                    <<replace '#exposition'>>\
+                                                                        <<cul>>А после школы я не знал, чем заняться. В универ поступить мне даже спорт не помог —грантов было недостаточно, а родители мои не тянули. <</cul>>
+                                                                    <</replace>>
+                                                                    <<cont keypress>>
+                                                                        <<replace '#exposition'>>\
+                                                                            <<cul>>Кабальный студенческий кредит я брать не хотел.<</cul>>
+                                                                        <</replace>>
+                                                                        <<cont keypress>>
+                                                                            <<replace '#exposition'>>\
+                                                                                <<cul>>Вот и пошёл в копы. Сначала в обычные, там, на Земле. А потом, когда дослужился до детектива, меня отправили вести расследование. <</cul>>
+                                                                            <</replace>>
+                                                                            <<cont keypress>>
+                                                                                <<replace '#exposition'>>\
+                                                                                    <<cul>>Поступил звонок об очередной перестрелке. Когда я прибыл на место, два аугментированных до зубов контрабандюги разносили район. <</cul>>
+                                                                                <</replace>>
+                                                                                <<cont keypress>>
+                                                                                    <<replace '#exposition'>>\
+                                                                                        <<cul>>Я спрятался за углом какого-то здания, связываться в одиночку было опасно. <</cul>>
+                                                                                    <</replace>>
+                                                                                    <<cont keypress>>
+                                                                                        <<replace '#exposition'>>\
+                                                                                            <<cul>>В итоге, те поубивали друг-друга без моей "помощи". Как выяснилось, из-за некоего груза.<</cul>>
+                                                                                        <</replace>>
+                                                                                        <<cont keypress>>
+                                                                                            <<replace '#exposition'>>\
+                                                                                                <<cul>>Я доложил о нём ИнтерГалаКопам. Они этот груз как раз искали.<</cul>>
+                                                                                            <</replace>>
+                                                                                            <<cont keypress>>
+                                                                                                <<replace '#exposition'>>\
+                                                                                                    <<cul>>Оказалось, внутри груза были военные аугментации производства нашего подразделения. <</cul>>
+                                                                                                <</replace>>
+                                                                                                <<cont keypress>>
+                                                                                                    <<replace '#exposition'>>\
+                                                                                                        <<cul>>Видимо, какой-то из коррумпированных копов слил его одному из киборгов, а другой прознал. Ну, за что боролись, на то и напоролись.<</cul>>
+                                                                                                    <</replace>>
+                                                                                                    <<cont keypress>>
+                                                                                                        <<replace '#exposition'>>\
+                                                                                                            <<pln>>Вау. Никогда бы не подумала, что у нас в подразделении вообще такое возможно — коррумпированный коп и какие-либо утечки.<</pln>>
+                                                                                                        <</replace>>
+                                                                                                        <<cont keypress>>
+                                                                                                            <<replace '#exposition'>>\
+                                                                                                                <<pln>>Всех же тщательно проверяют. <</pln>>
+                                                                                                            <</replace>>
+                                                                                                            <<cont keypress>>
+                                                                                                                <<replace '#exposition'>>\
+                                                                                                                    <<cul>>Этот случай был единственный. Говорят, провинившегося копа наказали, и никто не знает, где он. <</cul>>
+                                                                                                                <</replace>>
+                                                                                                                <<cont keypress>>
+                                                                                                                    <<replace '#exposition'>>\
+                                                                                                                        <<pln>>Я рада, что ты в порядке. Те двое ведь могли тебя на куски порвать. А детективам такая медицина как у нас недоступна.<</pln>>
+                                                                                                                    <</replace>>
+                                                                                                                    <<cont keypress>>
+                                                                                                                        <<replace '#exposition'>>\
+                                                                                                                            <<cul>>Да брось, ты же меня знаешь. Даже если бы заметили, я бы им надрал зад!<</cul>>
+                                                                                                                        <</replace>>
+                                                                                                                        <<cont keypress>>
+                                                                                                                            <<replace '#exposition'>>\
+                                                                                                                                <<pln>>Ой, хватит рисоваться. Да, я тебя знаю —всё время ходишь по грани. Сколько у тебя шрамов на теле, боюсь представить.<</pln>>
+                                                                                                                            <</replace>>
+                                                                                                                            <<cont keypress>>
+                                                                                                                                <<replace '#exposition'>>\
+                                                                                                                                    <<cul>>Хочешь сосчитать?<</cul>>
+                                                                                                                                <</replace>>
+                                                                                                                                <<cont keypress>>
+                                                                                                                                    <<replace '#exposition'>>\
+                                                                                                                                        <<pli>>Лукаво улыбнулся Каллен.<</pli>>
+                                                                                                                                    <</replace>>
+                                                                                                                                    <<cont keypress>>
+                                                                                                                                        <<replace '#exposition'>>\
+                                                                                                                                            <<pli>>Я не знала, стоит ли признаться в своих чувствах, или продолжать вести беседу в дружеском ключе. Я боялась, что наши отношения могут помешать моей карьере. И одновременно боялась быть отвергнутой. <</pli>>
+                                                                                                                                        <</replace>>
+                                                                                                                                        <<cont keypress>>
+                                                                                                                                            <<replace '#exposition'>>\
+                                                                                                                                                <<pli>>И хоть мы и в одном подразделении, видимся мы редко. На таком хрупком фундаменте отношения долго не продержатся.<</pli>>\
+                                                                                                                                                <div class="button">[[Признаться в симпатии|Drake_Cullen_DeclareFeelings]]</div>
+                                                                                                                                                <div class="button">[[Промолчать|Drake_Cullen_Explosion]]</div>
+                                                                                                                                            <</replace>>
+                                                                                                                                        <</cont>>
+                                                                                                                                    <</cont>>
+                                                                                                                                <</cont>>
+                                                                                                                            <</cont>>
+                                                                                                                        <</cont>>
+                                                                                                                    <</cont>>
+                                                                                                                <</cont>>
+                                                                                                            <</cont>>
+                                                                                                        <</cont>>
+                                                                                                    <</cont>>
+                                                                                                <</cont>>
+                                                                                            <</cont>>
+                                                                                        <</cont>>
+                                                                                    <</cont>>
+                                                                                <</cont>>
+                                                                            <</cont>>
+                                                                        <</cont>>
+                                                                    <</cont>>
+                                                                <</cont>>
+                                                            <</cont>>
+                                                        <</cont>>
+                                                    <</cont>>
+                                                <</cont>>
+                                            <</cont>>
+                                        <</cont>>
+                                    <</cont>>
+                                <</cont>>
+                            <</cont>>
+                        <</cont>>
+                    <</cont>>
+                <</cont>>
+            <</cont>>
+        <</cont>>
+    <</cont>>
+<</silently>>
+                                                                                                                                
+
+
+:: Drake_Cullen_DeclareFeelings
+
+@@#exposition;\
+<<pln>>Если честно, я очень рада, что мы оказались в одном подразделении. Ты мне нравился ещё со школы, но ты вечно был окружён девчонками, и я стеснялась тебя. А здесь одни мужики, и конкуренции почти нет.<</pln>>
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            <<pli>>Неловко засмеялась я.<</pli>>
+        <</replace>>
+        <<cont keypress>>
+            <<replace '#exposition'>>\
+                <<cul>>Оу... Ты меня застала врасплох, я не знаю, что и сказать...<</cul>>
+            <</replace>>
+            <<cont keypress>>
+                <<replace '#exposition'>>\
+                    <<pln>>Да ладно, забудь, всё нормально.<</pln>>
+                <</replace>>
+                <<cont keypress>>
+                    <<replace '#exposition'>>\
+                        <<cul>>Нет, <<= $Player.name>>, я ничего забывать не собираюсь. Если бы я знал, я бы не тратил время на девушку, которая разбила мне сердце. Обратная сторона так называемой "популярности". <</cul>>
+                    <</replace>>
+                    <<cont keypress>>
+                        <<replace '#exposition'>>\
+                            <<cul>>Я просто удивлён, почему ты стеснялась? Ты себя постоянно недооцениваешь. Ты отличный пилот. Ты хороший друг. Ты милая.<</cul>>
+                        <</replace>>
+                        <<cont keypress>>
+                            <<replace '#exposition'>>\
+                                <<pln>>Вот именно... Милая. А ты всё время был окружён красотками. <</pln>>
+                            <</replace>>
+                            <<cont keypress>>
+                                <<replace '#exposition'>>\
+                                    <<cul>>Ох, хватит с меня этой чуши.<</cul>>
+                                <</replace>>
+                                <<cont keypress>>
+                                    <<replace '#exposition'>>\
+                                        <<pli>>Каллен потянулся к моим губам, обняв меня за бедро. Я была в ступоре.<</pli>>
+                                        <div class="button">[[Убрать Руку|Drake_Cullen_HandAway]]</div>
+                                        <div class="button">[[Поддаться искушению|Drake_Cullen_FallToTemptation]]</div>
+                                    <</replace>>
+                                <</cont>>
+                            <</cont>>
+                        <</cont>>
+                    <</cont>>
+                <</cont>>
+            <</cont>>
+        <</cont>>
+    <</cont>>
+<</silently>>
+
+
+:: Drake_Cullen_HandAway
+
+@@#exposition;\
+<<pli>>Я сомневалась в намерениях Каллена. Вёл ли он какую-то игру или его чувства искренние. Я убрала его руку и отпрянула.<</pli>>
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            <<pln>>Прости, я не могу так. К тому же, мы не одни, Ксандр сидит у меня в кабине.<</pln>>
+        <</replace>>
+        <<cont keypress>>
+            <<replace '#exposition'>>\
+                <<cul>>Нет, это ты меня прости. Не знаю, что на меня нашло.<</cul>>
+            <</replace>>
+            <<cont keypress>>
+                <<replace '#exposition'>>\
+                    <<pli>>Сказал побагровевший Каллен, потирая затылок. <</pli>>
+                <</replace>>
+                <<cont keypress>>
+                    <<replace '#exposition'>>\
+                        <<cul>>Ты мне тоже нравишься, <<= $Player.name>>. Правда. И для меня ты красивая. Да и в целом, красивая, не знаю, с чего ты думала обратное.<</cul>>
+                    <</replace>>
+                    <<cont keypress>>
+                        <<replace '#exposition'>>\
+                            <<pln>>Может с того, что все твои подруги смеялись надо мной. Считали меня серой мышью, аутсайдером. Смеялись над моей мечтой стать пилотом. Говорили, что  я "просто хочу быть поближе к мужикам".<</pln>>
+                        <</replace>>
+                        <<cont keypress>>
+                            <<replace '#exposition'>>\
+                                <<cul>>Брось. У тебя хотя бы была мечта. А у этих "подруг" мечты ограничивались длиной их ногтей и обсуждением мальчиков. <</cul>>
+                            <</replace>>
+                            <<cont keypress>>
+                                <<replace '#exposition'>>\
+                                    <<cul>>Ничего не имею против, но должно же быть в человеке что-то помимо этого. <</cul>>
+                                <</replace>>
+                                <<cont keypress>>
+                                    <<replace '#exposition'>>\
+                                        <<goto "Drake_Explosion">>
+                                    <</replace>>
+                                <</cont>>
+                            <</cont>>
+                        <</cont>>
+                    <</cont>>
+                <</cont>>
+            <</cont>>
+        <</cont>>
+    <</cont>>
+<</silently>>
+
+
+
+:: Drake_Cullen_FallToTemptation
+
+@@exposition;\
+<<pli>>Я потянулась к Каллену в ответ и поцеловала его. Я почувствовала приятное тепло в груди, перетекающее вниз живота. <</pli>>
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            <<pli>>Я чувствовала его руку на бедре, и хотела, чтобы она оказалась под одеждой.<</pli>> 
+        <</replace>>
+        <<cont keypress>>
+            <<replace '#exposition'>>\
+                <<pli>>Но он был джентельменом, и его рука с берда поползла наверх по спину и к моему затылку. Мурашки побежали вслед за ней. Его пальцы слегка сжимали мои волосы, приятно оттягивая их назад. Это была лёгкая и приятная боль.<</pli>>
+            <</replace>>
+            <<cont keypress>>
+                <<replace '#exposition'>>\
+                    <<pli>>На секунду, я оторвалась.<</pli>>
+                <</replace>>
+                <<cont keypress>>
+                    <<replace '#exposition'>>\
+                        <<pln>>А как же "мисс пока ещё не Маклахлан"?<</pln>>
+                    <</replace>>
+                    <<cont keypress>>
+                        <<replace '#exposition'>>\
+                            <<cul>>Я её выдумал, чтобы ты поревновала немного.<</cul>>
+                        <</replace>>
+                        <<cont keypress>>
+                            <<replace '#exposition'>>\
+                                <<pli>>Улыбнулся Каллен, я ему в ответ, и он продолжил меня целовать.<</pli>>
+                            <</replace>>
+                            <<cont keypress>>
+                                <<replace '#exposition'>>\
+                                    <<pli>>Мы не могли оторваться друг от друга, и тяжело дышали через нос. <</pli>>
+                                <</replace>>
+                                <<cont keypress>>
+                                    <<replace '#exposition'>>\
+                                        <<pli>>Каллен двинулся вперёд, и своей могучей грудью прижал меня к дивану… Его рука поползла вниз по моей груди и к животу.<</pli>> 
+                                    <</replace>>
+                                    <<cont keypress>>
+                                        <<replace '#exposition'>>\
+                                            <<pli>>Я хотела убрать его руку, но её тепло заставляло меня таять, и оно, словно магия, покалывала и протекала по коже, рукам, и ногам, к низу живота… Пока он прижимался ко мне сильнее… Тело задрожало, будто хотело воспарить — будто магия тянула низ моего живота наверх — к нему… Я глубоко вздохнула, и выдохнула, и…<</pli>>
+                                        <</replace>>
+                                        <<cont keypress>>
+                                            <<replace '#exposition'>>\
+                                                <<pli>>Внезапно, открылась дверь кабины, и в ней стоял Ксандр. Как по команде, я и Каллен быстро сели и отряхнулись, будто ничего не было. Очевидно, Ксандр всё равно всё видел.<</pli>>
+                                            <</replace>>
+                                            <<cont keypress>>
+                                                <<replace '#exposition'>>\
+                                                    <<pli>>Он стоял в ступоре, кашлянул, и молча закрыл дверь кабины, не меняя ошарашенной физиономии.<</pli>>
+                                                <</replace>>
+                                                <<cont keypress>>
+                                                    <<replace '#exposition'>>\
+                                                        <<pln>>"Упс!"<</pln>>
+                                                    <</replace>>
+                                                    <<cont keypress>>
+                                                        <<replace '#exposition'>>\
+                                                            <<pli>>Подумала я, вспоминая наш разговор про свидание и гёдзо. "Отлично, <<$Player.name>>, мало тебе проблем, ещё и личный фронт решила нагрузить."<</pli>>
+                                                        <</replace>>
+                                                        <<cont keypress>>
+                                                            <<replace '#exposition'>>\
+                                                                <<pli>>Каллен лишь засмеялся.<</pli>>
+                                                            <</replace>>
+                                                            <<cont keypress>>
+                                                                <<replace '#exposition'>>\
+                                                                    <<cul>>Ты в порядке?<</cul>>
+                                                                <</replace>>
+                                                                <<cont keypress>>
+                                                                    <<replace '#exposition'>>\
+                                                                        <<pln>>Да, всё нормально. Надо бы за штурвал идти, а то врежемся ещё в астероид какой-нибудь.<</pln>>
+                                                                    <</replace>>
+                                                                    <<cont keypress>>
+                                                                        <<replace '#exposition'>>\
+                                                                            <<cul>>Да, ты права, пойду и я отслеживать эти валуны. Кофе был сегодня на редкость вкусный.<</cul>>
+                                                                        <</replace>>
+                                                                        <<cont keypress>>
+                                                                            <<replace '#exposition'>>\ 
+                                                                                    <<pli>>Подмигнул он мне. Я хихикнула в ответ. Каллен умел разбавить неловкую атмосферу. <</pli>>
+                                                                            <</replace>>
+                                                                            <<cont keypress>>
+                                                                                <<replace '#exposition'>>\
+                                                                                    <<pli>>Однако, в кабину я возвращалась неохотно, зная, что там сидит Ксандр. Мне было так неловко перед ним.<</pli>>
+                                                                                <</replace>>
+                                                                                <<cont keypress>>
+                                                                                    <<replace '#exposition'>>\
+                                                                                        <<goto "Drake_Explosion">>
+                                                                                    <</replace>>
+                                                                                <</cont>>
+                                                                            <</cont>>
+                                                                        <</cont>>
+                                                                    <</cont>>
+                                                                <</cont>>
+                                                            <</cont>>
+                                                        <</cont>>
+                                                    <</cont>>
+                                                <</cont>>
+                                            <</cont>>
+                                        <</cont>>
+                                    <</cont>>
+                                <</cont>>
+                            <</cont>>
+                        <</cont>>
+                    <</cont>>
+                <</cont>>
+            <</cont>>
+        <</cont>>
+    <</cont>>
+<</silently>>\ 
+
+<<silently>>
+    <<set $kissCullen = true>>
+<</silently>>
