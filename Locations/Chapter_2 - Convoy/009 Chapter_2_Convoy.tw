@@ -1,0 +1,176 @@
+<<include Variables>>
+
+:: Convoy_Start
+
+@@#exposition;\
+Через полчаса все команды погрузились на челноки.
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\ 
+            <<pli>>Я припарковала свой личный монорайд в гаражный отсек новенького шаттла. Он был раза в четыре больше тех, которые мне удавалось "пощупать" ранее. 
+        <</replace>><</pli>>
+        <<cont keypress>>
+            <<replace '#exposition'>>\ 
+                <<pli>>Челноки производят инженеры нашего подразделения по секретными технологиям. <</pli>>
+            <</replace>>
+            <<cont keypress>>
+                <<replace '#exposition'>>\ 
+                    <<pli>>Названия у них простые — "Воробей", "Стриж", "Сокол" — в зависимости от размера и назначения. Этот же был "Селезнем-F17". <</pli>>
+                <</replace>>
+                <<cont keypress>>
+                    <<replace '#exposition'>>\ 
+                        <<pli>>Несмотря на глупое название и не самый большой размер, "Селезень" вмещал в себя четыре боевых мини-шаттла "Воробей".<</pli>>
+                    <</replace>>
+                    <<cont keypress>>
+                        <<replace '#exposition'>>\ 
+                            <<pli>>Из оружия — четыре лазерных пушки, пулемёт для наземных боёв, и, вишенка на торте — огромная пушка-дезинтегратор на крыше. <</pli>>
+                        <</replace>>
+                        <<cont keypress>>
+                            <<replace '#exposition'>>\ 
+                                <<pli>>Такая расщепляет корабль противника на молекулы и запрещена Женевской конвенцией. Однако, не для Интергалапола.<</pli>>
+                            <</replace>>
+                            <<cont keypress>>
+                                <<replace '#exposition'>>\ 
+                                    <<pli>>Кабина — четырёхместная. Внутри — ультрасовременные бортовые компьютеры со сверхточной системой навигации. <</pli>>
+                                <</replace>>
+                                <<cont keypress>>
+                                    <<replace '#exposition'>>\ 
+                                        <<pli>>Летать в таком — это даже не прогулка в парке, это лежание в кроватке, что везёт тебя сама по парку и подаёт тебе маргариту со льдом. <</pli>>
+                                    <</replace>>
+                                    <<cont keypress>>
+                                        <<replace '#exposition'>>\ 
+                                            <<pli>>Внешне он тоже был прекрасен — переливался зелёным, прямо как голова у настоящего селезня.<</pli>>
+                                        <</replace>>
+                                        <<cont keypress>>
+                                            <<replace '#exposition'>>\ 
+                                                <<pli>>Мои глаза сияли от восхищения — не терпелось сесть за штурвал.<</pli>>
+                                            <</replace>>
+                                            <<cont keypress>>
+                                                <<replace '#exposition'>>\ 
+                                                    <<pli>>Я зашла сзади, в гаражный отсек, а из него в основной — самый большой. <</pli>>
+                                                <</replace>>
+                                                <<cont keypress>>
+                                                    <<replace '#exposition'>>\ 
+                                                        <<pli>>Посередине помещения возвышался круглый капитанский мостик — его занял Каллен и уже о чём-то переговаривался с Кэпом и другими командорами.<</pli>>
+                                                    <</replace>>
+                                                    <<cont keypress>>
+                                                        <<replace '#exposition'>>\ 
+                                                            <<pli>>Мне не было до этого дела и скорее хотелось уединиться с кораблём в кабине пилота. <</pli>>
+                                                        <</replace>>
+                                                        <<cont keypress>>
+                                                            <<replace '#exposition'>>\ 
+                                                                <<pli>>Пока я двигалась в её сторону, я наслаждалась убранствами корабля. <</pli>>
+                                                            <</replace>>
+                                                            <<cont keypress>>
+                                                                <<replace '#exposition'>>\ 
+                                                                    <<pli>>Тут не торчали провода и не было железных стен, как в тех, что я летала ранее.<</pli>>
+                                                                <</replace>>
+                                                                <<cont keypress>>
+                                                                    <<replace '#exposition'>>\ 
+                                                                        <<pli>>Они были обиты искусственной огнеупорной кожей белого цвета, так что любые падения при включённой <</pli>>гравитации смягчали удар. 
+                                                                    <</replace>>
+                                                                    <<cont keypress>>
+                                                                        <<replace '#exposition'>>\ 
+                                                                            <<pli>>Слева стоял полукруглый диван с обивкой салатового оттенка и круглый стол. <</pli>>
+                                                                        <</replace>>
+                                                                        <<cont keypress>>
+                                                                            <<replace '#exposition'>>\ 
+                                                                                <<pli>>За ним уже сидел Ксандр, закинув на него ноги, и жевал гёдзо. <</pli>>
+                                                                            <</replace>>
+                                                                            <<cont keypress>>
+                                                                                <<replace '#exposition'>>\ 
+                                                                                    <<pli>>В целом, по всему кораблю можно было увидеть лёгкие салатовые акценты.<</pli>>
+                                                                                <</replace>>
+                                                                                <<cont keypress>>
+                                                                                    <<replace '#exposition'>>\ 
+                                                                                       <<pli>>На первый взгляд можно было подумать, что это круизный лайнер, а не боевая машина.<</pli>>
+                                                                                    <</replace>>
+                                                                                    <<cont keypress>>
+                                                                                        <<replace '#exposition'>>\ 
+                                                                                            <<pli>>Справа была выемка в стене с запасным бортовым компьютером — место уоранта, то есть Ксандра.<</pli>>
+                                                                                        <</replace>>
+                                                                                        <<cont keypress>>
+                                                                                            <<replace '#exposition'>>\ 
+                                                                                                <<pli>>Этот был мощнее остальных, и рассчитан как раз для взлома вражеских кораблей. <</pli>>
+                                                                                            <</replace>>
+                                                                                            <<cont keypress>>
+                                                                                                <<replace '#exposition'>>\ 
+                                                                                                    <<pli>>Над ним была лестница на второй этаж — там располагались четыре каюты для отдыха экипажа.<</pli>>
+                                                                                                <</replace>>
+                                                                                                <<cont keypress>>
+                                                                                                    <<replace '#exposition'>>\ 
+                                                                                                        <<pli>>Наконец, я дошла до кабины и села в своё креслице, поглаживая его обивку и штурвал из нежной кожи, такой мягкий и приятный, и...<</pli>>
+                                                                                                    <</replace>>
+                                                                                                    <<cont keypress>>
+                                                                                                        <<replace '#exposition'>>\ 
+                                                                                                            <<capt>>Цунами! Хватит спать, пора взлетать! <</capt>>
+                                                                                                        <</replace>>
+                                                                                                        <<cont keypress>>
+                                                                                                            <<replace '#exposition'>>\ 
+                                                                                                                <<pli>>Заорал голос из интеркома. От испуга я упёрлась я нажала на педаль и челнок резко взлетел, слегка стукнувшись о потолок штабного гаражного отсека.<</pli>>
+                                                                                                            <</replace>>
+                                                                                                            <<cont keypress>>
+                                                                                                                <<replace '#exposition'>>\ 
+                                                                                                                   <<capt>>Цунами, какого хрена ты творишь! Стингер, ты обещал следить! <</capt>>
+                                                                                                                <</replace>>
+                                                                                                                <<cont keypress>>
+                                                                                                                    <<replace '#exposition'>>\ 
+                                                                                                                       <<cul>>Извиняюсь, Кэп, промашка. Вы бы не орали так, я аж сам чуть не подпрыгнул.<</cul>>
+                                                                                                                    <</replace>>
+                                                                                                                    <<cont keypress>>
+                                                                                                                        <<replace '#exposition'>>\ 
+                                                                                                                            <<pli>>Каллен, очевидно, лукавил, чтобы выгородить меня. Он к орам Кэпа привык давно.<</pli>>
+                                                                                                                        <</replace>>
+                                                                                                                        <<cont keypress>>
+                                                                                                                            <<replace '#exposition'>>\ 
+                                                                                                                                <<capt>>Ах да, не забываем — пока мы на задании, обращаемся только позывными. <</capt>> 
+                                                                                                                            <</replace>>
+                                                                                                                            <<cont keypress>>
+                                                                                                                                <<replace '#exposition'>>\ 
+                                                                                                                                    <<pli>>"Так точно, сэр!"<</pli>>
+                                                                                                                                <</replace>>
+                                                                                                                                <<cont keypress>>
+                                                                                                                                    <<replace '#exposition'>>\ 
+                                                                                                                                       <<pli>>Какофонией смешались голоса из интеркома.<</pli>>
+                                                                                                                                    <</replace>>
+                                                                                                                                    <<cont keypress>>
+                                                                                                                                        <<replace '#exposition'>>\ 
+                                                                                                                                            <<goto "Convoy_Xander">>
+                                                                                                                                        <</replace>>
+                                                                                                                                    <</cont>>
+                                                                                                                                <</cont>>
+                                                                                                                            <</cont>>
+                                                                                                                        <</cont>>
+                                                                                                                    <</cont>>
+                                                                                                                <</cont>>
+                                                                                                            <</cont>>
+                                                                                                        <</cont>>
+                                                                                                    <</cont>>
+                                                                                                <</cont>>
+                                                                                            <</cont>>
+                                                                                        <</cont>>
+                                                                                    <</cont>>
+                                                                                <</cont>>
+                                                                            <</cont>>
+                                                                        <</cont>>
+                                                                    <</cont>>
+                                                                <</cont>>
+                                                            <</cont>>
+                                                        <</cont>>
+                                                    <</cont>>
+                                                <</cont>>
+                                            <</cont>>
+                                        <</cont>>
+                                    <</cont>>
+                                <</cont>>
+                            <</cont>>
+                        <</cont>>
+                    <</cont>>
+                <</cont>>
+            <</cont>>
+        <</cont>>
+    <</cont>>
+<</silently>>
+

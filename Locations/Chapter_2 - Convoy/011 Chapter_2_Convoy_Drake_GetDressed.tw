@@ -1,0 +1,21 @@
+<<include Variables>>\
+
+:: Drake_GetDressed
+
+@@#exposition;\
+<<if $gotDressed == true>>\
+    <<pli>>Для начала, я решила переодеться. Мой "парадный" костюм уже вызывал дискомфорт.<</pli>>\
+<<else>>\
+    <<pli>>Для начала, я решила переодеться, и наконец, привести себя в порядок, чтобы выглядеть как и подобает офицеру, "а не как воронье гнездо". <</pli>>
+<</if>>
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            <<pln>>Вот так-то лучше! Чем бы ещё заняться? Лететь долго…<</pln>>\
+            <div class="button">[[Поговорить с Кэпом|Drake_TalkTo_Capt]]</div>
+            <div class="button">[[Сходить к Каллену|Drake_GoTo_Cullen]]</div>
+        <</replace>>
+    <</cont>>
+<</silently>>

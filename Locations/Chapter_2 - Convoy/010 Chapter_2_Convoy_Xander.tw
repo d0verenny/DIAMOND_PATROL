@@ -1,0 +1,315 @@
+:: Convoy_Xander
+
+@@#exposition;\
+Через час мы встретились с космическими дальнобойщиками и сопровождали их груз. 
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\ 
+            Следующие пару часов ничего интересного не происходило, корабль был на автопилоте, и я уже было начала скучать, как в кабину вошёл Ксандр в его естественной манере — без стука. В руках у него была миска с гёдзо.
+        <</replace>>
+        <<cont keypress>>
+            <<replace '#exposition'>>\ 
+                Ну, похоже наши посиделки в гёдзо-кафе отменяются, так что поем тут в одиночестве. 
+            <</replace>>
+            <<cont keypress>>
+                <<replace '#exposition'>>\ 
+                    <<pln>>Мог бы и мне предложить!<</pln>>
+                <</replace>>
+                <<cont keypress>>
+                    <<replace '#exposition'>>\ 
+                        <<xander>>Мог бы, но хватило только мне. У нас есть проблема поважнее. Кое-что я хотел изложить в кафе, но, видимо, придётся здесь и сейчас.<</xander>>
+                    <</replace>>
+                    <<cont keypress>>
+                        <<replace '#exposition'>>\ 
+                            <<pln>>Что за проблема?<</pln>>
+                        <</replace>>
+                        <<cont keypress>>
+                            <<replace '#exposition'>>\ 
+                                <<xander>>Груз. <</xander>>
+                            <</replace>>
+                            <<cont keypress>>
+                                <<replace '#exposition'>>\  
+                                    Что с ним?
+                                <</replace>>
+                                <<cont keypress>>
+                                    <<replace '#exposition'>>\ 
+                                        <<xander>>Выключи интерком. <</xander>> 
+                                    <</replace>>
+                                    <<cont keypress>>
+                                        <<replace '#exposition'>>\ 
+                                            <<pli>>Я не знала, что делать. Если было действительно что-то важное, надо, чтобы все знали. С другой стороны, Ксандр явно чего-то опасался.<</pli>>\
+                                            <div class="button">[[Выключить Интерком|Convoy_XanderIntercomOff]]</div>
+                                            <div class="button">[[Оставить включенным|Convoy_XanderIntercomOn]]</div>
+                                        <</replace>>
+                                    <</cont>>
+                                <</cont>>
+                            <</cont>>
+                        <</cont>>
+                    <</cont>>
+                <</cont>>
+            <</cont>>
+        <</cont>>
+    <</cont>>
+<</silently>>
+
+
+:: Convoy_XanderIntercomOff
+
+<<silently>>
+    <<set $xanderIntercomOff = true>>
+<</silently>>\
+@@#exposition;\
+<<pli>>В итоге, я послушалась и выключила интерком.<</pli>>
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\ 
+            <<pln>>Ну так что же?<</pln>>
+        <</replace>>
+        <<cont keypress>>
+            <<replace '#exposition'>>\ 
+                <<xander>>Груз не пустой. Сначала я думал, что там только Аугментозин и другие медикаменты...<</xander>>
+            <</replace>>
+            <<cont keypress>>
+                <<replace '#exposition'>>\ 
+                    <<pln>>Аугментозин? Медикаменты для аугментированных? Что они делают здесь?<</pln>>
+                <</replace>>
+                <<cont keypress>>
+                    <<replace '#exposition'>>\ 
+                        <<xander>>Это ещё цветочки. Среди этого барахла перевозят бриллианты с Касандрии.<</xander>>
+                    <</replace>>
+                    <<cont keypress>>
+                        <<replace '#exposition'>>\ 
+                            <<pln>>С планеты в системе Инферно?<</pln>>
+                        <</replace>>
+                        <<cont keypress>>
+                            <<replace '#exposition'>>\ 
+                                <<xander>>Так точно, босс.<</xander>>
+                            <</replace>>
+                            <<cont keypress>>
+                                <<replace '#exposition'>>\ 
+                                    <<pln>>Но что бриллианты делают среди груза?<</pln>>
+                                <</replace>>
+                                <<cont keypress>>
+                                    <<replace '#exposition'>>\ 
+                                        <<xander>>А вот мы и добрались до вишенки на этом ягодном торте. Спроси у Маклахлана и нашего горячо любимого Кэпа.<</xander>> 
+                                    <</replace>>
+                                    <<cont keypress>>
+                                        <<replace '#exposition'>>\ 
+                                            <<xander>>Шучу, даже и не вздумай их расспрашивать.<</xander>>
+                                        <</replace>>
+                                        <<cont keypress>>
+                                            <<replace '#exposition'>>\ 
+                                                <<xander>>Веди себя естественно.<</xander>>
+                                            <</replace>>
+                                            <<cont keypress>>
+                                                <<replace '#exposition'>>\ 
+                                                    <<xander>>Груз — их рук дело. Они хотят пустить новичков и низкоранговых офицеров в расход. Им известно о грядущем нападении.<</xander>>
+                                                <</replace>>
+                                                <<cont keypress>>
+                                                    <<replace '#exposition'>>\ 
+                                                        <<pln>>Нет, не может быть. Каллен бы никогда не сделал ничего подобного. Должно быть какое-то объяснение.<</pln>>
+                                                    <</replace>>
+                                                    <<cont keypress>>
+                                                        <<replace '#exposition'>>\ 
+                                                            <<xander>>Ты неисправимая оптимистка.<</xander>>
+                                                        <</replace>>
+                                                        <<cont keypress>>
+                                                            <<replace '#exposition'>>\ 
+                                                                <<pli>>Вдруг зазвонил интерком. Нужно было ответить. Я включила его.<</pli>>
+                                                            <</replace>>
+                                                            <<cont keypress>>
+                                                                <<replace '#exposition'>>\ 
+                                                                    <<capt>>Цунами, какого хрена ты выключила интерком?<</capt>>
+                                                                <</replace>>
+                                                                <<cont keypress>>
+                                                                    <<replace '#exposition'>>\ 
+                                                                        <<pli>>Ксандр ответил за меня.<</pli>>
+                                                                    <</replace>>
+                                                                    <<cont keypress>>
+                                                                        <<replace '#exposition'>>\ 
+                                                                            <<xander>>Всё в порядке, Кэп. Просто у меня были сильные поветрия, и лучше бы вам этого было не слышать.<</xander>>
+                                                                        <</replace>>
+                                                                        <<cont keypress>>
+                                                                            <<replace '#exposition'>>\ 
+                                                                                <<capt>>Жестянка, твою налево, ты просто отвратителен. Пожалей несчастную Цунами, ей и так нелегко приходится.<</capt>>
+                                                                            <</replace>>
+                                                                            <<cont keypress>>
+                                                                                <<replace '#exposition'>>\ 
+                                                                                    <<pli>>Из интеркома раздалась какофония из смеха сослуживцев. Я же чуть не сгорела со стыда. И всё же это было лучше, чем оправдываться самой.<</pli>>
+                                                                                <</replace>>
+                                                                                <<cont keypress>>
+                                                                                    <<replace '#exposition'>>\
+                                                                                        Останусь у тебя в кабине, пожалуй. Тут хоть ремни безопасности не сломаны.
+                                                                                    <</replace>>
+                                                                                <</cont>>
+                                                                            <</cont>>
+                                                                        <</cont>>
+                                                                    <</cont>>
+                                                                <</cont>>
+                                                            <</cont>>
+                                                        <</cont>>
+                                                    <</cont>>
+                                                <</cont>>
+                                            <</cont>>
+                                        <</cont>>
+                                    <</cont>>
+                                <</cont>>
+                            <</cont>>
+                        <</cont>>
+                    <</cont>>
+                <</cont>>
+            <</cont>>
+        <</cont>>
+    <</cont>>
+<</silently>>
+
+
+:: Convoy_XanderIntercomOn
+
+<<silently>>
+    <<set $xanderIntercomOff = false>>
+<</silently>>\
+@@#exposition;\
+<<pln>>Нет, Ксандр. От своих не должно быть секретов. Выкладывай.<</pln>>
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            <<xander>>Забудь. Скоро сама всё узнаешь.<</xander>>
+        <</replace>>
+        <<cont keypress>>
+            <<replace '#exposition'>>\
+                <<pli>>Сказал Ксандр с набитым ртом.<</pli>>
+            <</replace>>
+            <<cont keypress>>
+                <<replace '#exposition'>>\
+                    <<xander>>А я, пожалуй, останусь у тебя в кабине. Тут хоть ремни безопасности не сломаны. <</xander>>\
+                    <div class="button">[[Прогнать|Shoo_Xander_Away]]</div>
+                    <div class="button">[[Позволить остаться|Let_Xander_Stay]]</div>
+                <</replace>>
+            <</cont>>
+        <</cont>>
+    <</cont>>
+<</silently>>
+
+:: Shoo_Xander_Away
+
+@@#exposition;\
+<<pln>>Эй, я вообще-то не давала разрешения! И пока я тут временный коммандор, ты должен выполнять мои приказы! Ну, на время обучения.<</pln>>
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            <<xander>>Ага, конечно, с Маклахланом-то в качестве надзирателя на борту, босс.<</xander>> 
+        <</replace>>
+        <<cont keypress>>
+            <<replace '#exposition'>>\
+                <<pln>>Он мой друг и постоянно меня выручает.<</pln>>
+            <</replace>>
+            <<cont keypress>>
+                <<replace '#exposition'>>\
+                    <<xander>>Старый друг лучше новых двух, да? Как скажете, босс. Но я остаюсь здесь.<</xander>>
+                <</replace>>
+                <<cont keypress>>
+                    <<replace '#exposition'>>\
+                        <<pln>>Вот засранец.<</pln>>
+                    <</replace>>
+                    <<cont keypress>>
+                        <<replace '#exposition'>>\
+                            <<xander>>Вовсе не засранец, я ем аккуратно. Почти.<</xander>>
+                        <</replace>>
+                        <<cont keypress>>
+                            <<replace '#exposition'>>\
+                                <<pln>>Ой, дурак. Всё шутки шутишь. Ну ладно уж, сиди. Только не заляпай тут мне ничего. Ешь аккуратно, а не "почти".<</pln>>
+                            <</replace>>
+                            <<cont keypress>>
+                                <<replace '#exposition'>>\
+                                    <<goto "Xander_Stay_Converge">>
+                                <</replace>>
+                            <</cont>>
+                        <</cont>>
+                    <</cont>>
+                <</cont>>
+            <</cont>>
+        <</cont>>
+    <</cont>>
+<</silently>>
+
+
+
+:: Let_Xander_Stay
+
+@@#exposition;\
+<<pln>>Ну ладно уж, сиди. Только не заляпай тут мне ничего.<</pln>>
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            <<goto "Xander_Stay_Converge">>
+        <</replace>>
+    <</cont>>
+<</silently>>
+
+
+:: Xander_Stay_Converge
+
+@@#exposition;\
+<<xander>>Ну уж простите, босс — не имею желания летать по всему салону.<</xander>> 
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            <<pln>>Да ты и так прекрасно трапезничал в главном отсеке. А если вдруг будешь нужен взламывать вражеские корабли?<</pln>>
+        <</replace>>
+        <<cont keypress>>
+            <<replace '#exposition'>>\
+                <<xander>>Мне и этого барахла здесь хватит. Дело не в мощности компа, а в том, как его юзать. Это всего лишь строки кода.<</xander>> 
+            <</replace>>
+            <<cont keypress>>
+                <<replace '#exposition'>>\
+                    <<xander>>Да и вообще, мне попадаются в основном ламеры.<</xander>> 
+                <</replace>>
+                <<cont keypress>>
+                    <<replace '#exposition'>>\
+                        <<xander>>Тот кто проектировал тот "сверхмощный бортовой компьютер" в главном отсеке, явно был одним из таких. Он сквозит бэкдорами как дуршлаг.<</xander>>
+                    <</replace>>
+                    <<cont keypress>>
+                        <<replace '#exposition'>>\
+                            <<pln>>Как скажешь.<</pln>>
+                        <</replace>>
+                        <<cont keypress>>
+                            <<replace '#exposition'>>\
+                                <<goto "Drake_Look_Around">>
+                            <</replace>>
+                        <</cont>>
+                    <</cont>>
+                <</cont>>
+            <</cont>>
+        <</cont>>
+    <</cont>>
+<</silently>>
+
+
+
+:: Drake_Look_Around
+
+@@#exposition;\
+<<pli>>Через 2 часа полёта мне осточертело сидеть в кресле, и я захотела размяться и занять себя чем-нибудь. Я попросила разрешения напрямую у Кэпа. Он дал добро.<</pli>>\
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            <<goto "Drake_GetDressed">>
+        <</replace>>
+    <</cont>>
+<</silently>>
+

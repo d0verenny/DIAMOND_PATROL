@@ -1,0 +1,103 @@
+:: HQ_Briefing
+
+@@#exposition;\ 
+<<capt>>Господа и дамы, тащите ваши задницы обратно в инструктажный отсек!<</capt>>
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\ 
+            <<pli>>Внезапно заорал громкоговоритель голосом Кэпа. От неожиданности я уронила ложку в суп и немного забрызгала одежду.<</pli>>
+        <</replace>>
+        <<cont keypress>>
+            <<replace '#exposition'>>\ 
+                <<pln>>"Никогда к этому не привыкну!"<</pln>>
+            <</replace>>
+            <<cont keypress>>
+                <<replace '#exposition'>>\ 
+                    <<pli>>Пока я вытиралась салфетками, Ксандра уже и след простыл.<</pli>>
+                <</replace>>
+                <<cont keypress>>
+                    <<replace '#exposition'>>\ 
+                        <<pln>>"Бэтмэн, блин, нашёлся."<</pln>>
+                    <</replace>>
+                    <<cont keypress>>
+                        <<replace '#exposition'>>\ 
+                            <<pli>>Я поспешила обратно в инструктажный отсек.<</pli>>
+                        <</replace>>
+                        <<cont keypress>>
+                            <<replace '#exposition'>>\ 
+                                <<capt>>Итак, господа и дамы, сегодня у нас проходят учения. Серьёзные.<</capt>>
+                            <</replace>>
+                            <<cont keypress>>
+                                <<replace '#exposition'>>\ 
+                                    <<cul>>Ничего особенного, всё пройдёт в штатном режиме. Тренируемся конвоировать груз. Это займёт трое земных суток.<</cul>>
+                                <</replace>>
+                                <<cont keypress>>
+                                    <<replace '#exposition'>>\ 
+                                        <<capt>>Так точно. По окончанию тренировки, кто-то из вас получит повышение. Далеко не все, разумеется.<</capt>>
+                                    <</replace>>
+                                    <<cont keypress>>
+                                        <<replace '#exposition'>>\ 
+                                            <<capt>>За вашими действиями будут следить старшие по званию. Распределяю я лично.<</capt>>
+                                        <</replace>>
+                                        <<cont keypress>>
+                                            <<replace '#exposition'>>\ 
+                                                <<capt>>"Цунами", полетишь со Стингером и Жестянкой.<</capt>>
+                                            <</replace>>
+                                            <<cont keypress>>
+                                                <<replace '#exposition'>>\ 
+                                                    <<capt>>Маклахлан, отчитываться будешь каждые полчаса о работе Цунами. Не хочу потерять очередной челнок из-за неё.<</capt>>
+                                                <</replace>>
+                                                <<cont keypress>>
+                                                    <<replace '#exposition'>>\ 
+                                                        Прослежу за ней как следует, кэп. 
+                                                    <</replace>>
+                                                    <<cont keypress>>
+                                                        <<replace '#exposition'>>\ 
+                                                            Каллен улыбнулся и подмигнул мне.
+                                                        <</replace>>
+                                                        <<cont keypress>>
+                                                            <<replace '#exposition'>>\ 
+                                                                <<capt>>Ладно, по коням. Не будем терять время зря.<</capt>>
+                                                            <</replace>>
+                                                            <<cont keypress>>
+                                                                <<replace '#exposition'>>\ 
+                                                                    <<pli>>Внутри я пищала от радости, несмотря на колкости Кэпа. Наконец-то у меня появился шанс получить нормальный корабль!<</pli>>
+                                                                <</replace>>
+                                                                <<cont keypress>>
+                                                                    <<replace '#exposition'>>\ 
+                                                                        <<pli>>Ещё и Каллен полетит.<</pli>>
+                                                                    <</replace>>
+                                                                    <<cont keypress>>
+                                                                        <<replace '#exposition'>>\ 
+                                                                            <<pli>> Соберись, <<print $Player.name>>, радоваться рано, надо ещё пройти аттестацию и получить звание.<</pli>>
+                                                                        <</replace>>
+                                                                        <<cont keypress>>
+                                                                            <<replace '#exposition'>>\ 
+                                                                                <<pli>> Но раз это всего лишь учебное конвоирование, думаю, всё пройдёт гладко.<</pli>>
+                                                                            <</replace>>
+                                                                            <<cont keypress>>
+                                                                                <<replace '#exposition'>>
+                                                                                    <<goto "Convoy_Start">>
+                                                                                <</replace>>
+                                                                            <</cont>>
+                                                                        <</cont>>
+                                                                    <</cont>>
+                                                                <</cont>>
+                                                            <</cont>>
+                                                        <</cont>>
+                                                    <</cont>>
+                                                <</cont>>
+                                            <</cont>>
+                                        <</cont>>
+                                    <</cont>>
+                                <</cont>>
+                            <</cont>>
+                        <</cont>>
+                    <</cont>>
+                <</cont>>
+            <</cont>>
+        <</cont>>
+    <</cont>>
+<</silently>>

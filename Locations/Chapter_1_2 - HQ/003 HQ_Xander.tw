@@ -1,0 +1,346 @@
+<<include Variables>>
+
+:: HQ_3_Xander 
+
+@@#exposition;\
+<<pli>> Справа от меня стоял Ксандр Кайтон — Киборг-хакер. Его прислали к нам пару месяцев назад. <</pli>>
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            <<pli>>Он взломал наш объект, и его поймали. Ему поставили ультиматум: либо работаешь на нас, либо 40 лет тюрьмы.<</pli>>
+        <</replace>>
+        <<cont keypress>>
+            <<replace '#exposition'>>\
+                <<pli>>Хотя своему выбору Ксандр был не рад, альтернатива радовала его ещё меньше.<</pli>>
+            <</replace>>
+                <<cont keypress>>
+                <<replace '#exposition'>>\
+                    <<xander>>Привет...<</xander>>
+                <</replace>>
+                <<cont keypress>>
+                    <<replace '#exposition'>>\
+                        <<pli>>Наконец буркнул он. Обычно, Ксандр вёл себя со всеми нагло и фривольно, ведь он не хотел находиться здесь.<</pli>> 
+                    <</replace>>
+                    <<cont keypress>>
+                        <<replace '#exposition'>>\
+                            <<pli>>Со мной же он вёл себя... странно.<</pli>>
+                        <</replace>>
+                        <<cont keypress>>
+                            <<replace '#exposition'>>\
+                                <<pln>>Привет Ксандр. Как ты?<</pln>>
+                            <</replace>>
+                            <<cont keypress>>
+                                <<replace '#exposition'>>\
+                                    <<xander>>Нормально. Ты?<</xander>>
+                                <</replace>>
+                                <<cont keypress>>
+                                    <<replace '#exposition'>>\
+                                        <<pln>>Как сам видишь.<</pln>>
+                                    <</replace>>
+                                    <<cont keypress>>
+                                        <<replace '#exposition'>>\
+                                            <<xander>>Вижу что?<</xander>>
+                                        <</replace>>
+                                        <<cont keypress>>
+                                            <<replace '#exposition'>>\
+                                                <<goto "HQ_3_Xander_Start">>  
+                                            <</replace>>
+                                        <</cont>>
+                                    <</cont>>
+                                <</cont>>
+                            <</cont>>
+                        <</cont>>
+                    <</cont>>                
+                <</cont>>    
+            <</cont>>
+        <</cont>>
+    <</cont>>
+<</silently>>
+
+
+:: HQ_3_Xander_Start
+
+<<if $gotDressed == true && $closeCanopy == true>>
+    <<goto "HQ_3_Xander_2">>
+<<else>>
+    <<goto "HQ_3_Xander_1">>
+<</if>>
+
+
+
+:: HQ_3_Xander_1
+
+@@#exposition;\
+<<xander>>Хм... Ты сменила причёску?<</xander>>
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            <<pln>>Сменила, в каком-то роде!<</pln>>
+        <</replace>>
+        <<cont keypress>>
+            <<replace '#exposition'>>\
+                <<pli>>Я рассмеялась в руку, чтобы капитан не услышал.<</pli>>
+            <</replace>>
+            <<cont keypress>>
+                <<replace '#exposition'>>\
+                    <<if $gotDressed == false && $closesCanopy == true>>
+                        <<goto "HQ_3_Xander_1_1">>
+                    <<elseif $gotDressed == false && $closeCanopy == false>>
+                        <<goto "HQ_3_Xander_1_2">>
+                    <<elseif $gotDressed == true && $closeCanopy == false>>
+                        <<goto "HQ_3_Xander_1_2">>
+                    <<else>>
+                        <<goto "HQ_3_Xander_1_1">>
+                    <</if>>
+                <</replace>>
+            <</cont>>
+        <</cont>>
+    <</cont>>
+<</silently>>
+
+
+
+:: HQ_3_Xander_1_1
+
+@@#exposition;\
+<<xander>>Тебе идёт.<</xander>>
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            <<pln>>Вообще-то я пошутила, Ксандр...<</pln>>
+        <</replace>>
+        <<cont keypress>>
+            <<replace '#exposition'>>\
+                <<xander>>Я тоже.<</xander>>
+            <</replace>>
+            <<cont keypress>>
+                <<replace '#exposition'>>\
+                    <<pli>>Улыбнулся он и оставил меня биться в догадках: это очередная подколка или нет.<</pli>>
+                <</replace>>
+                <<cont keypress>>
+                    <<replace '#exposition'>>\
+                        <<goto "HQ_3_Xander_Finish">>
+                    <</replace>>
+                <</cont>>
+            <</cont>>
+        <</cont>>
+    <</cont>>
+<</silently>>
+
+
+
+:: HQ_3_Xander_1_2
+/*  <<set $Xander.relationship +=1>> */
+@@#exposition;\ 
+<<pln>>Моим парикмахером был ветер!<</pln>>
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            <<xander>>Да? Контактами не поделишься? Как раз хотел подровнять виски.<</xander>>
+        <</replace>>
+        <<cont keypress>>
+            <<replace '#exposition'>>\
+                <<pln>>Связаться с ним просто — пялься всю ночь в галочасы, не выспись, и садись за руль монорайда.<</pln>>
+            <</replace>>
+            <<cont keypress>>
+                <<replace '#exposition'>>\
+                    <<pln>>Не забудь оставить кабину открытой, когда будешь взлетать.<</pln>>
+                <</replace>>
+                <<cont keypress>>
+                    <<replace '#exposition'>>\
+                        <<xander>>Отдать жизнь за стрижку? Боюсь, этот мастер мне не по карману. Я же не псих, как ты.<</xander>>
+                    <</replace>>
+                    <<cont keypress>>
+                        <<replace '#exposition'>>\
+                            <<pln>>Эй, обидно вообще-то!<</pln>>
+                        <</replace>>
+                        <<cont keypress>>
+                            <<replace '#exposition'>>\
+                                <<xander>>Зато правда.<</xander>>
+                            <</replace>>
+                            <<cont keypress>>
+                                <<replace '#exposition'>>\
+                                    <<pln>>Ну если только совсем чуть-чуть.<</pln>>
+                                <</replace>>
+                                <<cont keypress>>
+                                    <<replace '#exposition'>>\
+                                        <<xander>>Кстати, классная мушка на щеке.<</xander>>
+                                    <</replace>>
+                                        <<cont keypress>>
+                                            <<replace '#exposition'>>\
+                                                <<pln>>Какая мушка? Ты про родинку что ли? Это у меня от бабуш...<</pln>>
+                                            <</replace>>
+                                            <<cont keypress>>
+                                            <<replace '#exposition'>>\
+                                                <<xander>>Да нет, я буквально про муху. Насекомое. Отряд двукрылые.<</xander>>
+                                            <</replace>>
+                                            <<cont keypress>>
+                                                <<replace '#exposition'>>\
+                                                    <<pln>>Где?! На какой щеке?<</pln>>
+                                                <</replace>>
+                                                <<cont keypress>>
+                                                    <<replace '#exposition'>>\
+                                                        <<pli>>Я стала судорожно вытирать лицо.<</pli>>
+                                                    <</replace>>
+                                                    <<cont keypress>>
+                                                        <<replace '#exposition'>>\
+                                                            <<xander>>Спокойно. Дай сниму. Вот так. Жаль, она тебе была к лицу.<</xander>>
+                                                        <</replace>>
+                                                        <<cont keypress>>
+                                                            <<replace '#exposition'>>\
+                                                                <<pli>>Он нежно коснулся моей щеки, и я почувствовала — за его "железным занавесом" было что-то тёплое и человечное.<</pli>>
+                                                            <</replace>>
+                                                            <<cont keypress>>
+                                                                <<replace '#exposition'>>\
+                                                                    <div class = "msgbox fadeout crt">>Ксандру это понравилось</div>\
+                                                                    <<pli>>Ксандр лишь ухмыльнулся, и отвернулся, будто стеснялся произошедшего.<</pli>>
+                                                                        <<silently>>
+                                                                            <<set $Xander.relationship +=1>>
+                                                                        <</silently>>
+                                                                <</replace>>
+                                                                <<cont keypress>>
+                                                                    <<replace '#exposition'>>\
+                                                                        <<goto "HQ_3_Xander_Finish">>
+                                                                    <</replace>>
+                                                                <</cont>>
+                                                            <</cont>>
+                                                        <</cont>>
+                                                    <</cont>>
+                                                <</cont>>
+                                            <</cont>>
+                                        <</cont>>
+                                    <</cont>>
+                                <</cont>>
+                            <</cont>>
+                        <</cont>>
+                    <</cont>>
+                <</cont>>
+            <</cont>>
+        <</cont>>
+    <</cont>>
+<</silently>>
+
+
+
+
+
+:: HQ_3_Xander_2
+
+/* xanderMentionedSpecOps = true */
+
+@@#exposition;\
+<<xander>>Ты выщипала брови?<</xander>>
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            <<pln>>Очень смешно, Ксандр. Твой юмор, как всегда, на высоте.<</pln>>
+        <</replace>>
+        <<cont keypress>>
+            <<replace '#exposition'>>\
+                <<xander>>Не на такой высоте, как твои шпильки. Смотри не упади.<</xander>>
+            <</replace>>
+            <<cont keypress>>
+                <<replace '#exposition'>>\
+                    <<xander>>Вот будет ирония, учитывая, что высота — твоя профессия.<</xander>>
+                <</replace>>
+                <<cont keypress>>
+                    <<replace '#exposition'>>\
+                        <<pln>>Ох, какой же ты придурок!<</pln>>
+                    <</replace>>
+                    <<cont keypress>>
+                        <<replace '#exposition'>>\
+                            <<pli>>Рассмеялась я. Подкалывать меня с утреца — излюбленная традиция Ксандра.<</pli>>
+                        <</replace>>
+                        <<cont keypress>>
+                            <<replace '#exposition'>>\
+                                <<xander>>А чего ты так вырядилась? На бал собралась? Сегодня ведь вылет на конвоирование. Спецоперация.<</xander>>
+                                    <<silently>>
+                                        <<set $xanderMentionedSpecOps = true>>
+                                    <</silently>>
+                            <</replace>>
+                            <<cont keypress>>
+                                <<replace '#exposition'>>\
+                                    <<pln>>Что?! Блин, так вот что кэп имел в виду под "особым случаем"... Вот я дура...<</pln>>
+                                <</replace>>
+                                <<cont keypress>>
+                                    <<replace '#exposition'>>\
+                                        <<xander>>Да ладно тебе, повоюешь... при параде.<</xander>>
+                                    <</replace>>
+                                    <<cont keypress>>
+                                        <<replace '#exposition'>>\
+                                            <<pln>>Да вот как-то сложновато будет, знаешь ли, на шпильках!<</pln>>
+                                        <</replace>>
+                                        <<cont keypress>>
+                                            <<replace '#exposition'>>\
+                                                <<xander>>Швырнёшь шпилькой во врага!<</xander>>
+                                            <</replace>>
+                                            <<cont keypress>>
+                                                <<replace '#exposition'>>\
+                                                    <<pln>>Вот уж действительно — сразу все разбегутся. А откуда ты узнал о задании?<</pln>>
+                                                <</replace>>
+                                                <<cont keypress>>
+                                                    <<replace '#exposition'>>\
+                                                        <<xander>>Я знаю всё. Всегда.<</xander>>
+                                                    <</replace>>
+                                                    <<cont keypress>>
+                                                        <<replace '#exposition'>>\
+                                                            <<pli>>Ухмыльнулся Ксандр и вернулся к своим обычным делам — думать и изредка бормотать код себе под нос.<</pli>>
+                                                        <</replace>>
+                                                        <<cont keypress>>
+                                                            <<replace '#exposition'>>\
+                                                                <<goto [[HQ_3_Xander_Finish ]]>>
+                                                            <</replace>>
+                                                        <</cont>>
+                                                    <</cont>>
+                                                <</cont>>
+                                            <</cont>>
+                                        <</cont>>
+                                    <</cont>>
+                                <</cont>>
+                            <</cont>>
+                        <</cont>>
+                    <</cont>>
+                <</cont>>
+            <</cont>>
+        <</cont>>
+    <</cont>>
+<</silently>>
+
+
+
+
+
+
+:: HQ_3_Xander_Finish 
+
+@@#exposition;\
+<<pli>>Вскоре, киборг совсем перестал подавать признаки жизни.<</pli>>
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            <<pli>>Лишь иногда он поглядывал на меня, и тут же отворачивался — по крайней мере, мне так казалось.<</pli>>
+        <</replace>>
+        <<cont keypress>>
+            <<replace '#exposition'>>\
+                <<pli>>По его глазам не поймёшь.<</pli>>
+            <</replace>>
+            <<cont keypress>>
+                <<replace '#exposition'>>\
+                    <<goto "HQ_4_CullenFirstMet">>
+                <</replace>>
+            <</cont>>
+        <</cont>>
+    <</cont>>
+<</silently>>
