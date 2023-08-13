@@ -120,8 +120,8 @@ Macro.add('pln', {
 		var id = this.args[0], name = id;
 		if (this.args.length > 1) name = this.args[1];
 		var output = '<div class="playersp ' + id + '">';
-		output += '<span class="playerav" style="margin-right:20px"></span>';
-		output += '<div class="playername" style="display:block;padding:50px 0px 0px 0px">$Player.name</div>' + '<hr style="display:block;margin-top:60px;height:1px;border-width:0;color:rgb(74, 4, 95);background-color:rgb(74, 4, 95)">' + this.payload[0].contents + '</div>';
+		output += '<span class="playerav" style="margin-right:1.25rem"></span>';
+		output += '<div class="playername" style="display:block;padding:3.125rem 0rem 0rem 0rem">$Player.name</div>' + '<hr style="display:block;margin-top:3.75rem;height:1px;border-width:0;color:rgb(74, 4, 95);background-color:rgb(74, 4, 95)">' + this.payload[0].contents + '</div>';
 		$(this.output).wiki(output);
 	}
 });
@@ -147,8 +147,8 @@ Macro.add('xander', {
 		var id = this.args[0], name = id;
 		if (this.args.length > 1) name = this.args[1];
 		var output = '<div class="xandersp ' + id + '">';
-		output += '<span class="xanderav" style="margin-right:20px"></span>';
-		output += '<div class="xandername" style="display:block;padding:50px 0px 0px 0px">$Xander.name</div>' + '<hr style="display:block;margin-top:60px;height:1px;border-width:0;color:rgb(5, 97, 66);background-color:rgb(5, 97, 66)">' + this.payload[0].contents + '</div>';
+		output += '<span class="xanderav" style="margin-right:1.25rem"></span>';
+		output += '<div class="xandername" style="display:block;padding:3.125rem 0rem 0rem 0rem">$Xander.name</div>' + '<hr style="display:block;margin-top:3.75rem;height:1px;border-width:0;color:rgb(5, 97, 66);background-color:rgb(5, 97, 66)">' + this.payload[0].contents + '</div>';
 		$(this.output).wiki(output);
 	}
 });
@@ -160,8 +160,8 @@ Macro.add('cul', {
 		var id = this.args[0], name = id;
 		if (this.args.length > 1) name = this.args[1];
 		var output = '<div class="cullensp ' + id + '">';
-		output += '<span class="cullenav" style="margin-right:20px;"></span>';
-		output += '<div class="cullenname" style="display:block;padding:50px 0px 0px 0px">$Cullen.name</div>' + '<hr style="display:block;margin-top:60px;height:1px;border-width:0;color:rgb(8, 72, 97);background-color:rgb(8, 72, 97)">' + this.payload[0].contents + '</div>';
+		output += '<span class="cullenav" style="margin-right:1.25rem;"></span>';
+		output += '<div class="cullenname" style="display:block;padding:3.125rem 0rem 0rem 0rem">$Cullen.name</div>' + '<hr style="display:block;margin-top:3.75rem;height:1px;border-width:0;color:rgb(8, 72, 97);background-color:rgb(8, 72, 97)">' + this.payload[0].contents + '</div>';
 		$(this.output).wiki(output);
 	}
 });
@@ -173,8 +173,8 @@ Macro.add('capt', {
 		var id = this.args[0], name = id;
 		if (this.args.length > 1) name = this.args[1];
 		var output = '<div class="cptsp ' + id + '">';
-		output += '<span class="cptav" style="margin-right:20px"></span>';
-		output += '<div class="cptname" style="display:block;padding:50px 0px 0px 0px">Капитан Бохэннон</div>' + '<hr style="display:block;margin-top:60px;height:1px;border-width:0;color:rgb(70, 73, 75);background-color:rgb(70, 73, 75)">' + this.payload[0].contents + '</div>';
+		output += '<span class="cptav" style="margin-right:1.25rem"></span>';
+		output += '<div class="cptname" style="display:block;padding:3.125rem 0rem 0rem 0rem">Капитан Бохэннон</div>' + '<hr style="display:block;margin-top:3.75rem;height:1px;border-width:0;color:rgb(70, 73, 75);background-color:rgb(70, 73, 75)">' + this.payload[0].contents + '</div>';
 		$(this.output).wiki(output);
 	}
 });
@@ -187,8 +187,8 @@ Macro.add('jack', {
 		var id = this.args[0], name = id;
 		if (this.args.length > 1) name = this.args[1];
 		var output = '<div class="jacksp ' + id + '">';
-		output += '<span class="jackav" style="margin-right:20px"></span>';
-		output += '<div class="jackname" style="display:block;padding:50px 0px 0px 0px">$Jack.name</div>' + '<hr style="display:block;margin-top:60px;height:1px;border-width:0;color:#855a11;background-color:#855a11">' + this.payload[0].contents + '</div>';
+		output += '<span class="jackav" style="margin-right:1.25rem"></span>';
+		output += '<div class="jackname" style="display:block;padding:3.125rem 0rem 0rem 0rem">$Jack.name</div>' + '<hr style="display:block;margin-top:3.75rem;height:1px;border-width:0;color:#855a11;background-color:#855a11">' + this.payload[0].contents + '</div>';
 		$(this.output).wiki(output);
 	}
 });
@@ -238,3 +238,7 @@ jQuery('#history-forward')
 	setPageElement("story-author","StoryAuthor");
 	setPageElement("story-caption","StoryCaption");
 }
+
+setup.mydice = function() {
+    return [1,2,3,4,5,6,7,8,9,10,10,11,11,12,12].random();
+  }

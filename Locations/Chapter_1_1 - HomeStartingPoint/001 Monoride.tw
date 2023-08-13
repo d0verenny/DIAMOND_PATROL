@@ -76,7 +76,7 @@
 <<silently>>
     <<cont keypress>>
         <<replace '#exposition'>>\
-            <<pln>>Чорт, запорный механизм сломался! Что же делать! Чорт! Чорт! Чорт!<</pln>>\
+            <<pln>>Чорт, запорный механизм сломался! Что делать?! Чорт! Чорт! Чорт!<</pln>>\
             <<if $canopyOneMoreTime == true && $standUpAndClose == false >>\
                 <div class="button">[[Встать и закрыть вручную|standUpAndClose]]</div>
                 <div class="button">[[Нажать на тормоз|stopPedal]]</div>
@@ -140,14 +140,14 @@
 <</silently>>\
 
 @@#exposition;\
-<<pli>>Я нажала на тормоз, и монорайд начал падать!<</pli>>
+<<pli>>Я нажала на тормоз, и монорайд начал падать.<</pli>>
 @@
 
 
 <<silently>>
     <<cont keypress>>
         <<replace '#exposition'>>\  
-            <<pln>>Отлично — падаем! Только бы теперь ничего не перепутать!
+            <<pln>>Отлично — падаем! Только бы теперь ничего не перепутать...
             <</pln>>\
             <<if $monorideLeverDown == true && $monorideLeverUp == false>>\
             <div style="margin-top:-50px;">
@@ -211,7 +211,7 @@
     <<set $monorideLeverUp = true>>
 <</silently>>\
 
-<div class="countdownstyle crt" id="countdown">Осталось <span class="countdownnumber">$secondsMonoride секунд</span>  до падения!</div>\
+<div class="countdownstyle crt" id="countdown">Осталось <span class="countdownnumber">$secondsMonoride секунд</span> до падения!</div>\
 <<silently>>
 	<<repeat 1s>>
 		<<set $secondsMonoride = $secondsMonoride - 1>>
@@ -231,7 +231,7 @@
 <<silently>>
     <<cont keypress>>
         <<replace '#exposition'>>\
-            <<pln>>Отлично, поток ветра закрыл крышку кабины!<</pln>>\
+            <<pli>>Поток ветра закрыл крышку кабины.<</pli>>\
         <</replace>>
         <<cont keypress>>
             <<replace '#exposition'>>\
@@ -357,7 +357,7 @@
         <</replace>>
         <<cont keypress>>
             <<replace '#exposition'>>\
-                <<pln>>"Хотя желание закурить сейчас было сильно, как никогда."<</pln>>
+                <<pln>>"Хотя желание закурить сейчас сильно, как никогда."<</pln>>
             <</replace>>
             <<cont replace>>
                 <<goto [[gloveBox]]>>
@@ -409,18 +409,11 @@
     <</cont>>
 <</silently>>
 
-
-
-
-
 /* Ветка безопасности */
 
 
-:: CloseCanopy {"position":"1100,700"}
 
-<<silently>>
-    <<set $closeCanopy = true>>
-<</silently>>\
+:: CloseCanopy {"position":"1100,700"}
 
 @@#exposition;\
 <<pli>>Безопасность прежде всего! Я пристегнулась, закрыла кабину и надавила на педаль.<</pli>>
@@ -444,14 +437,17 @@
     <</cont>>
 <</silently>>
 
+<<silently>>
+    <<set $closeCanopy = true>>
+<</silently>>\
 
 
 :: closeToTheHQ {"position":"1900,100"}
 
 @@#exposition;\
-<<if $closeCanopy == true>>
+<<if $closeCanopy == true>>\
     <img src="Media/Locations/canopy close to hq.jpg" max-width=550em>
-<<else>>
+<<else>>\
     <img src="Media/Locations/canopy space foamed copy.jpg" max-width=550em>
 <</if>>
 @@
@@ -463,7 +459,7 @@
         <</replace>>
             <<cont keypress>>
                 <<replace '#exposition'>>\
-                <<if $closeCanopy == false>>
+                <<if $closeCanopy == false>>\
                      <<pln>> Хотя, мне лучше поберечь крышку кабины, после таких-то приключений.<</pln>>
                      <<cont keypress>>
                         <<replace '#exposition'>>\
@@ -485,31 +481,45 @@
 :: closeToTheHQDescription
 
 @@#exposition;\
-Гигантский круглый штаб состоял из множества секторов, и его легко можно было перепутать с космической станцией. Однако же это был полноценный корабль с двигателями по всему периметру.
+<<pli>>Гигантский круглый штаб состоял из множества секторов, и его легко можно было перепутать с космической станцией. <</pli>>
 @@
 
 <<silently>>
     <<cont keypress>>
         <<replace '#exposition'>>\
-            При своих размерах он обладал высокой манёвренностью и скоростью.
+            <<pli>>Однако же это был полноценный корабль с двигателями по всему периметру.<</pli>>
         <</replace>>
-        
         <<cont keypress>>
             <<replace '#exposition'>>\
-                Он представлял собой "авианосец" для множества других "авианосцев", или вернее будет сказать — "шатлоносцев". Те, в свою очередь, носили на себе челноки разных размеров.
+                <<pli>>При своих размерах, он обладал высокой манёвренностью и скоростью.<</pli>>
             <</replace>>
             <<cont keypress>>
                 <<replace '#exposition'>>\
-                    В основном, штаб парил на орбите, и во время моей службы я ещё ни разу не видела, чтобы он двигался. От этого он покрывался ржавчиной, сколько бы наши техники его ни чистили и не ремонтировали. Однако, внутри всё было достаточно опрятно.
+                    <<pli>>Штаб представлял собой "авианосец" для множества других "авианосцев", или вернее будет сказать — "шатлоносцев".<</pli>>
                 <</replace>>
                 <<cont keypress>>
                     <<replace '#exposition'>>\
-                        Техника, особенно транспорт, должна работать, а не простаивать — так меня учил ещё отец.
+                        <<pli>>Те, в свою очередь, носили на себе челноки поменьше. Такая вот матрёшка, своего рода.<</pli>>
                     <</replace>>
                     <<cont keypress>>
                         <<replace '#exposition'>>\
-                            <<goto "HQ_1">>
+                            <<pli>>В основном, штаб парил на орбите, и во время моей службы я ещё ни разу не видела, чтобы он двигался. <</pli>>
                         <</replace>>
+                        <<cont keypress>>
+                            <<replace '#exposition'>>\
+                                <<pli>>От этого он покрывался ржавчиной, сколько бы наши техники его ни чистили и не ремонтировали. Однако, внутри всё было достаточно опрятно.<</pli>>
+                            <</replace>>
+                            <<cont keypress>>
+                                <<replace '#exposition'>>\
+                                    <<pli>>Техника, особенно транспорт, должна работать, а не простаивать — так меня учил ещё отец.<</pli>>
+                                <</replace>>
+                                <<cont keypress>>
+                                    <<replace '#exposition'>>\
+                                        <<goto "HQ_1">>
+                                    <</replace>>
+                                <</cont>>
+                            <</cont>>
+                        <</cont>>
                     <</cont>>
                 <</cont>>
             <</cont>>
@@ -517,7 +527,9 @@
     <</cont>>
 <</silently>>
 
+
+
 :: TooLate 
 
-<<pli>> Из-за слишком долгой реакции, <<print $Player.name>> разбилась на монорайде. Иронично, учитывая, что такие нелепые ошибки совершил профессиональный пилот.<</pli>>\
+<<pli>>Из-за слишком долгой реакции, <<= $Player.name>> разбилась на монорайде. Иронично, учитывая, что такие нелепые ошибки совершил профессиональный пилот.<</pli>>\
 <div class="button">[[Попробовать ещё раз|StepOnIt]]</div>

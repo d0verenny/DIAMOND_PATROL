@@ -63,7 +63,7 @@
                  <</replace>>
             <<cont keypress>>
                 <<replace '#exposition'>>\
-                    Меня зовут <<= $Player.name>>, я одна из них...
+                    Меня зовут <<= $Player.name>>, и я одна из них...
                 <</replace>>
                 <<cont keypress>>
                     <<replace '#exposition'>>\

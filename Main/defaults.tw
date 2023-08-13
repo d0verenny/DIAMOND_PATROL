@@ -39,6 +39,8 @@
         } 
     }>>*/
 
+    
+
     <<set $Player.detective += 0>>
     <<set $Player.lawmaker += 0>>
     <<set $Player.renegate += 0>>
@@ -61,7 +63,7 @@
     <<set $xanderdateAccepted = false>>
     
     <<set $cullenJoinsConvoy = false>>
-
+    <<set $HQ_4_Cullen_SayAsIs = false>>
 
     <<set $xanderIntercomOff = false>>
 

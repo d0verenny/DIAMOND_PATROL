@@ -6,9 +6,9 @@
 :root {
 	--paddingsp: 0.625rem 1.875rem 0.625rem 1.875rem;
 	--max-width-sp: 80% !important;
-	--min-width-sp: 21.25rem !important;
+	--min-width-sp: 20% !important;
 	--min-height-sp: 23.75rem;
-	--max-height-sp: 41.875rem;
+	--max-height-sp: 80rem;
 	--playername-font-size: 1.5rem;
 	--sp-margin-bottom: 0.938rem;
 	--av-height: 8.125rem;
@@ -39,7 +39,6 @@ h1#story-title {
 	display: grid;
 	text-align: justify;
 	padding: 7em 1em 7em 1em;
-/* Изначально тут был em, а не rem */
 	min-width: 16em;
 	max-width: 26em !important;
 	font-family: 'Play', sans-serif;
@@ -65,10 +64,9 @@ button {
 .button a { 
 	display: block;
 	float: right !important;
-	position: relative;
-	width: 18.75rem;
+	width: 300px;
 	font-family: 'Russo One', sans-serif;
-	font-size: 1rem;
+	font-size: 16px;
 	letter-spacing: 2px;
 	text-transform: uppercase;
 	background-color: transparent !important;
@@ -78,7 +76,8 @@ button {
 	border: 2px solid;
 	border-color: rgb(151, 38, 173);
 	cursor: pointer;
-	padding: 0rem 1rem !important;
+	padding: 0px 16px !important;
+	position: relative;
 	user-select: none;
 	-webkit-user-select: none;
 	touch-action: manipulation;
@@ -102,45 +101,6 @@ button {
 	}
 }
 
-.rombtn a { 
-	display: block;
-	float: left !important;
-	position: relative;
-	width: 18.75rem;
-	font-family: 'Russo One', sans-serif;
-	font-size: 1rem;
-	letter-spacing: 2px;
-	text-transform: uppercase;
-	background-color: transparent !important;
-    background-repeat: no-repeat !important;
-	box-shadow: 5px 5px 3px Black;
-	border-radius: 4px;
-	border: 2px solid;
-	border-color: rgb(151, 38, 173);
-	cursor: pointer;
-	padding: 0rem 1rem !important;
-	user-select: none;
-	-webkit-user-select: none;
-	touch-action: manipulation;
-	/* top | right | bottom | left ВЫСТАВИТЬ В ПРААВИЛЬНОМ ПОРЯДКЕ! */
-	margin-bottom: -30px!important;
-
-}
-
-/* rgb(151, 38, 173) */
-
-.rombtn a:hover {
-	text-decoration: none;
-	box-shadow: 0px 0px 0px 0px;
-	top: 5px;
-	left: 5px;
-}
-
-@media (min-width: 768px) {
-	.rombtn a {
-	  padding: 0.25em 0.75em;
-	}
-}
 
 /* DIALOGUE BOXES */
 
@@ -170,9 +130,9 @@ button {
 	box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-	min-width: var(--min-width-sp);
-    min-height: var(--min-height-sp);
-	max-height: var(--max-height-sp);
+	min-width: 340px;
+    min-height: 380px;
+	max-height: 670px;
 	color: bisque;
 	border: 2px solid rgb(128, 6, 165);
 	border-radius: 5px;
@@ -184,11 +144,11 @@ button {
 .playerav {
 	display: block;
 	padding: 1px;
-	height: 8.125rem;
-	width: 8.125rem;
+	height: 130px;
+	width: 130px;
 	float: left;
-	margin: 0.313rem 0.313rem 0rem 0rem;
-	border: 0.125rem solid rgb(128, 6, 165);
+	margin: 5px 5px 0px 0px;
+	border: 2px solid rgb(128, 6, 165);
 	border-radius: 5px;
 	background-size: contain;
     background-color: #333333;
@@ -198,7 +158,7 @@ button {
 .playername {
 	font-family: 'Russo One', sans-serif;
 	color: rgb(151, 38, 173);
-	font-size: 1.75rem;
+	font-size: 28px;
 }
 
 
@@ -210,21 +170,21 @@ button {
 	box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    min-height: var(--min-height-sp);
-	max-height: var(--max-height-sp);
+    min-height: 380px;
+	max-height: 670px;
 	border: 2px solid rgb(5, 153, 104);
 	border-radius: 5px;
-	padding: var(--paddingsp);
+	padding: 10px 30px 10px 30px;
 	box-shadow: 5px 5px 3px Black;
 }
 .xanderav {
 	display: block;
 	padding: 1px;
-	height: var(--av-height);
-	width: var(--av-width);
+	height: 130px;
+	width: 130px;
 	float: left;
-	margin: var(--av-margin);
-	border: 0.125rem solid rgb(5, 153, 104);
+	margin: 0px 10px 0px 0px;
+	border: 2px solid rgb(5, 153, 104);
 	border-radius: 5px;
 	background-size: contain;
     background-color: #333333;
@@ -246,23 +206,23 @@ button {
 	box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    min-height: var(--min-height-sp);
-	max-height: var(--max-height-sp);
-	border: 0.125rem solid rgb(5, 111, 153);
+    min-height: 380px;
+	max-height: 670px;
+	border: 2px solid rgb(5, 111, 153);
 	border-radius: 5px;
-	padding: var(--paddingsp);
+	padding: 10px 30px 10px 30px;
 	box-shadow: 5px 5px 3px Black;
-	margin-bottom: var(--sp-margin-bottom) !important;
+	margin-bottom: 15px !important;
 }
 
 .cullenav {
 	display: block;
 	padding: 1px;
-	height: var(--av-height);
-	width: var(--av-width);
+	height: 130px;
+	width: 130px;
 	float: left;
-	margin: var(--av-margin);
-	border: 0.125rem solid rgb(5, 111, 153);
+	margin: 0px 10px 0px 0px;
+	border: 2px solid rgb(5, 111, 153);
 	border-radius: 5px;
 	background-size: contain;
     background-color: #333333;
@@ -282,23 +242,23 @@ button {
 	box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    min-height: var(--max-height-sp);
-	max-height: var(--min-height-sp);
-	border: 0.125rem solid rgb(86, 91, 94);
+    min-height: 380px;
+	max-height: 670px;
+	border: 2px solid rgb(86, 91, 94);
 	border-radius: 5px;
-	padding: var(--paddingsp);
+	padding: 10px 30px 10px 30px;
 	box-shadow: 5px 5px 3px Black;
-	margin-bottom: var(--sp-margin-bottom) !important;
+	margin-bottom: 15px !important;
 }
 
 .cptav {
 	display: block;
 	padding: 1px;
-	height: var(--av-height);
-	width: var(--av-width);
+	height: 130px;
+	width: 130px;
 	float: left;
-	margin: var(--av-margin);
-	border: 0.125rem solid rgb(86, 91, 94);
+	margin: 0px 10px 0px 0px;
+	border: 2px solid rgb(86, 91, 94);
 	border-radius: 5px;
 	background-size: contain;
     background-color: #333333;
@@ -319,23 +279,23 @@ button {
 	box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    min-height: var(--min-height-sp);
-	max-height: var(--max-height-sp);
-	border: 0.125rem solid #c98612;
+    min-height: 380px;
+	max-height: 670px;
+	border: 2px solid #c98612;
 	border-radius: 5px;
-	padding: var(--paddingsp);
+	padding: 10px 30px 10px 30px;
 	box-shadow: 5px 5px 3px Black;
-	margin-bottom: var(--sp-margin-bottom) !important;
+	margin-bottom: 15px !important;
 }
 
 .jackav {
 	display: block;
 	padding: 1px;
-	height: var(--av-height);
-	width: var(--av-width);
+	height: 130px;
+	width: 130px;
 	float: left;
-	margin: var(--av-margin);
-	border: 0.125rem solid #c98612;
+	margin: 0px 10px 0px 0px;
+	border: 2px solid #c98612;
 	border-radius: 5px;
 	background-size: contain;
     background-color: #333333;

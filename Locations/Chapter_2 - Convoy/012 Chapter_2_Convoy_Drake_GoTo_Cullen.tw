@@ -3,7 +3,7 @@
 :: Drake_GoTo_Cullen
 
 @@#exposition;\
-<<pli>>Я пошла к Каллену на мост. Он что-то задумчиво рассматривал на галло-карте.<</pli>>
+<<pli>>Я пошла к Каллену на мост. Он что-то задумчиво рассматривал на гало-карте.<</pli>>
 @@
 
 <<silently>>
@@ -109,24 +109,24 @@
 <<if $xanderIntercomOff == true && $cullenAboutGirlfriend == false && $drakeCullenAboutCargo == false && $howBecameACop == false>>\
     <div class ="button">[[Спросить про груз|Drake_Cullen_Cargo]]</div>
     <div class ="button">[[Есть ли девушка?|Drake_Cullen_Girlfriend]]</div>
-    <div class ="button">[[Как стал копом? (paid)|Drake_Cullen_HowBecameACop]]</div>
+    <div class ="button">[[Как стал копом?|Drake_Cullen_HowBecameACop]]</div>
 <<elseif $xanderIntercomOff == true && $drakeCullenAboutCargo == false && $cullenAboutGirlfriend == true && $howBecameACop == false>>\
     <div class ="button">[[Спросить про груз|Drake_Cullen_Cargo]]</div>
-    <div class ="button">[[Как стал копом? (paid)|Drake_Cullen_HowBecameACop]]</div>
+    <div class ="button">[[Как стал копом?|Drake_Cullen_HowBecameACop]]</div>
 <<elseif $xanderIntercomOff == true && $drakeCullenAboutCargo == false && $cullenAboutGirlfriend == false && $howBecameACop == true>>\
     <div class ="button">[[Спросить про груз|Drake_Cullen_Cargo]]</div>
     <div class ="button">[[Есть ли девушка?|Drake_Cullen_Girlfriend]]</div>
 <<elseif $xanderIntercomOff == true && $drakeCullenAboutCargo == true && $cullenAboutGirlfriend == true && $howBecameACop == false>>\
-    <div class ="button">[[Как стал копом? (paid)|Drake_Cullen_HowBecameACop]]</div>
+    <div class ="button">[[Как стал копом?|Drake_Cullen_HowBecameACop]]</div>
 <<elseif $xanderIntercomOff == true && $drakeCullenAboutCargo == false && $cullenAboutGirlfriend == true && $howBecameACop == true>>\
     <div class ="button">[[Спросить про груз|Drake_Cullen_Cargo]]</div>
 <<elseif $xanderIntercomOff == false && $drakeCullenAboutCargo == false && $cullenAboutGirlfriend == false && $howBecameACop == false>>\
     <div class ="button">[[Есть ли девушка?|Drake_Cullen_Girlfriend]]</div>
-    <div class ="button">[[Как стал копом? (paid)|Drake_Cullen_HowBecameACop]]</div>
+    <div class ="button">[[Как стал копом?|Drake_Cullen_HowBecameACop]]</div>
 <<elseif $xanderIntercomOff == false  && $drakeCullenAboutCargo == false && $cullenAboutGirlfriend == true && $howBecameACop == false>>\
-    <div class ="button">[[Как стал копом? (paid)|Drake_Cullen_HowBecameACop]]</div>
+    <div class ="button">[[Как стал копом?|Drake_Cullen_HowBecameACop]]</div>
 <<else>>
-    <<pln>>У меня больше нет вопросов.<</pln>>
+    <<goto 'Drake_Cullen_DeclareFeelings'>>
     /* Префаб. Заменить на goto */
 <</if>>
 
@@ -506,7 +506,7 @@
                                 <</replace>>
                                 <<cont keypress>>
                                     <<replace '#exposition'>>\
-                                        <<cul>>Куча аугментированных извращенцев и садюг отбились от рук, думая, что куча хрома делает их бессмертными.<</cul>>
+                                        <<cul>>Сотни тысяч аугментированных извращенцев и садюг отбились от рук, думая, что куча хрома делает их бессмертными.<</cul>>
                                     <</replace>>
                                     <<cont keypress>>
                                         <<replace '#exposition'>>\
@@ -530,15 +530,15 @@
                                                         <</replace>>
                                                         <<cont keypress>>
                                                             <<replace '#exposition'>>\
-                                                                <<pln>>Ты так много сказал, и при этом так и не сказал, как решил стать копом.<</pln>>
+                                                                <<pln>>Ты столько всего рассказал, и при этом так и не сказал, как решил стать копом.<</pln>>
                                                             <</replace>>
                                                             <<cont keypress>>
                                                                 <<replace '#exposition'>>\
-                                                                    <<cul>>Ах, да. Ты же помнишь, я играл в рэгби в школе. Моя спортивная карьера быстро закончилась, прям как у твоего отца. <</cul>>
+                                                                    <<cul>>Ах, да. Ты же помнишь, я играл в рэгби в школе? Моя спортивная карьера быстро закончилась, по тем же причинам, что и у твоего отца. <</cul>>
                                                                 <</replace>>
                                                                 <<cont keypress>>
                                                                     <<replace '#exposition'>>\
-                                                                        <<cul>>А после школы я не знал, чем заняться. В универ поступить мне даже спорт не помог —грантов было недостаточно, а родители мои не тянули. <</cul>>
+                                                                        <<cul>>А после школы я не знал, чем заняться. В универ поступить мне даже спорт не помог — грантов было недостаточно, а родители мои не тянули. <</cul>>
                                                                     <</replace>>
                                                                     <<cont keypress>>
                                                                         <<replace '#exposition'>>\
@@ -550,15 +550,15 @@
                                                                             <</replace>>
                                                                             <<cont keypress>>
                                                                                 <<replace '#exposition'>>\
-                                                                                    <<cul>>Поступил звонок об очередной перестрелке. Когда я прибыл на место, два аугментированных до зубов контрабандюги разносили район. <</cul>>
+                                                                                    <<cul>>Поступил звонок об очередной перестрелке. Прибываю я на место, а там два аугментированных до зубов контрабандюги разносят район. <</cul>>
                                                                                 <</replace>>
                                                                                 <<cont keypress>>
                                                                                     <<replace '#exposition'>>\
-                                                                                        <<cul>>Я спрятался за углом какого-то здания, связываться в одиночку было опасно. <</cul>>
+                                                                                        <<cul>>Я спрятался за углом заброшенной библиотеки — связываться в одиночку было опасно. <</cul>>
                                                                                     <</replace>>
                                                                                     <<cont keypress>>
                                                                                         <<replace '#exposition'>>\
-                                                                                            <<cul>>В итоге, те поубивали друг-друга без моей "помощи". Как выяснилось, из-за некоего груза.<</cul>>
+                                                                                            <<cul>>В итоге, те поубивали друг-друга без моей помощи. Как выяснилось, из-за некоего груза.<</cul>>
                                                                                         <</replace>>
                                                                                         <<cont keypress>>
                                                                                             <<replace '#exposition'>>\
@@ -606,15 +606,8 @@
                                                                                                                                     <</replace>>
                                                                                                                                     <<cont keypress>>
                                                                                                                                         <<replace '#exposition'>>\
-                                                                                                                                            <<pli>>Я не знала, стоит ли признаться в своих чувствах, или продолжать вести беседу в дружеском ключе. Я боялась, что наши отношения могут помешать моей карьере. И одновременно боялась быть отвергнутой. <</pli>>
+                                                                                                                                            <<goto 'Drake_Cullen_DeclareFeelingsChoice'>>
                                                                                                                                         <</replace>>
-                                                                                                                                        <<cont keypress>>
-                                                                                                                                            <<replace '#exposition'>>\
-                                                                                                                                                <<pli>>И хоть мы и в одном подразделении, видимся мы редко. На таком хрупком фундаменте отношения долго не продержатся.<</pli>>\
-                                                                                                                                                <div class="button">[[Признаться в симпатии|Drake_Cullen_DeclareFeelings]]</div>
-                                                                                                                                                <div class="button">[[Промолчать|Drake_Cullen_Explosion]]</div>
-                                                                                                                                            <</replace>>
-                                                                                                                                        <</cont>>
                                                                                                                                     <</cont>>
                                                                                                                                 <</cont>>
                                                                                                                             <</cont>>
@@ -650,7 +643,21 @@
     <</cont>>
 <</silently>>
                                                                                                                                 
+:: Drake_Cullen_DeclareFeelingsChoice
 
+@@#exposition;\
+<<pli>>Я не знала, стоит ли признаться в своих чувствах, или продолжать вести беседу в дружеском ключе. Я боялась, что наши отношения могут помешать моей карьере. И одновременно боялась быть отвергнутой.<</pli>>
+@@
+
+<<silently>>
+    <<cont keypress>>
+        <<replace '#exposition'>>\
+            <<pli>>И хоть мы и в одном подразделении, видимся мы редко. На таком хрупком фундаменте отношения долго не продержатся.<</pli>>\
+            <div class="button">[[Признаться в симпатии|Drake_Cullen_DeclareFeelings]]</div>
+            <div class="button">[[Промолчать|Drake_Explosion]]</div>
+        <</replace>>
+    <</cont>>
+<</silently>>
 
 :: Drake_Cullen_DeclareFeelings
 
@@ -689,7 +696,7 @@
                                 <</replace>>
                                 <<cont keypress>>
                                     <<replace '#exposition'>>\
-                                        <<pli>>Каллен потянулся к моим губам, обняв меня за бедро. Я была в ступоре.<</pli>>
+                                        <<pli>>Каллен потянулся к моим губам, обняв меня за бедро. Я была в ступоре.<</pli>>\
                                         <div class="button">[[Убрать Руку|Drake_Cullen_HandAway]]</div>
                                         <div class="button">[[Поддаться искушению|Drake_Cullen_FallToTemptation]]</div>
                                     <</replace>>
