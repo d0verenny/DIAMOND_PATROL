@@ -1,35 +1,34 @@
 :: Intro {"position":"295,100"}
-
 <<include Variables>>
 
 @@#exposition;
 <div class="crt">
 
 <img src="Media/UI/logo copy 2.png" width="800px">
-@@
 
 <div class='crtscreenfont fadeoutinifinite' style="text-align:center;">>Кликните в любое место, чтобы начать полёт</div>
+@@
 
 <<silently>>
     <<cont keypress>>
         <<replace '#exposition'>>\
-         <<goto "Home_1">>
+            <<goto "Home_1">>
         <</replace>>
     <</cont>>
 <</silently>>
 
 
-
 :: Home_1
 
-[[Drake_GoTo_Cullen_AwkwardSilence]]
-[[Testground]]
-[[HQ_Captain_Pushups]]
+<div class="rombtn">[[Посмотреть только романтическую часть|Drake_GoTo_Cullen]]</div>
 
-[[StepOnIt]]
+<div class="rombtn">[[Начать игру с начала|Home_Start]]</div>
+
+
+:: Home_Start 
 
 <div class='crt'><div style="color:rgb(151, 38, 173);font-family:'Russo One', sans-serif;">ВВЕДИТЕ ИМЯ ВАШЕЙ ГЕРОИНИ:</div>
-<<textbox "$Player.name" $Player.name>> \
+<<textbox "$Player.name" $Player.name>>\ 
 <<button "Подтвердить">>
 <<set $Player.name = $Player.name.trim()>>
 <<if $Player.name == "">>
@@ -48,7 +47,7 @@
 
 @@#exposition;\
 <h1>ГЛАВА I. ЕЩЁ ОДИН В ОФИСЕ.</h1>\
-2324-й год. Человечество покоряет космос окончательно после глобальных конфликтов в начале 2000-х. На Земле выживает лишь один миллиард человек.
+2324-й год. Человечество покоряет космос после глобальных конфликтов в 2256 году. На Земле выживает лишь один миллиард человек.
 
 <div class='devn fadeoutinifinite'>>Кликните в любое место, чтобы продолжить</div>
 @@
@@ -60,7 +59,7 @@
         <</replace>>
             <<cont keypress>>
                 <<replace '#exposition'>>\
-                    Особенно ценятся в ИнтерГалаПоле пилоты. Ведь управлегте современными боевыми летательными аппаратами требуют исключительных навыков.
+                    Особенно ценятся в ИнтерГалаПоле пилоты. Ведь управление современными боевыми летательными аппаратами требуют исключительных навыков.
                  <</replace>>
             <<cont keypress>>
                 <<replace '#exposition'>>\
@@ -68,7 +67,7 @@
                 <</replace>>
                 <<cont keypress>>
                     <<replace '#exposition'>>\
-                        <<pln>> И я очень хочу спать...<</pln>>\
+                        <<pln>> И я очень хочу спать... <</pln>>\
                         <div class="button">[[Проснуться|WakeUp]]</div>
                     <</replace>>
                 <</cont>>
@@ -78,10 +77,10 @@
 <</silently>>
 
 
+
 :: WakeUp {"position":"700,100"}
 
-
-@@#exposition;
+@@#exposition;\
 <<pli>>Гало-часы на моей руке громко запищали. Сонная, я взглянула на них.<</pli>>
     <div class='fadeoutinifinite devn'>>Кликните в любое место, чтобы продолжить</div>
 @@
@@ -99,6 +98,8 @@
     <</cont>>
 <</silently>>
 
+
+
 :: Wakeup_1 {"position":"900,100"}
 
 @@#exposition;\
@@ -109,7 +110,7 @@
 <<silently>>
     <<cont keypress>>
         <<replace '#exposition'>>\
-            <<pli>>Капитан Бохэннон нас зачем-то хочет всех собрать "по ОСОБОМУ поводу."<</pli>>\
+            <<pli>>Капитан Бохэннон нас зачем-то хочет всех собрать "по особому поводу."<</pli>>\
         <</replace>>
         <<cont keypress>>
             <<replace '#exposition'>>\
@@ -156,11 +157,12 @@
             <</cont>>
         <</cont>>
     <</cont>>
-<</silently>>
-
+<</silently>>\
 <<silently>>
     <<set $gotDressed = true>>
 <</silently>>\
+
+
 
 :: flyAsIs {"position":"700,300"}
 
@@ -185,9 +187,11 @@
     <</cont>>
 <</silently>>
 
+
+
 :: flyPreparation {"position":"900,500"}
 
-<<pli>>Одним махом я прыгнула в монорайд — подарок отца.<</pli>>\
+<<pli>>Одним махом я прыгнула в монорайд — подарок отца.
+<</pli>>\
 <div class="button">[[Давить педаль в пол|StepOnIt]]</div>
 <div class="button">[[Закрыть кабину|CloseCanopy]]</div>
-
