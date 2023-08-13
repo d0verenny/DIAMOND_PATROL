@@ -20,8 +20,9 @@
 
 :: Home_1
 
-<img src="Media/UI/logo copy 2.png" width="800px">
+<img src="Media/UI/logo copy 2.png" width="800px">\
 <div class="rombtn">[[Посмотреть только романтическую часть|Drake_GoTo_Cullen]]</div>
+
 <div class="rombtn">[[Начать игру с начала|Home_Start]]</div>
 
 
